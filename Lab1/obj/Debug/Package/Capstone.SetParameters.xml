@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="CyberDay_AWS-Web.config Connection String" value="server=capstone.cndbrlsa47lt.us-east-1.rds.amazonaws.com;database=CyberDay;uid=Master;password=password;Integrated Security=false;MultipleActiveResultSets=True;" />
+  <setParameter name="AUTH_AWS-Web.config Connection String" value="server=capstone.cndbrlsa47lt.us-east-1.rds.amazonaws.com;database=AUTH;uid=Master;password=password;Integrated Security=false;MultipleActiveResultSets=True;" />
+  <setParameter name="Lab3-Web.config Connection String" value="Data Source=LocalHost;Initial Catalog=Lab3;MultipleActiveResultSets=True;Trusted_Connection=Yes;" />
+  <setParameter name="AUTH-Web.config Connection String" value="Data Source=LocalHost;Initial Catalog=AUTH;MultipleActiveResultSets=True;Trusted_Connection=Yes;" />
+</parameters>
