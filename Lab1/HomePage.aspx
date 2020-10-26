@@ -6,6 +6,13 @@ Section 0002
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Table runat="server" >
+        <asp:TableRow >
+            <asp:TableCell>
+                <asp:button runat="server" text="SUPERSENIOR" />
+            </asp:TableCell>
+        </asp:TableRow>
+        </asp:Table>
     <asp:Table runat="server" GridLines="Both" HorizontalAlign="Center" CellSpacing="5" Height="309px" Width="424px"  >
 
         <asp:TableRow >
