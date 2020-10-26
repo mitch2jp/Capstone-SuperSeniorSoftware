@@ -104,10 +104,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Add a Student Page.aspx" />
-    <Content Include="Add a Teacher.aspx" />
-    <Content Include="Bag Toss Information Page.aspx" />
-    <Content Include="Capture the Flag Information Page.aspx" />
+    <Content Include="Lab3\Add a Student Page.aspx" />
+    <Content Include="Lab3\Add a Teacher.aspx" />
+    <Content Include="Lab3\Bag Toss Information Page.aspx" />
+    <Content Include="Lab3\Capture the Flag Information Page.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -116,16 +116,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CoordinatorDashboard.aspx" />
-    <Content Include="CoordinatorInformation.aspx" />
+    <Content Include="Lab3\CoordinatorInformation.aspx" />
     <Content Include="CoordinatorLogin.aspx" />
-    <Content Include="Create a Teacher.aspx" />
+    <Content Include="Lab3\Create a Teacher.aspx" />
     <Content Include="CreateEvent.aspx" />
     <Content Include="CreateEventSuccess.aspx" />
     <Content Include="css\CustomStyleSheet.css" />
-    <Content Include="EditStudentInfo.aspx" />
+    <Content Include="Lab3\EditStudentInfo.aspx" />
     <Content Include="EmailConfirmation.aspx" />
-    <Content Include="Event Information.aspx" />
-    <Content Include="Event Sign Up Page.aspx" />
+    <Content Include="Lab3\Event Information.aspx" />
+    <Content Include="Lab3\Event Sign Up Page.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Images\computer.png" />
@@ -137,12 +137,11 @@
     <Content Include="Images\new-event.png" />
     <Content Include="Images\new-user.png" />
     <Content Include="Images\sign-up.png" />
-    <Content Include="Learning Seminar Information Page.aspx" />
-    <Content Include="LoginPage.aspx" />
-    <Content Include="LoginPage1.aspx" />
-    <Content Include="Lunch Information Page.aspx" />
+    <Content Include="Lab3\Learning Seminar Information Page.aspx" />
+    <Content Include="Lab3\LoginPage.aspx" />
+    <Content Include="Lab3\Lunch Information Page.aspx" />
     <Content Include="MainSite.Master" />
-    <Content Include="HomePage.aspx" />
+    <Content Include="Lab3\HomePage.aspx" />
     <Content Include="ParentInfo.aspx" />
     <Content Include="ParentPhotoReleaseAuth.aspx" />
     <Content Include="ParentStudentRegistration.aspx" />
@@ -269,45 +268,45 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SelectEvents.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="Update Students.aspx" />
-    <Content Include="View Student Roster.aspx" />
-    <Content Include="View Teacher Roster.aspx" />
-    <Content Include="ViewSwitcher.ascx" />
-    <Content Include="VolunteerInformation.aspx" />
+    <Content Include="Lab3\Update Students.aspx" />
+    <Content Include="Lab3\View Student Roster.aspx" />
+    <Content Include="Lab3\View Teacher Roster.aspx" />
+    <Content Include="Lab3\ViewSwitcher.ascx" />
+    <Content Include="Lab3\VolunteerInformation.aspx" />
     <Content Include="VolunteerLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add a Student Page.aspx.cs">
+    <Compile Include="Lab3\Add a Student Page.aspx.cs">
       <DependentUpon>Add a Student Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Add a Student Page.aspx.designer.cs">
+    <Compile Include="Lab3\Add a Student Page.aspx.designer.cs">
       <DependentUpon>Add a Student Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Add a Teacher.aspx.cs">
+    <Compile Include="Lab3\Add a Teacher.aspx.cs">
       <DependentUpon>Add a Teacher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Add a Teacher.aspx.designer.cs">
+    <Compile Include="Lab3\Add a Teacher.aspx.designer.cs">
       <DependentUpon>Add a Teacher.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Bag Toss Information Page.aspx.cs">
+    <Compile Include="Lab3\Bag Toss Information Page.aspx.cs">
       <DependentUpon>Bag Toss Information Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Bag Toss Information Page.aspx.designer.cs">
+    <Compile Include="Lab3\Bag Toss Information Page.aspx.designer.cs">
       <DependentUpon>Bag Toss Information Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Capture the Flag Information Page.aspx.cs">
+    <Compile Include="Lab3\Capture the Flag Information Page.aspx.cs">
       <DependentUpon>Capture the Flag Information Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Capture the Flag Information Page.aspx.designer.cs">
+    <Compile Include="Lab3\Capture the Flag Information Page.aspx.designer.cs">
       <DependentUpon>Capture the Flag Information Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="CoordinatorDashboard.aspx.cs">
@@ -317,11 +316,11 @@
     <Compile Include="CoordinatorDashboard.aspx.designer.cs">
       <DependentUpon>CoordinatorDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CoordinatorInformation.aspx.cs">
+    <Compile Include="Lab3\CoordinatorInformation.aspx.cs">
       <DependentUpon>CoordinatorInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CoordinatorInformation.aspx.designer.cs">
+    <Compile Include="Lab3\CoordinatorInformation.aspx.designer.cs">
       <DependentUpon>CoordinatorInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="CoordinatorLogin.aspx.cs">
@@ -331,11 +330,11 @@
     <Compile Include="CoordinatorLogin.aspx.designer.cs">
       <DependentUpon>CoordinatorLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Create a Teacher.aspx.cs">
+    <Compile Include="Lab3\Create a Teacher.aspx.cs">
       <DependentUpon>Create a Teacher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Create a Teacher.aspx.designer.cs">
+    <Compile Include="Lab3\Create a Teacher.aspx.designer.cs">
       <DependentUpon>Create a Teacher.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateEvent.aspx.cs">
@@ -352,11 +351,11 @@
     <Compile Include="CreateEventSuccess.aspx.designer.cs">
       <DependentUpon>CreateEventSuccess.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditStudentInfo.aspx.cs">
+    <Compile Include="Lab3\EditStudentInfo.aspx.cs">
       <DependentUpon>EditStudentInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditStudentInfo.aspx.designer.cs">
+    <Compile Include="Lab3\EditStudentInfo.aspx.designer.cs">
       <DependentUpon>EditStudentInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmailConfirmation.aspx.cs">
@@ -366,18 +365,18 @@
     <Compile Include="EmailConfirmation.aspx.designer.cs">
       <DependentUpon>EmailConfirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Event Information.aspx.cs">
+    <Compile Include="Lab3\Event Information.aspx.cs">
       <DependentUpon>Event Information.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Event Information.aspx.designer.cs">
+    <Compile Include="Lab3\Event Information.aspx.designer.cs">
       <DependentUpon>Event Information.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Event Sign Up Page.aspx.cs">
+    <Compile Include="Lab3\Event Sign Up Page.aspx.cs">
       <DependentUpon>Event Sign Up Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Event Sign Up Page.aspx.designer.cs">
+    <Compile Include="Lab3\Event Sign Up Page.aspx.designer.cs">
       <DependentUpon>Event Sign Up Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -391,32 +390,32 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.aspx.cs">
+    <Compile Include="Lab3\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HomePage.aspx.designer.cs">
+    <Compile Include="Lab3\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Learning Seminar Information Page.aspx.cs">
+    <Compile Include="Lab3\Learning Seminar Information Page.aspx.cs">
       <DependentUpon>Learning Seminar Information Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Learning Seminar Information Page.aspx.designer.cs">
+    <Compile Include="Lab3\Learning Seminar Information Page.aspx.designer.cs">
       <DependentUpon>Learning Seminar Information Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.aspx.cs">
+    <Compile Include="Lab3\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginPage.aspx.designer.cs">
+    <Compile Include="Lab3\LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Lunch Information Page.aspx.cs">
+    <Compile Include="Lab3\Lunch Information Page.aspx.cs">
       <DependentUpon>Lunch Information Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Lunch Information Page.aspx.designer.cs">
+    <Compile Include="Lab3\Lunch Information Page.aspx.designer.cs">
       <DependentUpon>Lunch Information Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainSite.Master.cs">
@@ -471,41 +470,40 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="Update Students.aspx.cs">
+    <Compile Include="Lab3\Update Students.aspx.cs">
       <DependentUpon>Update Students.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Update Students.aspx.designer.cs">
+    <Compile Include="Lab3\Update Students.aspx.designer.cs">
       <DependentUpon>Update Students.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View Student Roster.aspx.cs">
+    <Compile Include="Lab3\View Student Roster.aspx.cs">
       <DependentUpon>View Student Roster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View Student Roster.aspx.designer.cs">
+    <Compile Include="Lab3\View Student Roster.aspx.designer.cs">
       <DependentUpon>View Student Roster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View Teacher Roster.aspx.cs">
+    <Compile Include="Lab3\View Teacher Roster.aspx.cs">
       <DependentUpon>View Teacher Roster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View Teacher Roster.aspx.designer.cs">
+    <Compile Include="Lab3\View Teacher Roster.aspx.designer.cs">
       <DependentUpon>View Teacher Roster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
+    <Compile Include="Lab3\ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
+    <Compile Include="Lab3\ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Volunteer.cs" />
-    <Compile Include="VolunteerInformation.aspx.cs">
+    <Compile Include="Lab3\Volunteer.cs" />
+    <Compile Include="Lab3\VolunteerInformation.aspx.cs">
       <DependentUpon>VolunteerInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VolunteerInformation.aspx.designer.cs">
+    <Compile Include="Lab3\VolunteerInformation.aspx.designer.cs">
       <DependentUpon>VolunteerInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="VolunteerLogin.aspx.cs">
