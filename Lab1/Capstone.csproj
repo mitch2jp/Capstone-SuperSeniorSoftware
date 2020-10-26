@@ -274,6 +274,7 @@
     <Content Include="View Teacher Roster.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VolunteerInformation.aspx" />
+    <Content Include="VolunteerLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -506,6 +507,13 @@
     </Compile>
     <Compile Include="VolunteerInformation.aspx.designer.cs">
       <DependentUpon>VolunteerInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerLogin.aspx.cs">
+      <DependentUpon>VolunteerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerLogin.aspx.designer.cs">
+      <DependentUpon>VolunteerLogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
