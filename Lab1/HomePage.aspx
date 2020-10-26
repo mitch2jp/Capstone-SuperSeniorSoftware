@@ -11,6 +11,9 @@ Section 0002
             <asp:TableCell>
                 <asp:button runat="server" text="SUPERSENIOR" />
             </asp:TableCell>
+            <asp:TableCell>
+                <asp:button runat="server" text="SUPERSENIOR2" />
+            </asp:TableCell>
         </asp:TableRow>
         </asp:Table>
     <asp:Table runat="server" GridLines="Both" HorizontalAlign="Center" CellSpacing="5" Height="309px" Width="424px"  >
