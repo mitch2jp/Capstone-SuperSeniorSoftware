@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <<<<<<< HEAD
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
@@ -64,6 +65,10 @@
                 </div>
             </div>
         </div>
+=======
+    <div>
+        <asp:Button ID="Button1" runat="server" Text="PlsWork" />
+>>>>>>> 55accc75b26978a770b282abec769c0349a4b440
     </div>
 
 </asp:Content>
