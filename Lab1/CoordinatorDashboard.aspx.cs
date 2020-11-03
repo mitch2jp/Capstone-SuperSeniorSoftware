@@ -18,6 +18,8 @@ namespace Lab1
 
             }
 
+            lblUser.Text = "Current User: " + "'" + Session["CoordinatorUsername"].ToString() + "'";
+
 
         }
 

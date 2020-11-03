@@ -94,7 +94,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <asp:Button ID="btnConfirm" CssClass="btn btn-success btn-block btn-lg" runat="server" PostBackUrl="~/SelectEvents.aspx" Text="Confirm" />
+                                        <asp:Button ID="btnConfirm" CssClass="btn btn-success btn-block btn-lg" runat="server" PostBackUrl="~/ParentSelectEvents.aspx" Text="Confirm" />
                                     </div>
                                     <div class="form-group">
                                         <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/Home.aspx" runat="server" Text="Cancel" />

@@ -33,6 +33,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtEventName;
 
         /// <summary>
+        /// valEventName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valEventName;
+
+        /// <summary>
         /// lblEventDescription control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEventDescription;
+
+        /// <summary>
+        /// valEventDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valEventDescription;
 
         /// <summary>
         /// lblBuilding control.
@@ -69,6 +87,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.DropDownList ddlBuilding;
 
         /// <summary>
+        /// valBuilding control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valBuilding;
+
+        /// <summary>
         /// lblRoom control.
         /// </summary>
         /// <remarks>
@@ -85,6 +112,24 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRoom;
+
+        /// <summary>
+        /// valRoom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRoom;
+
+        /// <summary>
+        /// valRoomInt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator valRoomInt;
 
         /// <summary>
         /// lblEventTime control.
@@ -105,6 +150,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtEventTime;
 
         /// <summary>
+        /// valTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valTime;
+
+        /// <summary>
         /// lblEventDate control.
         /// </summary>
         /// <remarks>
@@ -123,22 +177,85 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Calendar calEvent;
 
         /// <summary>
-        /// lblSchoolContact control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSchoolContact;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
-        /// ddlSchoolContact control.
+        /// valDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSchoolContact;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valDate;
+
+        /// <summary>
+        /// lblVolunteerInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVolunteerInstructions;
+
+        /// <summary>
+        /// rdoYes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdoYes;
+
+        /// <summary>
+        /// rdoNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdoNo;
+
+        /// <summary>
+        /// valRadioButtons control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator valRadioButtons;
+
+        /// <summary>
+        /// divVolunteerInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divVolunteerInstructions;
+
+        /// <summary>
+        /// txtVolunteerInstructions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVolunteerInstructions;
+
+        /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
         /// btnCreateEvent control.

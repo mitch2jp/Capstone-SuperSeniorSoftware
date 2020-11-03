@@ -16,10 +16,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <center>
-                        <h2>Create an Event</h2>
-                        <img width="150px" height="150px" src="Images/new-event.png" />
+                        <h2>Chat With Students</h2>
+                        <img width="150px" height="150px" src="Images/chat.jpg" />
                     <h4>
-                        <asp:Button ID="btnCreateEvent" CssClass="btn btn-primary btn-block" runat="server" Text="Create Event" PostBackUrl="~/CreateEvent.aspx" OnClick="btnCreatEvent_Click" />
+                        <asp:Button ID="btnCreateEvent" CssClass="btn btn-primary btn-block" runat="server" Text="Chat with Students" PostBackUrl="~/VolunteerChat.aspx" OnClick="btnCreatEvent_Click" />
                     </h4>
                     <p class="text-justify">  
                     </p>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <h2>Event Information</h2>
+                        <h2>View Event Information</h2>
                         <img width="150px" height="150px" src="Images/list.jpg" />
                     <h4>
-                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" runat="server" Text="View Event Information" OnClick="btnViewEventInfo_Click" />
+                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/VolunteerEventInformation.aspx" runat="server" Text="Event Information" OnClick="btnViewEventInfo_Click" />
                     </h4>
                     <p class="text-justify">
                     </p>
@@ -38,10 +38,10 @@
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <h2>Itinerary</h2>
-                        <img width="150px" height="150px" src="Images/itinerary.png" />
+                        <h2>Edit Profile</h2>
+                        <img width="250px" height="150px" src="Images/user-profile.jpg" />
                     <h4>
-                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" Text="View Itinerary" />
+                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/CreateVolunteer.aspx" Text="Edit Profile" />
                     </h4>
                     <p class="text-justify"></p>
                     </center>
@@ -50,32 +50,5 @@
         </div>
     </section>
 
-    <section>
-        <div class="container-fluid" style="border:5px solid #461c87">
-            <div class="row">
-                <div class="col-12">
-                    
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <center>
-                        <p>[Insert Tableau analytics here]</p>
-                    </center>
-                </div>
-                <div class="col-md-4">
-                    <center>
-                        <p>[Insert Tableau analytics here]</p>
-                    </center>
-                </div>
-                <div class="col-md-4">
-                    <center>
-                        <p>[Insert Tableau analytics here]</p>
-                    <p class="text-justify"></p>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 </asp:Content>

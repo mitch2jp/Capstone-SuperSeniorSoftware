@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <<<<<<< HEAD
-    <<<<<<< HEAD
+   
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
@@ -12,8 +11,9 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <center><img width="150px" src="images/dukes.png" 
-                                    </center>
+                                <center>
+                                    <img width="150px" src="Images/dukes.png" />
+                                </center>
                             </div>
                         </div>
 
@@ -40,11 +40,27 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" TextMode="Password" placeholder="Password" ID="txtPassword" runat="server"></asp:TextBox>
-
                                 </div>
-
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <div class="form-group">
-                                    <asp:Button ID="btnLogin" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                                    <asp:Label ID="lbl" runat="server" Text="New Volunteer? "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <asp:LinkButton ID="lnkbtnCreateAccount" runat="server" PostBackUrl="~/CreateVolunteer.aspx" OnClick="lnkbtnCreateAccount_Click">Create an account</asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <asp:Button ID="btnLogin" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" PostBackUrl="~/VolunteerDashboard.aspx" OnClick="btnLogin_Click1"/>
                                 </div>
                             </div>
                         </div>
@@ -53,27 +69,14 @@
                             <div class="col">
                                 <div class="form-group">
                                     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
-
                                 </div>
-
                             </div>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-=======
-    <div>
-        <asp:Button ID="Button1" runat="server" Text="PlsWork" />
->>>>>>> 55accc75b26978a770b282abec769c0349a4b440
-=======
-    <div>
-        <asp:Button ID="Button1" runat="server" Text="PlsWork" />
->>>>>>> 55accc75b26978a770b282abec769c0349a4b440
     </div>
+
 
 </asp:Content>

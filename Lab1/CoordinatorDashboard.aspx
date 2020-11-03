@@ -5,14 +5,27 @@
 
      <section>
         <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <asp:Label ID="lblUser" Font-Size="Large" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+            <br />
+            <br />
+
+
             <div class="row">
                 <div class="col-12">
                     <center>
-                    <h2>Coordinator Dashboard: </h2>
+                    <h2 style="border:1px groove #000000">Coordinator Dashboard: </h2>
                     <p><b></b></p>
                     </center>
                 </div>
             </div>
+            <br />
+            <br />
+
 
             <div class="row">
                 <div class="col-md-4">
@@ -31,7 +44,7 @@
                         <h2>Event Information</h2>
                         <img width="150px" height="150px" src="Images/list.jpg" />
                     <h4>
-                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" runat="server" Text="View Event Information" OnClick="btnViewEventInfo_Click" />
+                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/CoordinatorEventInformation.aspx" Text="View Event Information" OnClick="btnViewEventInfo_Click" />
                     </h4>
                     <p class="text-justify">
                     </p>
@@ -42,11 +55,34 @@
                         <h2>Itinerary</h2>
                         <img width="150px" height="150px" src="Images/itinerary.png" />
                     <h4>
-                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" Text="View Itinerary" />
+                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/EventItinerary.aspx" Text="View Itinerary" />
                     </h4>
                     <p class="text-justify"></p>
                     </center>
                 </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Chat With Students</h2>
+                        <img width="150px" height="150px" src="Images/chat.jpg" />
+                    <h4>
+                        <asp:Button ID="Button1" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/CoordinatorChat.aspx" Text="Chat With Students" />
+                    </h4>
+                    <p class="text-justify"></p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Add New Coordinator</h2>
+                        <img width="150px" height="150px" src="Images/add-user.png" />
+                        
+                    <h4>
+                        <asp:Button ID="btnCreateCoordinator" CssClass="btn btn-primary btn-block" PostBackUrl="~/CreateCoordinator.aspx" runat="server" Text="Add a Coordinator" />
+                    </h4>
+                    <p class="text-justify"></p>
+                    </center>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -79,6 +115,9 @@
             </div>
         </div>
     </section>
+    <br />
+    <br />
+
 
 
 

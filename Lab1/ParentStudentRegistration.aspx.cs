@@ -104,8 +104,8 @@ namespace Lab1
             lblParentMealTicket.Visible = false;
             rdoParentMealTicketNo.Visible = false;
             rdoParentMealTicketYes.Visible = false;
-            lblParentTShirtSize.Visible = false;
-            ddlParentShirtSize.Visible = false;
+            //lblParentTShirtSize.Visible = false;
+            //ddlParentShirtSize.Visible = false;
             lblParentPriorParticipation.Visible = false;
             rdoParentPriorParticipationYes.Visible = false;
             rdoParentPriorParticipationNo.Visible = false;
@@ -126,8 +126,8 @@ namespace Lab1
             lblParentMealTicket.Visible = true;
             rdoParentMealTicketNo.Visible = true;
             rdoParentMealTicketYes.Visible = true;
-            lblParentTShirtSize.Visible = true;
-            ddlParentShirtSize.Visible = true;
+            //lblParentTShirtSize.Visible = true;
+            //ddlParentShirtSize.Visible = true;
             lblParentPriorParticipation.Visible = true;
             rdoParentPriorParticipationYes.Visible = true;
             rdoParentPriorParticipationNo.Visible = true;

@@ -87,24 +87,6 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
 
         /// <summary>
-        /// lblStudentTShirtSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStudentTShirtSize;
-
-        /// <summary>
-        /// ddlStudentShirtSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlStudentShirtSize;
-
-        /// <summary>
         /// lblPriorParticipation control.
         /// </summary>
         /// <remarks>
@@ -265,24 +247,6 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtParentPhone;
-
-        /// <summary>
-        /// lblParentTShirtSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentTShirtSize;
-
-        /// <summary>
-        /// ddlParentShirtSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlParentShirtSize;
 
         /// <summary>
         /// lblParentMealTicket control.
