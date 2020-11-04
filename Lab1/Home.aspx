@@ -48,7 +48,7 @@
                         <br />
                         <br />
                     <h4>
-                        <asp:Button ID="btnRegisterChild" CssClass="btn btn-primary btn-block" runat="server" Text="Register Student" OnClick="btnRegisterChild_Click" />
+                        <asp:Button ID="btnRegisterChild" CssClass="btn btn-primary btn-block" runat="server" Text="Register Student" PostBackUrl="~/ParentInfo.aspx" OnClick="btnRegisterChild_Click" />
                     </h4>
                     <p class="text-justify">Register your child for CyberDay! Click here to begin the registration process.
                     </p>
