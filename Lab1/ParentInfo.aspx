@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server"></asp:TextBox>
-
+                                    <asp:RegularExpressionValidator ID="validEmail" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="" Text="Invalid Email" ForeColor="Red" Font-Bold="true"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                              <br />
@@ -82,6 +82,7 @@
                                 </div>
                                 <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtVerifyEmail" runat="server"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="validVerifyEmail" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtVerifyEmail" ErrorMessage="" Text="Invalid Email" ForeColor="Red" Font-Bold="true"></asp:RegularExpressionValidator>
 
                                 </div>
                             </div>

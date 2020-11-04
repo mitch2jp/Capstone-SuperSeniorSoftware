@@ -35,7 +35,7 @@
                     <h4>
                         <asp:Button ID="btnTeacher" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/TeacherLogin.aspx" Text="Get Started" OnClick="btnTeacher_Click" />
                     </h4>
-                    <p class="text-justify"> Click here to begin registering your schools and students for CyberDay!
+                    <p class="text-justify"> Click here to begin registering your students and school for CyberDay!
                     </p>
                     </center>
                 </div>
@@ -50,8 +50,7 @@
                     <h4>
                         <asp:Button ID="btnRegisterChild" CssClass="btn btn-primary btn-block" runat="server" Text="Register Student" OnClick="btnRegisterChild_Click" />
                     </h4>
-                    <p class="text-justify">Register your child for CyberDay Events! Click here to begin signing
-                        up your child for CyberDay events and activities.
+                    <p class="text-justify">Register your child for CyberDay! Click here to begin the registration process.
                     </p>
                     </center>
                 </div>
@@ -66,8 +65,8 @@
                     <h4>
                         <asp:Button ID="btnStudentStart" CssClass="btn btn-primary btn-block" runat="server" Text="Get Started" PostBackUrl="~/StudentDashboard.aspx" OnClick="btnStudentStart_Click" />
                     </h4>
-                    <p class="text-justify">Get started with you CyberDay activities! View activties, Upload your projects, 
-                        and chat with volunteers!
+                    <p class="text-justify">Get started with your CyberDay activities! View the itinerary, upload your projects, 
+                        and chat with volunteers/coordinators!
                     </p>
                     </center>
                 </div>

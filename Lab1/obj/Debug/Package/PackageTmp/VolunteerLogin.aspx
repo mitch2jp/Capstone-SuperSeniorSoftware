@@ -52,7 +52,7 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <asp:LinkButton ID="lnkbtnCreateAccount" runat="server" PostBackUrl="~/CreateVolunteer.aspx" OnClick="lnkbtnCreateAccount_Click">Create an account</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkbtnCreateAccount" runat="server" PostBackUrl="~/CreateConfirmVolunteer.aspx" OnClick="lnkbtnCreateAccount_Click">Create an account</asp:LinkButton>
                                 </div>
                             </div>
                         </div>

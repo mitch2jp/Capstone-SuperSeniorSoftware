@@ -1768,6 +1768,7 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Images\academic.png" />
     <Content Include="Images\add-event.png" />
     <Content Include="Images\add-user1.png" />
     <Content Include="Images\chat.png" />

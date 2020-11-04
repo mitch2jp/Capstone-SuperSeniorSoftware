@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <img width="150px" src="Images/teacher.jpg" />
+                                    <img width="150px" src="Images/academic.png" />
                                 </center>
                             </div>
                         </div>
@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                        <h3>Teacher/School Login</h3>
+                                        <h3>Teacher Login</h3>
                                     </center>
                             </div>
                         </div>

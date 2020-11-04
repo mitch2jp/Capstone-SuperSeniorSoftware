@@ -66,68 +66,7 @@ namespace Lab1
 
 
 
-            ////populate the drop down lists 
-            ////ddlSchool.Items.Insert(0, "Choose One");
-
-            //string sqlQuerySchool = "Select SchoolName FROM School";
-
-            //SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-            //SqlCommand sqlCommand2 = new SqlCommand();
-            //sqlCommand2.Connection = sqlConnect;
-            //sqlCommand2.CommandType = CommandType.Text;
-            //sqlCommand2.CommandText = sqlQuerySchool;
-
-            //sqlConnect.Open();
-            //SqlDataReader queryResultsSchool = sqlCommand2.ExecuteReader();
-
-
-            //while (queryResultsSchool.Read())
-            //{
-            //    string school = queryResultsSchool["SchoolName"].ToString();
-            //    ddlSchool.Items.Add(school);
-
-            //}
-
-
-            ////Create the query string, Define the connection to the database, Create the SQL Command Object that will process out query
-            //string schoolName = ddlSchool.SelectedValue.ToString();
-            //String sqlQuerySchoolID = "SELECT SchoolID FROM School WHERE SchoolName = @SchoolName";
-            //SqlConnection sqlConnectSchoolID = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-            //SqlCommand sqlCommandSchoolName = new SqlCommand();
-            //sqlCommandSchoolName.Connection = sqlConnectSchoolID;
-            //sqlCommandSchoolName.CommandType = CommandType.Text;
-            //sqlCommandSchoolName.CommandText = sqlQuerySchoolID;
-            //sqlCommandSchoolName.Parameters.AddWithValue("@SchoolName", schoolName);
-
-            ////Open the DB connection and send the query
-            //sqlConnectSchoolID.Open();
-            //SqlDataReader queryResultsSchoolID = sqlCommandSchoolName.ExecuteReader();
-            //queryResultsSchoolID.Read();
-
-            ////Retrieve the results
-            //string schoolID = queryResultsSchoolID["SchoolID"].ToString(); ;
-
-
-            //string sqlQueryTeacher = "Select LastName FROM Teacher WHERE SchoolID = " + schoolID;
-
-            //SqlCommand sqlCommand1 = new SqlCommand();
-            //sqlCommand1.Connection = sqlConnect;
-            //sqlCommand1.CommandType = CommandType.Text;
-            //sqlCommand1.CommandText = sqlQueryTeacher;
-
-            //SqlDataReader queryResultsTeacher = sqlCommand1.ExecuteReader();
-
-
-            //while (queryResultsTeacher.Read())
-            //{
-            //    string teacher = queryResultsTeacher["LastName"].ToString();
-            //    ddlSchool.Items.Add(teacher);
-
-            //}
-
-
-
-            //sqlConnect.Close();
+            
 
 
         }
@@ -144,10 +83,6 @@ namespace Lab1
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            
-
-
 
 
         }
@@ -171,7 +106,7 @@ namespace Lab1
                 oMail.Subject = "JMU CyberDay Student Registration";
 
                 oMail.TextBody = "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + "\n" +
-                    "Please follow the corresponding link to continue the registraiton process: " + "\n" + "\n" + "https://localhost:44322/ParentStudentRegistration";
+                    "Please follow the corresponding link to continue the registraiton process: " + "\n" + "\n" + "http://jmu-cyberday.us-east-1.elasticbeanstalk.com/ParentStudentRegistration";
 
                 EASendMail.SmtpServer oServer = new EASendMail.SmtpServer("smtp.gmail.com");
 

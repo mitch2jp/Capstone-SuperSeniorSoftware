@@ -96,6 +96,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// validEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validEmail;
+
+        /// <summary>
         /// lblVerifyEmail control.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtVerifyEmail;
+
+        /// <summary>
+        /// validVerifyEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validVerifyEmail;
 
         /// <summary>
         /// lblSchool control.
