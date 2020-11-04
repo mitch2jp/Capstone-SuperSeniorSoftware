@@ -58,7 +58,7 @@ namespace Lab1
 
             //Get the total number of students from the DB and save to a variable
             string sqlQueryTeachers = "SELECT * FROM TeacherAccount";
-            SqlConnection sqlConnectTeacher = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+            SqlConnection sqlConnectTeacher = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
             SqlCommand sqlCommandTeacher = new SqlCommand();
             sqlCommandTeacher.Connection = sqlConnectTeacher;
             sqlCommandTeacher.CommandType = CommandType.Text;
@@ -97,7 +97,7 @@ namespace Lab1
             {
                 //validate to see if the newly added student is already in the DB
                 string sqlQueryCheck = "SELECT COUNT(1) FROM Pass WHERE Username = @Username";
-                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
                 SqlCommand sqlCommand = new SqlCommand(sqlQueryCheck, sqlConnection);
 
                 sqlCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
@@ -121,8 +121,8 @@ namespace Lab1
                 {
                     Global.teacherExists = false;
 
-                    //insert new teacher account record into the AUTH database
-                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+                    //insert new teacher account record into the AUTH_AWS database
+                    SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
                     SqlCommand createTeacher = new SqlCommand();
                     createTeacher.Connection = sqlConnect;
                     createTeacher.CommandText = "INSERT INTO [TeacherAccount] VALUES (@FirstName, @LastName, @School, @GradeTaught, @Username)";
@@ -158,7 +158,7 @@ namespace Lab1
 
 
 
-                    //insert the new teacher record into the AUTH pass table with the hashed password
+                    //insert the new teacher record into the AUTH_AWS pass table with the hashed password
                     SqlCommand setPass = new SqlCommand();
                     setPass.Connection = sqlConnect;
                     setPass.CommandText = "INSERT INTO Pass VALUES ((SELECT MAX(UserID) FROM TeacherAccount), @Username, @Password)";
@@ -182,8 +182,8 @@ namespace Lab1
 
                 Global.teacherExists = false;
 
-                //insert new teacher account record into the AUTH database
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+                //insert new teacher account record into the AUTH_AWS database
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
                 SqlCommand createTeacher = new SqlCommand();
                 createTeacher.Connection = sqlConnect;
                 createTeacher.CommandText = "INSERT INTO [TeacherAccount] VALUES (@FirstName, @LastName, @School, @GradeTaught, @Username)";
@@ -221,7 +221,7 @@ namespace Lab1
 
 
 
-                //insert the new teacher record into the AUTH pass table with the hashed password
+                //insert the new teacher record into the AUTH_AWS pass table with the hashed password
                 SqlCommand setPass = new SqlCommand();
                 setPass.Connection = sqlConnect;
                 setPass.CommandText = "INSERT INTO Pass VALUES ((SELECT MAX(UserID) FROM TeacherAccount), @Username, @Password)";

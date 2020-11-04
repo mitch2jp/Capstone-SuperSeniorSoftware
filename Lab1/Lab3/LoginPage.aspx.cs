@@ -63,8 +63,8 @@ namespace Lab1
 
 
             //stored procedure to process the login attempt
-            //check to see if the entered info exsits int the AUTH credentials table 
-            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+            //check to see if the entered info exsits int the AUTH_AWS credentials table 
+            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
             SqlCommand loginCommand2 = new SqlCommand();
             loginCommand2.Connection = sqlConnection3;
             loginCommand2.CommandType = CommandType.StoredProcedure;
@@ -108,7 +108,7 @@ namespace Lab1
 
             }
 
-            //if the credentials do not exist in the Lab3 table, check if they exist in the AUTH Pass table
+            //if the credentials do not exist in the Lab3 table, check if they exist in the AUTH_AWS Pass table
             else if (reader.HasRows)
             {
                 while (reader.Read())

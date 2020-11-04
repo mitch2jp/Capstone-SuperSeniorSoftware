@@ -51,7 +51,7 @@ namespace Lab1
 
                 //validate to see if the newly added student is already in the DB
                 string sqlQuery = "SELECT COUNT(1) FROM Event WHERE EventName = @EventName";
-                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@EventName", HttpUtility.HtmlEncode(txtEventName.Text));
 
@@ -72,7 +72,7 @@ namespace Lab1
                 {
 
                     //Create query string, define connection and object, fill DB INSERT statements 
-                    SqlConnection connection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                    SqlConnection connection1 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
                     SqlDataAdapter cmd = new SqlDataAdapter();
                     cmd.InsertCommand = new SqlCommand("INSERT INTO Event(EventName, Date, Time, Building, Room, VolunteerInstructions, EventDescription) VALUES(@EventName, @Date, @Time, @Building, @Room, @VolunteerInstructions, @EventDescription)");
                     cmd.InsertCommand.Connection = connection1;

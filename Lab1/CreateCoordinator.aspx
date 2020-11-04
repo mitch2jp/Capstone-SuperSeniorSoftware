@@ -21,16 +21,37 @@
                         </div>
                         <br />
 
-                        <div class="row">
-                            <div class="col">
-                                <asp:Label ID="lblUsername" runat="server" Text="User Name: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                        <div id="divAccountInfo" runat="server" class="container-fluid" style="border:1px dashed #000000" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblUsername" runat="server" Text="Username: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblUsernameStatus" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblPassword" runat="server" Text="Password: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblPasswordStatus" Font-Bold="true" ForeColor="Red" runat="server" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                           <asp:Label ID="lblVerifyPassword" runat="server" Text="Verify Password: " ></asp:Label>
+                                           <asp:TextBox CssClass="form-control" Width="200" ID="txtVerifyPassword" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
                             </div>
-                            <div class="col">
-                                <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
-                        </div>
+                            <br />
+                            <br />
+
+                        
 
 
                         <div class="row">
@@ -54,16 +75,10 @@
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtPhoneNumber" runat="server"></asp:TextBox>
                             </div>
                         </div>
-
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <asp:Label ID="lblMealTicket" runat="server" Text="Will you require a meal ticket? "></asp:Label>
-                                </div>
-                            </div>
-                        </div>
                         <br />
+                        <br />
+
+
 
                         <div class="row">
                                 <div class="col">

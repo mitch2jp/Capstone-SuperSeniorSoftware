@@ -21,16 +21,35 @@
                         </div>
                         <br />
 
-                        <div class="row">
-                            <div class="col">
-                                <asp:Label ID="lblUsername" runat="server" Text="User Name: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                        <div id="divAccountInfo" runat="server" class="container-fluid" style="border:1px dashed #000000" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblUsername" runat="server" Text="Username: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblUsernameStatus" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblPassword" runat="server" Text="Password: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblPasswordStatus" Font-Bold="true" ForeColor="Red" runat="server" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                           <asp:Label ID="lblVerifyPassword" runat="server" Text="Verify Password: " ></asp:Label>
+                                           <asp:TextBox CssClass="form-control" Width="200" ID="txtVerifyPassword" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
                             </div>
-                            <div class="col">
-                                <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
-                        </div>
+                            <br />
+                            <br />
 
 
                         <div class="row">
@@ -59,19 +78,12 @@
                             <div class="col">
                                 <asp:Label ID="lblGender" runat="server" Text="Gender: "></asp:Label>
                                 <asp:DropDownList ID="ddlGender" Width="225" CssClass="form-control" runat="server">
-                                    <asp:ListItem Text="Choose one" Value="-1"></asp:ListItem>
-                                    <asp:ListItem Text="Male" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="Female" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="Non-Binary" Value="2"></asp:ListItem>
-
+                                    <asp:ListItem Text="Choose one"></asp:ListItem>
+                                    <asp:ListItem Text="Male"></asp:ListItem>
+                                    <asp:ListItem Text="Female"></asp:ListItem>
+                                    <asp:ListItem Text="Non-Binary"></asp:ListItem>
                                 </asp:DropDownList>
-
                                 <br />
-                                
-
-
-                        
-                            
                         
                         <div class="row">
                             <div class="col-md-6">
@@ -86,7 +98,22 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Label ID="lblPriorParticipation" runat="server" Text="Have you previously participated in CyberDay?:  "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:RadioButton GroupName="PriorParticipation" ID="rdoPriorYes" runat="server" Text="Yes"/>
+                                    <asp:RadioButton GroupName="PriorParticipation" ID="rdoPriorNo" runat="server" Text="No"/>
+                                </div>
+                            </div>
+                        </div>
+
+
                         
 
                         <div class="row">
@@ -101,7 +128,7 @@
                         </div>
                         <br />
 
-                        <div class="row">
+                        <%--<div class="row">
                             <div class="col-md-6">
                                 <%--<div class="form-group">
                                     <asp:Label ID="lblParentTShirtSize" runat="server" Text="Shirt Size: "></asp:Label>
@@ -113,12 +140,12 @@
                                         <asp:ListItem Text="XL" Value="4"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>--%>
-                                <div class="col">
+                                <%--<div class="col">
                                         <asp:Label ID="lblOccupation" runat="server" Text="Occupation: "></asp:Label>
                                         <asp:TextBox CssClass="form-control" Width="200" ID="txtOccupation" runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <br />
                         <br />
 

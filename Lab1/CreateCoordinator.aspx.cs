@@ -25,8 +25,8 @@ namespace Lab1
 
             string coordinator = "Coordinator";
 
-            //insert the new teacher record into the AUTH pass table with the hashed password
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+            //insert the new teacher record into the AUTH_AWS pass table with the hashed password
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
             SqlCommand setPass = new SqlCommand();
             setPass.Connection = sqlConnect;
             setPass.CommandText = "INSERT INTO Pass VALUES (@Username, @Role, @Password)";
@@ -38,7 +38,7 @@ namespace Lab1
             setPass.ExecuteNonQuery();
 
             //add the coordinator to the coordiantor table in the Cyberday_Local DB
-            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
             SqlCommand addCoordinator = new SqlCommand();
             addCoordinator.Connection = sqlConnect2;
             addCoordinator.CommandText = "INSERT INTO Coordinator VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber)";

@@ -21,16 +21,35 @@
                         </div>
                         <br />
 
-                        <div class="row">
-                            <div class="col">
-                                <asp:Label ID="lblUsername" runat="server" Text="User Name: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                        <div id="divAccountInfo" runat="server" class="container-fluid" style="border:1px dashed #000000" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblUsername" runat="server" Text="Username: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblUsernameStatus" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblPassword" runat="server" Text="Password: " ></asp:Label>
+                                            <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server"></asp:TextBox>
+                                            <asp:Label ID="lblPasswordStatus" Font-Bold="true" ForeColor="Red" runat="server" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                           <asp:Label ID="lblVerifyPassword" runat="server" Text="Verify Password: " ></asp:Label>
+                                           <asp:TextBox CssClass="form-control" Width="200" ID="txtVerifyPassword" runat="server"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
                             </div>
-                            <div class="col">
-                                <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
-                                <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
-                        </div>
+                            <br />
+                            <br />
 
 
                         <div class="row">
@@ -59,20 +78,20 @@
                             <div class="col">
                                 <asp:Label ID="lblGradeTaught" runat="server" Text="Grade Taught: "></asp:Label>
                                 <asp:DropDownList CssClass="form-control" ID="ddlGradeTaught" Width="60" runat="server">
-                                    <asp:ListItem Text="" Value="-1"></asp:ListItem>
-                                    <asp:ListItem Text="K" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="6" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="7" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="8" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="9" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="10" Value="10"></asp:ListItem>
-                                    <asp:ListItem Text="11" Value="11"></asp:ListItem>
-                                    <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                                    <asp:ListItem Text=""></asp:ListItem>
+                                    <asp:ListItem Text="K"></asp:ListItem>
+                                    <asp:ListItem Text="1"></asp:ListItem>
+                                    <asp:ListItem Text="2"></asp:ListItem>
+                                    <asp:ListItem Text="3"></asp:ListItem>
+                                    <asp:ListItem Text="4"></asp:ListItem>
+                                    <asp:ListItem Text="5"></asp:ListItem>
+                                    <asp:ListItem Text="6"></asp:ListItem>
+                                    <asp:ListItem Text="7"></asp:ListItem>
+                                    <asp:ListItem Text="8"></asp:ListItem>
+                                    <asp:ListItem Text="9"></asp:ListItem>
+                                    <asp:ListItem Text="10"></asp:ListItem>
+                                    <asp:ListItem Text="11"></asp:ListItem>
+                                    <asp:ListItem Text="12"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <div class="col">
@@ -80,8 +99,12 @@
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtSubjectTaught" runat="server"></asp:TextBox>
                             </div>
                             <br />
+                            <br />
                             
                         </div>
+                        <br />
+                        <br />
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -95,7 +118,6 @@
                                 </div>
                             </div>
                         </div>
-                        <br />
                         <br />
 
                         <div class="row">
@@ -216,31 +238,30 @@
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:Button ID="btnAddSchool" CssClass="btn btn-info btn-block btn-md" runat="server" Width="200" PostBackUrl="~/CreateTeacher.aspx" OnClick="btnAddSchool_Click" Text="Add School" />
+                                            <asp:Button ID="btnAddSchool" CssClass="btn btn-info btn-block btn-md" runat="server" Width="200" OnClick="btnAddSchool_Click" Text="Add School" />
                                         </div>
                                     </div>
                                 </div>
+                    </div>
+                        <br />
+                        <br />
 
-
-
-                </div>
-
-                        <div class="row">
+                        <%--<div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentTShirtSize" runat="server" Text="Shirt Size: "></asp:Label>
                                             <asp:DropDownList CssClass="form-control" Width="150" ID="ddlParentShirtSize" runat="server">
                                                 <asp:ListItem Enabled="true" Text="Select one" Value="-1"></asp:ListItem>
-                                                <asp:ListItem Text="S" Value="1"></asp:ListItem>
-                                                <asp:ListItem Text="M" Value="2"></asp:ListItem>
-                                                <asp:ListItem Text="L" Value="3"></asp:ListItem>
-                                                <asp:ListItem Text="XL" Value="4"></asp:ListItem>
+                                                <asp:ListItem Text="S"></asp:ListItem>
+                                                <asp:ListItem Text="M"></asp:ListItem>
+                                                <asp:ListItem Text="L"></asp:ListItem>
+                                                <asp:ListItem Text="XL"></asp:ListItem>
                                             </asp:DropDownList>
                                         </div>
                                     </div>
                                 </div>
                         <br />
-                        <br />
+                        <br />--%>
 
 
                         <div class="row">

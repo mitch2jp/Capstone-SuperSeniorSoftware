@@ -144,3 +144,4 @@ C:\Capstone\Lab1\obj\Debug\Capstone.csproj.CoreCompileInputs.cache
 C:\Capstone\Lab1\obj\Debug\Capstone.csproj.CopyComplete
 C:\Capstone\Lab1\obj\Debug\Lab1.dll
 C:\Capstone\Lab1\obj\Debug\Lab1.pdb
+C:\Capstone\Lab1\bin\EASendMail.dll

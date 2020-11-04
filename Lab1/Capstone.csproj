@@ -110,6 +110,7 @@
     <Content Include="CoordinatorChat.aspx" />
     <Content Include="CoordinatorEventDetails.aspx" />
     <Content Include="CoordinatorEventInformation.aspx" />
+    <Content Include="CreateConfirmVolunteer.aspx" />
     <Content Include="CreateCoordinator.aspx" />
     <Content Include="CreateCoordinatorSuccess.aspx" />
     <Content Include="CreateTeacher.aspx" />
@@ -1767,15 +1768,20 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
-    <Content Include="Images\add-user.png" />
-    <Content Include="Images\chat.jpg" />
+    <Content Include="Images\add-event.png" />
+    <Content Include="Images\add-user1.png" />
+    <Content Include="Images\chat.png" />
     <Content Include="Images\computer1.png" />
     <Content Include="Images\computer2.png" />
+    <Content Include="Images\edit-profile.png" />
+    <Content Include="Images\Itinerary_schedule.png" />
     <Content Include="Images\register.png" />
+    <Content Include="Images\register_student.png" />
     <Content Include="Images\survey.png" />
     <Content Include="Images\teacher.jpg" />
     <Content Include="Images\teachers.png" />
     <Content Include="Images\upload.png" />
+    <Content Include="Images\upload_folder.png" />
     <Content Include="Images\user-profile.jpg" />
     <Content Include="Lab3\Add a Student Page.aspx" />
     <Content Include="Lab3\Add a Teacher.aspx" />
@@ -2019,6 +2025,7 @@
     <Content Include="Lab3\View Teacher Roster.aspx" />
     <Content Include="Lab3\ViewSwitcher.ascx" />
     <Content Include="Lab3\VolunteerInformation.aspx" />
+    <Content Include="VolunteerEmailConfirmation.aspx" />
     <Content Include="VolunteerEventDetails.aspx" />
     <Content Include="VolunteerEventInformation.aspx" />
     <Content Include="VolunteerLogin.aspx" />
@@ -2047,6 +2054,13 @@
     </Compile>
     <Compile Include="CoordinatorEventInformation.aspx.designer.cs">
       <DependentUpon>CoordinatorEventInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateConfirmVolunteer.aspx.cs">
+      <DependentUpon>CreateConfirmVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateConfirmVolunteer.aspx.designer.cs">
+      <DependentUpon>CreateConfirmVolunteer.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateCoordinator.aspx.cs">
       <DependentUpon>CreateCoordinator.aspx</DependentUpon>
@@ -2464,6 +2478,13 @@
     </Compile>
     <Compile Include="VolunteerChat.aspx.designer.cs">
       <DependentUpon>VolunteerChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerEmailConfirmation.aspx.cs">
+      <DependentUpon>VolunteerEmailConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerEmailConfirmation.aspx.designer.cs">
+      <DependentUpon>VolunteerEmailConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="VolunteerEventDetails.aspx.cs">
       <DependentUpon>VolunteerEventDetails.aspx</DependentUpon>

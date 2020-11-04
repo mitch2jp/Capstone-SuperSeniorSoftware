@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CyberDay_AWS-Web.config Connection String" description="CyberDay_AWS Connection String used in web.config by the application to access the database." defaultValue="server=capstone.cndbrlsa47lt.us-east-1.rds.amazonaws.com;database=CyberDay;uid=Master;password=password;Integrated Security=false;MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Capstone\\Lab1\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CyberDay_AWS']/@connectionString" />
+  </parameter>
+  <parameter name="AUTH_AWS-Web.config Connection String" description="AUTH_AWS Connection String used in web.config by the application to access the database." defaultValue="server=capstone.cndbrlsa47lt.us-east-1.rds.amazonaws.com;database=AUTH;uid=Master;password=password;Integrated Security=false;MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Capstone\\Lab1\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AUTH_AWS']/@connectionString" />
+  </parameter>
+  <parameter name="CyberDay_Local-Web.config Connection String" description="CyberDay_Local Connection String used in web.config by the application to access the database." defaultValue="Data Source=LocalHost;Initial Catalog=CyberDay;MultipleActiveResultSets=True;Trusted_Connection=Yes;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Capstone\\Lab1\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CyberDay_Local']/@connectionString" />
+  </parameter>
+  <parameter name="AUTH_Local-Web.config Connection String" description="AUTH_Local Connection String used in web.config by the application to access the database." defaultValue="Data Source=LocalHost;Initial Catalog=AUTH;MultipleActiveResultSets=True;Trusted_Connection=Yes;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Capstone\\Lab1\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AUTH_Local']/@connectionString" />
+  </parameter>
+</parameters>

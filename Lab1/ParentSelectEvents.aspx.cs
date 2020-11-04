@@ -16,7 +16,7 @@ namespace Lab1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString()))
+            using (SqlConnection sqlCon = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString()))
             {
                 sqlCon.Open();
                 SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT EventName, Date, Time, Building, Room, EventDescription FROM Event;", sqlCon);

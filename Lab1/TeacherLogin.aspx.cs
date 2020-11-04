@@ -25,7 +25,7 @@ namespace Lab1
             //check to see if the credentials exist in the basic credentials table(for already existing users) 
             //in the Lab3 database
             String queryCredentials = "SELECT COUNT(1) FROM Credentials WHERE Username = @Username AND Password = @Password";
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
             SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = sqlConnection;
             loginCommand.CommandType = CommandType.Text;
@@ -40,13 +40,15 @@ namespace Lab1
 
 
             //stored procedure to process the login attempt
-            //check to see if the entered info exsits int the AUTH credentials table 
-            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH"].ToString());
+            //check to see if the entered info exsits int the AUTH_AWS credentials table 
+            string teacher = "Teacher";
+            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
             SqlCommand loginCommand2 = new SqlCommand();
             loginCommand2.Connection = sqlConnection3;
             loginCommand2.CommandType = CommandType.StoredProcedure;
-            loginCommand2.CommandText = "JeremyEzellLab3";
+            loginCommand2.CommandText = "LoginAttempt";
             loginCommand2.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            loginCommand2.Parameters.AddWithValue("@Role", teacher);
 
             sqlConnection3.Open();
             SqlDataReader reader = loginCommand2.ExecuteReader();
@@ -58,12 +60,12 @@ namespace Lab1
             if (count == 1)
             {
                 //save the username in the session variable 
-                Session["Username"] = HttpUtility.HtmlEncode(txtUsername.Text);
+                Session["TeacherUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
 
 
                 //find the current user's role and save it into a session variable to be diplayed in U/I for reference
                 String userRoleQuery = "SELECT Role FROM Credentials WHERE Username = @Username AND Password = @Password";
-                SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
                 SqlCommand loginCommand3 = new SqlCommand();
                 loginCommand3.Connection = sqlConnection2;
                 loginCommand3.CommandType = CommandType.Text;
@@ -85,7 +87,7 @@ namespace Lab1
 
             }
 
-            //if the credentials do not exist in the CyberDay table, check if they exist in the AUTH Pass table
+            //if the credentials do not exist in the CyberDay table, check if they exist in the AUTH_AWS Pass table
             else if (reader.HasRows)
             {
                 while (reader.Read())
@@ -95,7 +97,7 @@ namespace Lab1
                     //validate the hashed password
                     if (PasswordHash.ValidatePassword(HttpUtility.HtmlEncode(txtPassword.Text), storedHash))
                     {
-                        Session["Username"] = HttpUtility.HtmlEncode(txtUsername.Text);
+                        Session["TeacherUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
                         Session["UserRole"] = "Teacher";
 
                         lblStatus.Text = "Success!";

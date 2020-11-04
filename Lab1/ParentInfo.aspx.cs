@@ -30,7 +30,7 @@ namespace Lab1
             string sqlQueryTeacher = "Select * From Teacher";
             string sqlQuerySchool = "Select SchoolName FROM School";
 
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
             SqlCommand sqlCommand1 = new SqlCommand();
             sqlCommand1.Connection = sqlConnect;
             sqlCommand1.CommandType = CommandType.Text;
@@ -71,7 +71,7 @@ namespace Lab1
 
             //string sqlQuerySchool = "Select SchoolName FROM School";
 
-            //SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            //SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
             //SqlCommand sqlCommand2 = new SqlCommand();
             //sqlCommand2.Connection = sqlConnect;
             //sqlCommand2.CommandType = CommandType.Text;
@@ -92,7 +92,7 @@ namespace Lab1
             ////Create the query string, Define the connection to the database, Create the SQL Command Object that will process out query
             //string schoolName = ddlSchool.SelectedValue.ToString();
             //String sqlQuerySchoolID = "SELECT SchoolID FROM School WHERE SchoolName = @SchoolName";
-            //SqlConnection sqlConnectSchoolID = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            //SqlConnection sqlConnectSchoolID = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
             //SqlCommand sqlCommandSchoolName = new SqlCommand();
             //sqlCommandSchoolName.Connection = sqlConnectSchoolID;
             //sqlCommandSchoolName.CommandType = CommandType.Text;
