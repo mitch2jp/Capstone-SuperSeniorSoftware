@@ -87,6 +87,24 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
 
         /// <summary>
+        /// lblGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGender;
+
+        /// <summary>
+        /// ddlGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+
+        /// <summary>
         /// lblPriorParticipation control.
         /// </summary>
         /// <remarks>
@@ -123,22 +141,22 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblMealTicket;
 
         /// <summary>
-        /// chkboxMealYes control.
+        /// rdoStudentMealTicketYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkboxMealYes;
+        protected global::System.Web.UI.WebControls.RadioButton rdoStudentMealTicketYes;
 
         /// <summary>
-        /// chkboxMealNo control.
+        /// rdoStudentMealTicketNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkboxMealNo;
+        protected global::System.Web.UI.WebControls.RadioButton rdoStudentMealTicketNo;
 
         /// <summary>
         /// lblParentParticipation control.

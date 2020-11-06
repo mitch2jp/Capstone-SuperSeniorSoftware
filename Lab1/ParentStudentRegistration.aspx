@@ -36,14 +36,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:Label ID="lblStudentFirstName" runat="server" Text="First Name"></asp:Label>
-                                        <asp:TextBox CssClass="form-control" placeholder="Student's First Name" ID="txtFirstName" runat="server"></asp:TextBox>
+                                        <asp:Label ID="lblStudentFirstName" runat="server" Text="First Name: "></asp:Label>
+                                        <asp:TextBox CssClass="form-control" placeholder="Student's First Name" Width="300" ID="txtFirstName" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:Label ID="lblStudentLastName" runat="server" Text="Last Name"></asp:Label>
-                                        <asp:TextBox CssClass="form-control" placeholder="Student's Last Name" ID="txtLastName" runat="server"></asp:TextBox>
+                                        <asp:Label ID="lblStudentLastName" runat="server" Text="Last Name: "></asp:Label>
+                                        <asp:TextBox CssClass="form-control" placeholder="Student's Last Name" Width="300" ID="txtLastName" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -51,15 +51,26 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:Label ID="lblAge" runat="server" Text="Age"></asp:Label>
-                                        <asp:TextBox CssClass="form-control" placeholder="" ID="txtAge" Width="50" runat="server"></asp:TextBox>
+                                        <asp:Label ID="lblAge" runat="server" Text="Age: "></asp:Label>
+                                        <asp:TextBox CssClass="form-control" placeholder="" ID="txtAge" Width="85" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:Label ID="lblNotes" runat="server" Text="Notes"></asp:Label>
+                                        <asp:Label ID="lblNotes" runat="server" Text="Comments/Notes: "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtNotes" runat="server" TextMode="MultiLine" Width="300" Height="100"></asp:TextBox>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <asp:Label ID="lblGender" runat="server" Text="Gender: "></asp:Label>
+                                    <asp:DropDownList ID="ddlGender" Width="225" CssClass="form-control" runat="server">
+                                        <asp:ListItem Text="Choose one"></asp:ListItem>
+                                        <asp:ListItem Text="Male"></asp:ListItem>
+                                        <asp:ListItem Text="Female"></asp:ListItem>
+                                        <asp:ListItem Text="Non-Binary"></asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
 
@@ -100,8 +111,8 @@
                                 </div>
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                        <asp:RadioButton GroupName="StudentMealTicket" ID="chkboxMealYes" runat="server" Text="Yes" />
-                                        <asp:RadioButton GroupName="StudentMealTicket" ID="chkboxMealNo" runat="server" Text="No" />
+                                        <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketYes" runat="server" Text="Yes" />
+                                        <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketNo" runat="server" Text="No" />
                                     </div>
                                 </div>
                             </div>
@@ -134,13 +145,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentFirstName" runat="server" Text="First Name: " ></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtParentFirstName" runat="server"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="txtParentFirstName" Width="300" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentLastName" runat="server" Text="Last Name: " ></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtParentLastName" runat="server"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="txtParentLastName" Width="300" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -149,13 +160,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentEmail" runat="server" Text="Email Adress: "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtParentEmail" runat="server"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="txtParentEmail" Width="300" runat="server"></asp:TextBox>
                                         </div>
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentPhone" runat="server" Text="Phone Number: "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtParentPhone" runat="server" TextMode="Phone"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="txtParentPhone" Width="300" runat="server" TextMode="Phone"></asp:TextBox>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +250,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <asp:Button ID="btnRegister" CssClass="btn btn-success btn-block btn-lg" runat="server" PostBackUrl="~/ParentPhotoReleaseAuth.aspx" Text="Register" />
+                                        <asp:Button ID="btnRegister" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnRegister_Click" Text="Register" />
                                     </div>
                                     <div class="form-group">
                                         <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/Home.aspx" runat="server" Text="Cancel" />

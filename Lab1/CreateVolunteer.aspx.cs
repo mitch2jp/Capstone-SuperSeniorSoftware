@@ -69,7 +69,7 @@ namespace Lab1
                 setPass.ExecuteNonQuery();
 
 
-                //add the coordinator to the coordiantor table in the Cyberday_Local DB
+                //add the volunteer to the volunteer table in the Cyberday_Local DB
                 SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
                 SqlCommand addVolunteer = new SqlCommand();
                 addVolunteer.Connection = sqlConnect2;

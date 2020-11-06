@@ -89,77 +89,82 @@ namespace Lab1
 
         protected void btnSendEmail_Click(object sender, EventArgs e)
         {
-            Session["ParentFirstName"] = txtFirstName.Text.ToString();
-            Session["ParentLastName"] = txtLastName.Text.ToString();
-            Session["ParentEmail"] = txtEmail.Text.ToString();
-
-
-
-            try
+            if (txtEmail.Text != txtVerifyEmail.Text)
             {
-                EASendMail.SmtpMail oMail = new EASendMail.SmtpMail("TryIt");
-
-                oMail.From = "jmu.cyberday@gmail.com";
-
-                oMail.To = Session["ParentEmail"].ToString();
-
-                oMail.Subject = "JMU CyberDay Student Registration";
-
-                oMail.TextBody = "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + "\n" +
-                    "Please follow the corresponding link to continue the registraiton process: " + "\n" + "\n" + "http://jmu-cyberday.us-east-1.elasticbeanstalk.com/ParentStudentRegistration";
-
-                EASendMail.SmtpServer oServer = new EASendMail.SmtpServer("smtp.gmail.com");
-
-                oServer.User = "jmu.cyberday@gmail.com";
-                oServer.Password = "cyberday!";
-
-                oServer.Port = 587;
-
-                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
-
-                EASendMail.SmtpClient oSmtp = new EASendMail.SmtpClient();
-                oSmtp.SendMail(oServer, oMail);
-
-                lblStatus.ForeColor = Color.Green;
-                Response.Redirect("ParentEmailConfirmation");
-                
-
-
+                lblStatus.ForeColor = Color.Red;
+                lblStatus.Text = "Emails do not match!";
 
             }
-            catch (Exception ep)
+            else
             {
-                lblStatus.Text = ep.Message;
 
-                
+                Session["ParentFirstName"] = txtFirstName.Text.ToString();
+                Session["ParentLastName"] = txtLastName.Text.ToString();
+                Session["ParentPhoneNumber"] = txtPhone.Text.ToString();
+                Session["ParentEmail"] = txtEmail.Text.ToString();
+
+
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                SqlCommand addParent = new SqlCommand();
+                addParent.Connection = sqlConnect2;
+                addParent.CommandText = "INSERT INTO Parent VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber, @StudentSchool, @StudentTeacher)";
+                addParent.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
+                addParent.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtLastName.Text)));
+                addParent.Parameters.Add(new SqlParameter("@EmailAddress", HttpUtility.HtmlEncode(txtEmail.Text)));
+                addParent.Parameters.Add(new SqlParameter("@PhoneNumber", HttpUtility.HtmlEncode(txtPhone.Text)));
+                addParent.Parameters.Add(new SqlParameter("@StudentSchool", HttpUtility.HtmlEncode(ddlSchool.Text)));
+                addParent.Parameters.Add(new SqlParameter("@StudentTeacher", HttpUtility.HtmlEncode(ddlTeacher.Text)));
+                sqlConnect2.Open();
+                addParent.ExecuteNonQuery();
+
+
+                try
+                {
+
+
+                    EASendMail.SmtpMail oMail = new EASendMail.SmtpMail("TryIt");
+
+                    oMail.From = "jmu.cyberday@gmail.com";
+
+                    oMail.To = Session["ParentEmail"].ToString();
+
+                    oMail.Subject = "JMU CyberDay Student Registration";
+
+                    //oMail.TextBody = "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + "\n" +
+                    //    "Please follow the corresponding link to continue the registraiton process: " + "\n" + "\n" + "http://jmu-cyberday.us-east-1.elasticbeanstalk.com/ParentStudentRegistration";
+
+                    oMail.TextBody = "Hi " + Session["ParentFirstName"].ToString() + "," + "\n" + "\n" + 
+                        "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + 
+                        "Please return to the application and enter the following registration code to continue: " + "\n" + "\n" + "Registration Code: " + GenerateAuthCode();
+
+                    EASendMail.SmtpServer oServer = new EASendMail.SmtpServer("smtp.gmail.com");
+
+                    oServer.User = "jmu.cyberday@gmail.com";
+                    oServer.Password = "cyberday!";
+
+                    oServer.Port = 587;
+
+                    oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                    EASendMail.SmtpClient oSmtp = new EASendMail.SmtpClient();
+                    oSmtp.SendMail(oServer, oMail);
+
+                    lblStatus.ForeColor = Color.Green;
+                    Response.Redirect("ParentEmailConfirmation");
+
+
+
+
+                }
+                catch (Exception ep)
+                {
+                    lblStatus.Text = ep.Message;
+
+
+                }
+
             }
 
-
-            //Response.Redirect("ParentStudentRegistration.aspx");
-
-
-
-            //MailMessage mailMessage = new MailMessage(txtEmail.Text, "jmu.cyberday@gmail.com");
-            //mailMessage.Subject = "CyberDay Registration";
-            //mailMessage.Body = "blah";
-
-            //SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            //smtpClient.Credentials = new System.Net.NetworkCredential()
-            //{
-            //    UserName = "jmu.cyberday@gmail.com",
-            //    Password = "cyberday!"
-
-
-            //};
-            //smtpClient.EnableSsl = true;
-            //smtpClient.Send(mailMessage);
-
-
-            //lblStatus.ForeColor = Color.Green;
-            //lblStatus.Text = "Email Sent successfully. Please check your email to verify your credentials and continue the process. ";
-
-
-            //Response.Redirect("ParentStudentRegistration.aspx");
 
         }
 
@@ -170,6 +175,19 @@ namespace Lab1
 
         protected void ddlTeacher_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        //generate the authentication code to be used for registration
+        public int GenerateAuthCode()
+        {
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+
+            Session["AuthenticationCode"] = rdm.Next(min, max);
+
+            return Convert.ToInt32(Session["AuthenticationCode"]);
 
         }
     }
