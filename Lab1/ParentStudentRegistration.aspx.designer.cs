@@ -33,6 +33,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
+        /// valFirstName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valFirstName;
+
+        /// <summary>
         /// lblStudentLastName control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
+        /// valLastName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valLastName;
+
+        /// <summary>
         /// lblAge control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAge;
+
+        /// <summary>
+        /// valAge control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valAge;
 
         /// <summary>
         /// lblNotes control.
@@ -105,6 +132,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.DropDownList ddlGender;
 
         /// <summary>
+        /// valGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valGender;
+
+        /// <summary>
         /// lblPriorParticipation control.
         /// </summary>
         /// <remarks>
@@ -114,22 +150,31 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblPriorParticipation;
 
         /// <summary>
-        /// chkboxPriorYes control.
+        /// rdoPriorYes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkboxPriorYes;
+        protected global::System.Web.UI.WebControls.RadioButton rdoPriorYes;
 
         /// <summary>
-        /// chkboxPriorNo control.
+        /// rdoPriorNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkboxPriorNo;
+        protected global::System.Web.UI.WebControls.RadioButton rdoPriorNo;
+
+        /// <summary>
+        /// valPriorParticipation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label valPriorParticipation;
 
         /// <summary>
         /// lblMealTicket control.
@@ -159,166 +204,13 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.RadioButton rdoStudentMealTicketNo;
 
         /// <summary>
-        /// lblParentParticipation control.
+        /// valMealTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentParticipation;
-
-        /// <summary>
-        /// rdoParentParticipateYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentParticipateYes;
-
-        /// <summary>
-        /// rdoParentParticipateNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentParticipateNo;
-
-        /// <summary>
-        /// divParentInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divParentInfo;
-
-        /// <summary>
-        /// lblParentFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentFirstName;
-
-        /// <summary>
-        /// txtParentFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParentFirstName;
-
-        /// <summary>
-        /// lblParentLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentLastName;
-
-        /// <summary>
-        /// txtParentLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParentLastName;
-
-        /// <summary>
-        /// lblParentEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentEmail;
-
-        /// <summary>
-        /// txtParentEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParentEmail;
-
-        /// <summary>
-        /// lblParentPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentPhone;
-
-        /// <summary>
-        /// txtParentPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParentPhone;
-
-        /// <summary>
-        /// lblParentMealTicket control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentMealTicket;
-
-        /// <summary>
-        /// rdoParentMealTicketYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentMealTicketYes;
-
-        /// <summary>
-        /// rdoParentMealTicketNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentMealTicketNo;
-
-        /// <summary>
-        /// lblParentPriorParticipation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentPriorParticipation;
-
-        /// <summary>
-        /// rdoParentPriorParticipationYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentPriorParticipationYes;
-
-        /// <summary>
-        /// rdoParentPriorParticipationNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoParentPriorParticipationNo;
+        protected global::System.Web.UI.WebControls.Label valMealTicket;
 
         /// <summary>
         /// lblSchool control.
@@ -339,6 +231,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.DropDownList ddlSchool;
 
         /// <summary>
+        /// valSchooList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valSchooList;
+
+        /// <summary>
         /// lblTeacher control.
         /// </summary>
         /// <remarks>
@@ -357,13 +258,22 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.DropDownList ddlTeacher;
 
         /// <summary>
-        /// btnRegister control.
+        /// valTeacherList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valTeacherList;
+
+        /// <summary>
+        /// btnContinue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnContinue;
 
         /// <summary>
         /// btnCancel control.

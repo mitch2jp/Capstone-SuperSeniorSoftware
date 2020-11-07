@@ -155,7 +155,7 @@
                                         <asp:Button ID="btnCreateAccount" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnCreateAccount_Click" Text="Create Account" />
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/Home.aspx" runat="server" Text="Cancel" />
+                                        <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/VolunteerDashboard.aspx" runat="server" Text="Cancel" />
                                     </div>
                                 </div>
                             </div>

@@ -102,6 +102,8 @@ namespace Lab1
                 Session["ParentLastName"] = txtLastName.Text.ToString();
                 Session["ParentPhoneNumber"] = txtPhone.Text.ToString();
                 Session["ParentEmail"] = txtEmail.Text.ToString();
+                Session["ParentStudentSchool"] = ddlSchool.SelectedValue;
+                Session["ParentStudentTeacher"] = ddlTeacher.SelectedValue;
 
 
                 SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());

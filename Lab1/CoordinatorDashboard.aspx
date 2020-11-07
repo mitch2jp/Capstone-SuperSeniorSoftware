@@ -30,12 +30,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <center>
-                        <h2>Create an Event</h2>
+                        <h2>Create Event</h2>
                         <img width="150px" height="150px" src="Images/add-event.png" />
                         <br />
                         <br />
                     <h4>
-                        <asp:Button ID="btnCreateEvent" CssClass="btn btn-primary btn-block" runat="server" Text="Create Event" PostBackUrl="~/CreateEvent.aspx" OnClick="btnCreatEvent_Click" />
+                        <asp:Button ID="btnCreateEvent" CssClass="btn btn-primary btn-block" runat="server" Text="Create a New Event" PostBackUrl="~/CreateEvent.aspx" OnClick="btnCreatEvent_Click" />
                     </h4>
                     <p class="text-justify">  
                     </p>
@@ -68,13 +68,39 @@
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <h2>Add New Coordinator</h2>
+                        <h2>Add Coordinator</h2>
                         <img width="150px" height="150px" src="Images/add-user1.png" />
                         <br />
                         <br />
                         
                     <h4>
-                        <asp:Button ID="btnCreateCoordinator" CssClass="btn btn-primary btn-block" PostBackUrl="~/CreateCoordinator.aspx" runat="server" Text="Add a Coordinator" />
+                        <asp:Button ID="btnCreateCoordinator" CssClass="btn btn-primary btn-block" PostBackUrl="~/CreateCoordinator.aspx" runat="server" Text="Creat a New Coordinator" />
+                    </h4>
+                    <p class="text-justify"></p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Student Roster</h2>
+                        <img width="150px" height="150px" src="Images/student-roster.png" />
+                        <br />
+                        <br />
+                        
+                    <h4>
+                        <asp:Button ID="btnViewStudentRoster" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/StudentRoster.aspx" Text="View Student Roster" />
+                    </h4>
+                    <p class="text-justify"></p>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Volunteer Roster</h2>
+                        <img width="150px" height="150px" src="Images/volunteer-list.png" />
+                        <br />
+                        <br />
+                        
+                    <h4>
+                        <asp:Button ID="btnViewVolunteerRoster" CssClass="btn btn-primary btn-block" PostBackUrl="~/VolunteerRoster.aspx" runat="server" Text="View Volunteer Roster" />
                     </h4>
                     <p class="text-justify"></p>
                     </center>

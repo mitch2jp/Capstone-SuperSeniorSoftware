@@ -1776,14 +1776,18 @@
     <Content Include="Images\computer2.png" />
     <Content Include="Images\edit-profile.png" />
     <Content Include="Images\Itinerary_schedule.png" />
+    <Content Include="Images\jmu-cover.png" />
+    <Content Include="Images\jmu-logo.png" />
     <Content Include="Images\register.png" />
     <Content Include="Images\register_student.png" />
+    <Content Include="Images\student-roster.png" />
     <Content Include="Images\survey.png" />
     <Content Include="Images\teacher.jpg" />
     <Content Include="Images\teachers.png" />
     <Content Include="Images\upload.png" />
     <Content Include="Images\upload_folder.png" />
     <Content Include="Images\user-profile.jpg" />
+    <Content Include="Images\volunteer-list.png" />
     <Content Include="Lab3\Add a Student Page.aspx" />
     <Content Include="Lab3\Add a Teacher.aspx" />
     <Content Include="Lab3\Bag Toss Information Page.aspx" />
@@ -1824,6 +1828,7 @@
     <Content Include="Lab3\HomePage.aspx" />
     <Content Include="ParentEventDetails.aspx" />
     <Content Include="ParentInfo.aspx" />
+    <Content Include="ParentParticipation.aspx" />
     <Content Include="ParentPhotoReleaseAuth.aspx" />
     <Content Include="ParentStudentRegistration.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1854,6 +1859,7 @@
     <Content Include="StudentDashboard.aspx" />
     <Content Include="StudentEventDetails.aspx" />
     <Content Include="StudentEventInformation.aspx" />
+    <Content Include="StudentRoster.aspx" />
     <Content Include="StudentSurvey.aspx" />
     <Content Include="TeacherAccountConfirmation.aspx" />
     <Content Include="TeacherDashboard.aspx" />
@@ -2019,7 +2025,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="ParentSelectEvents.aspx" />
+    <Content Include="ParentStudentItinerary.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Lab3\Update Students.aspx" />
     <Content Include="Lab3\View Student Roster.aspx" />
@@ -2030,6 +2036,7 @@
     <Content Include="VolunteerEventDetails.aspx" />
     <Content Include="VolunteerEventInformation.aspx" />
     <Content Include="VolunteerLogin.aspx" />
+    <Content Include="VolunteerRoster.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -2287,6 +2294,13 @@
     <Compile Include="ParentInfo.aspx.designer.cs">
       <DependentUpon>ParentInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ParentParticipation.aspx.cs">
+      <DependentUpon>ParentParticipation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParentParticipation.aspx.designer.cs">
+      <DependentUpon>ParentParticipation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ParentPhotoReleaseAuth.aspx.cs">
       <DependentUpon>ParentPhotoReleaseAuth.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2303,12 +2317,12 @@
     </Compile>
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ParentSelectEvents.aspx.cs">
-      <DependentUpon>ParentSelectEvents.aspx</DependentUpon>
+    <Compile Include="ParentStudentItinerary.aspx.cs">
+      <DependentUpon>ParentStudentItinerary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ParentSelectEvents.aspx.designer.cs">
-      <DependentUpon>ParentSelectEvents.aspx</DependentUpon>
+    <Compile Include="ParentStudentItinerary.aspx.designer.cs">
+      <DependentUpon>ParentStudentItinerary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -2395,6 +2409,13 @@
     </Compile>
     <Compile Include="StudentEventInformation.aspx.designer.cs">
       <DependentUpon>StudentEventInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRoster.aspx.cs">
+      <DependentUpon>StudentRoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentRoster.aspx.designer.cs">
+      <DependentUpon>StudentRoster.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentSurvey.aspx.cs">
       <DependentUpon>StudentSurvey.aspx</DependentUpon>
@@ -2514,6 +2535,13 @@
     </Compile>
     <Compile Include="VolunteerDashboard.aspx.designer.cs">
       <DependentUpon>VolunteerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerRoster.aspx.cs">
+      <DependentUpon>VolunteerRoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerRoster.aspx.designer.cs">
+      <DependentUpon>VolunteerRoster.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

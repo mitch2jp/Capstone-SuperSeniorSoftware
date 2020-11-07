@@ -157,7 +157,7 @@
                                         <asp:Button ID="btnCreateEvent" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnCreateEvent_Click" Text="Create Event" />
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/CoordinatorDashboard.aspx" runat="server" Text="Cancel" />
+                                        <asp:Button ID="btnCancel" CausesValidation="false" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/CoordinatorDashboard.aspx" runat="server" Text="Cancel" />
                                     </div>
                                 </div>
                             </div>

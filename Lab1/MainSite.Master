@@ -22,7 +22,7 @@ Section 0002
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <img src="Images/jmu.png" width="175" height="175" />
+                <img src="Images/jmu.png" width="259" height="200" />
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

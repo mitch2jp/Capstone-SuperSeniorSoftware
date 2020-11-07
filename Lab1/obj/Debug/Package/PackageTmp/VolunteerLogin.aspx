@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <asp:Button ID="btnLogin" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" PostBackUrl="~/VolunteerDashboard.aspx" OnClick="btnLogin_Click1"/>
+                                    <asp:Button ID="btnLogin" CssClass="btn btn-success btn-block btn-lg" runat="server" Text="Login" OnClick="btnLogin_Click"/>
                                 </div>
                             </div>
                         </div>

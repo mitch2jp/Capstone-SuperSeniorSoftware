@@ -3,22 +3,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class="row">
+            <div class="col">
+                <center>
+                    <h2>Step 1: Parent Information </h2>
+
+                </center>
+            </div>
+        </div>
+        <br />
+        <br />
+
+
+
     <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="card">
                         <div class="card-body">
-
-                            <div class="row">
-                                <div class="col">
-                                    <center>
-                                    <h2>Step 1:</h2>
-                                    </center>
-                                </div>
-                            </div>
-                            <br />
-                            <br />
-
 
 
                             <div class="row">
