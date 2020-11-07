@@ -13,5 +13,26 @@ namespace Lab1
         {
 
         }
+
+        protected void btnFileUpload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fileUpload.HasFile == true)
+                {
+                    String strPath = Request.PhysicalApplicationPath + "Student_Files\\" + fileUpload.FileName;
+                    fileUpload.SaveAs(strPath);
+                    lblUploadStatus.Text = "File Uploaded Successfully!";
+                }
+                else
+                {
+                    lblUploadStatus.Text = "Something went wrong!";
+                }
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
+        }
     }
 }

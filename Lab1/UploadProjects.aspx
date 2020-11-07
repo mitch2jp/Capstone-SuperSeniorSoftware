@@ -5,7 +5,13 @@
 
     <div>
         <center>
-            <h2>[Insert Project Upload Functionality Here]</h2>
+            <%--<h2>[Insert Project Upload Functionality Here]</h2>--%>
+            <asp:Label ID="lblFileUpload" runat="server" Text="Select a File to Upload"></asp:Label>
+            <br />
+            <asp:FileUpload ID="fileUpload" runat="server"></asp:FileUpload>
+            <asp:Button ID="btnFileUpload" runat="server" Text="Upload File" OnClick="btnFileUpload_Click"></asp:Button>
+            <br />
+            <asp:Label ID="lblUploadStatus" runat="server" Text=""></asp:Label>
         </center>
     </div>
     <br />
