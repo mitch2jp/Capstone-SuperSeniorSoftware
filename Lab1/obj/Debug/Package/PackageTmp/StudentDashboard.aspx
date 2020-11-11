@@ -32,12 +32,12 @@
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <h2>View Event Information:</h2>
+                        <h2>Itinerary:</h2>
                         <img width="150px" height="150px" src="Images/Itinerary_schedule.png" />
                         <br />
                         <br />
                     <h4>
-                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/StudentEventInformation.aspx" runat="server" Text="Event Information" OnClick="btnViewEventInfo_Click" />
+                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/StudentItinerary.aspx" runat="server" Text="Event Information" OnClick="btnViewEventInfo_Click" />
                     </h4>
                     <p class="text-justify">
                     </p>
@@ -51,7 +51,7 @@
                         <br />
                         <br />
                     <h4>
-                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/UploadProjects.aspx" Text="Submit Projects" OnClick="btnItinerary_Click" />
+                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/StudentUploadProjects.aspx" Text="Submit Projects" OnClick="btnItinerary_Click" />
                     </h4>
                     <p class="text-justify"></p>
                     </center>

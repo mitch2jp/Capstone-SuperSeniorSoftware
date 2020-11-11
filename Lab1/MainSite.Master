@@ -30,13 +30,13 @@ Section 0002
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="Home.aspx">Home</a>
+                            <a class="nav-link" style="font-size:larger" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="CoordinatorLogin.aspx">Coordinators</a>
+                            <a class="nav-link" style="font-size:larger" href="CoordinatorLogin.aspx">Coordinators</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="VolunteerLogin.aspx">Volunteers</a>
+                            <a class="nav-link" style="font-size:larger" href="VolunteerLogin.aspx">Volunteers</a>
                         </li>
                         
                     </ul>
@@ -48,23 +48,7 @@ Section 0002
             </asp:ContentPlaceHolder>
         </div>
         <div>
-             <asp:Table runat="server" HorizontalAlign="Right">
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblUser" runat="server" Text="Current User: "></asp:Label>
-                        <asp:Label ID="lblCurrentUser" runat="server" Text=""></asp:Label>
-                    </asp:TableCell>
-                    
-                        
-                    
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblUserRole" runat="server" Text="Role: "></asp:Label>
-                        <asp:Label ID="lblCurrentUserRole" runat="server" Text=""></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
+             
 
         </div>
         <footer>
@@ -80,7 +64,7 @@ Section 0002
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">All rights Reserved</p>
+                        <p style="color:whitesmoke">SuperSenior Software</p>
                     </div>
                 </div>
             </div>

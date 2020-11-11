@@ -37,7 +37,7 @@ namespace Lab1
                 string sqlQueryTeacher = "Select * From Teacher";
                 string sqlQuerySchool = "Select SchoolName FROM School";
 
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand sqlCommand1 = new SqlCommand();
                 sqlCommand1.Connection = sqlConnect;
                 sqlCommand1.CommandType = CommandType.Text;
@@ -160,18 +160,9 @@ namespace Lab1
             else
             {
 
-                //get the session parent's ID to associate with the newly registered student
-                String getParentID = "SELECT ParentID FROM Parent WHERE FirstName = @FirstName AND LastName = @LastName";
-                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-                SqlCommand command = new SqlCommand();
-                command.Connection = sqlConnection;
-                command.CommandType = CommandType.Text;
-                command.CommandText = getParentID;
-                command.Parameters.AddWithValue("@FirstName", Session["ParentFirstName"].ToString());
-                command.Parameters.AddWithValue("@LastName", Session["ParentLastName"].ToString());
-                sqlConnection.Open();
-                int parentID = Convert.ToInt32(command.ExecuteScalar());
 
+                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                sqlConnection.Open();
 
                 //get the school ID to associate with the newly registered student
                 String getSchoolID = "SELECT SchoolID FROM School WHERE SchoolName = @SchoolName";
@@ -182,7 +173,7 @@ namespace Lab1
                 command2.Parameters.AddWithValue("@SchoolName", ddlSchool.Text);
                 int schoolID = Convert.ToInt32(command2.ExecuteScalar());
 
-                //get the school ID to associate with the newly registered student
+                //get the teacher ID to associate with the newly registered student
                 String getTeacherID = "SELECT TeacherID FROM Teacher WHERE LastName = @LastName";
                 SqlCommand command3 = new SqlCommand();
                 command3.Connection = sqlConnection;
@@ -221,7 +212,7 @@ namespace Lab1
 
                 Session["StudentSchoolID"] = schoolID;
                 Session["StudentTeacherID"] = teacherID; ;
-                Session["ParentID"] = parentID;
+                
 
 
                 Response.Redirect("ParentParticipation.aspx");
@@ -245,7 +236,7 @@ namespace Lab1
             string sqlQueryTeacher = "Select * From Teacher";
             string sqlQuerySchool = "Select SchoolName FROM School";
 
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand sqlCommand1 = new SqlCommand();
             sqlCommand1.Connection = sqlConnect;
             sqlCommand1.CommandType = CommandType.Text;

@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -12,8 +13,31 @@
                     </center>
                 </div>
             </div>
+
+
+            <asp:Table ID="Table1" runat="server" Width="350" BorderStyle="Dashed">
+                
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUsername" Font-Size="Large" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUser" Font-Size="Large" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Button ID="btnLogOut" CssClass="btn btn-danger btn-sm"  Width="100" OnClick="btnLogOut_Click" runat="server" Text="Log Out"  />
+                    </asp:TableCell>
+                </asp:TableRow>
+                
+            </asp:Table>
             <br />
             <br />
+
 
             <div class="row">
                 <div class="col-md-4">
@@ -22,24 +46,28 @@
                         <img width="150px" height="150px" src="Images/register_student.png" />
                         <br />
                         <br />
+                        <p class="text-justify"> Begin registering your students for CyberDay!   </p>
+                        <br />
+                   
                     <h4>
                         <asp:Button ID="btnRegisterStudent" CssClass="btn btn-primary btn-block" PostBackUrl="~/TeacherStudentRegistration.aspx" runat="server" Text="Register Student"  />
                     </h4>
-                    <p class="text-justify">  
-                    </p>
+                    
                     </center>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <h2>View Event Information:</h2>
+                        <h2>Itinerary</h2>
                         <img width="150px" height="150px" src="Images/Itinerary_schedule.png" />
                         <br />
                         <br />
+                        <p class="text-justify">View the current CyberDay itinerary! </p>
+                        <br />
                     <h4>
-                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/EventInformation.aspx" runat="server" Text="Event Information "  />
+                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/TeacherItinerary.aspx" runat="server" Text="Event Information "  />
                     </h4>
-                    <p class="text-justify">
-                    </p>
+                    <p class="text-justify"></p>
+                    
                     </center>
                 </div>
                 <div class="col-md-4">
@@ -48,15 +76,32 @@
                         <img width="150px" height="150px" src="Images/edit-profile.png" />
                         <br />
                         <br />
+                        <p class="text-justify">Edit, update and change your account information!</p>
+
                     <h4>
                         <asp:Button ID="btnEditProfile" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/EditTeacherProfile.aspx" Text="Edit Profile" />
                     </h4>
-                    <p class="text-justify"></p>
+                    
                     </center>
                 </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Class Roster</h2>
+                        <img width="150px" height="150px" src="Images/student-roster.png" />
+                        <br />
+                        <br />
+                        <p class="text-justify">View, edit and manage your student's CyberDay information!</p>
+                    <h4>
+                        <asp:Button ID="btnClassRoster" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/ClassRoster.aspx" Text="View Class Roster" />
+                    </h4>
+                    </center>
+                </div>
+
             </div>
         </div>
     </section>
+    <br />
+    <br />
 
     
 

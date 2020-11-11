@@ -33,22 +33,7 @@ namespace Lab1
             valGuidancePhone.Enabled = false;
 
 
-            //if (Session["TeacherUsername"] != null && Session["TeacherPassword"] != null && Session["TeacherVerifyPassword"] != null && Session["TeacherFirstName"] != null
-            //    && Session["TeacherLastName"] != null && Session["TeacherEmailAddress"] != null && Session["TeacherPhoneNumber"] != null &&
-            //    Session["TeacherGradeTaught"] != null && Session["TeacherSubjectTaught"] != null && Session["TeacherMealTicket"] != null)
-            //{
-            //    txtUsername.Text = Session["TeacherUsername"].ToString();
-            //    txtPassword.Text = Session["TeacherPassword"].ToString();
-            //    txtVerifyPassword.Text = Session["TeacherVerifyPassword"].ToString();
-            //    txtFirstName.Text = Session["TeacherFirstName"].ToString();
-            //    txtLastName.Text = Session["TeacherLastName"].ToString();
-            //    txtEmail.Text = Session["TeacherEmailAddress"].ToString();
-            //    txtPhoneNumber.Text = Session["TeacherPhoneNumber"].ToString();
-            //    ddlGradeTaught.SelectedValue = Session["TeacherGradeTaught"].ToString();
-            //    txtSubjectTaught.Text = Session["TeacherSubjectTaught"].ToString();
-
-
-            //}
+            
 
             divSchoolInfo.Visible = false;
 
@@ -57,7 +42,7 @@ namespace Lab1
 
             string sqlQuerySchool = "Select SchoolName FROM School";
 
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand sqlCommand2 = new SqlCommand();
             sqlCommand2.Connection = sqlConnect;
             sqlCommand2.CommandType = CommandType.Text;
@@ -90,28 +75,9 @@ namespace Lab1
 
             dropDownListHandler(0);
 
-            Session["TeacherUsername"] = txtUsername.Text;
-            Session["TeacherPassword"] = txtPassword.Text;
-            Session["TeacherVerifyPassword"] = txtVerifyPassword.Text;
-            Session["TeacherFirstName"] = txtFirstName.Text;
-            Session["TeacherLastName"] = txtLastName.Text;
-            Session["TeacherEmailAddress"] = txtEmail.Text;
-            Session["TeacherPhoneNumber"] = txtPhoneNumber.Text;
-            Session["TeacherGradeTaught"] = ddlGradeTaught.SelectedValue;
-            Session["TeacherSubjectTaught"] = txtSubjectTaught.Text;
-            if (rdoMealTicketYes.Checked)
-            {
-                Session["TeacherMealTicket"] = rdoMealTicketYes.Checked;
-
-            }
-            else
-            {
-                Session["TeacherMealTicket"] = rdoMealTicketNo.Checked;
-            }
-
 
             //add the newly added school to the drop down
-            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand addSchool = new SqlCommand();
             addSchool.Connection = sqlConnect2;
             addSchool.CommandText = "INSERT INTO School VALUES (@SchoolName, @PhoneNumber, @PrincipalName, @PrincipalEmail," +
@@ -139,11 +105,11 @@ namespace Lab1
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
 
-            dropDownListHandler(0);
+            
 
             //check to see if the entered username already is already taken
             String usernameCheck = "SELECT COUNT(1) FROM Pass WHERE Username = @Username";
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
             SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = sqlConnection;
             loginCommand.CommandType = CommandType.Text;
@@ -154,7 +120,7 @@ namespace Lab1
 
             //check to see if there is already an account associated with the entered email
             String emailCheck = "SELECT COUNT(1) FROM Teacher WHERE EmailAddress = @EmailAddress";
-            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand emailValidate = new SqlCommand();
             emailValidate.Connection = sqlConnection3;
             emailValidate.CommandType = CommandType.Text;
@@ -191,30 +157,13 @@ namespace Lab1
             {
 
 
-                //save user session variables in case they want to edit or change profile info
-                Session["TeacherUsername"] = txtUsername.Text;
-                Session["TeacherPassword"] = txtPassword.Text;
-                Session["TeacherVerifyPassword"] = txtVerifyPassword.Text;
-                Session["TeacherFirstName"] = txtFirstName.Text;
-                Session["TeacherLastName"] = txtLastName.Text;
-                Session["TeacherEmailAddress"] = txtEmail.Text;
-                Session["TeacherPhoneNumber"] = txtPhoneNumber.Text;
-                Session["TeacherGradeTaught"] = ddlGradeTaught.SelectedValue;
-                Session["TeacherSubjectTaught"] = txtSubjectTaught.Text;
-                if (rdoMealTicketYes.Checked)
-                {
-                    Session["TeacherMealTicket"] = rdoMealTicketYes.Checked;
+                
 
-                }
-                else
-                {
-                    Session["TeacherMealTicket"] = rdoMealTicketNo.Checked;
-                }
 
                 //Create the query string, Define the connection to the database, Create the SQL Command Object that will process out query
                 string schoolName = ddlSchool.Text;
                 String sqlQuerySchoolID = "SELECT SchoolID FROM School WHERE SchoolName = @SchoolName";
-                SqlConnection sqlConnectSchoolID = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                SqlConnection sqlConnectSchoolID = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand sqlCommandSchoolName = new SqlCommand();
                 sqlCommandSchoolName.Connection = sqlConnectSchoolID;
                 sqlCommandSchoolName.CommandType = CommandType.Text;
@@ -231,9 +180,9 @@ namespace Lab1
                 sqlConnectSchoolID.Close();
 
 
-                //insert the new teacher record into the AUTH_AWS pass table with the hashed password
+                //insert the new teacher record into the AUTH_Local pass table with the hashed password
                 string teacher = "Teacher";
-                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
                 SqlCommand setPass = new SqlCommand();
                 setPass.Connection = sqlConnect;
                 setPass.CommandText = "INSERT INTO Pass VALUES (@Username, @Role, @Password)";
@@ -245,13 +194,14 @@ namespace Lab1
                 setPass.ExecuteNonQuery();
 
 
-                //add the newly added teacher to the Teacher table in the CyberDay_AWS Database
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                //add the newly added teacher to the Teacher table in the CyberDay_Local Database
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand addTeacher = new SqlCommand();
                 addTeacher.Connection = sqlConnect2;
-                addTeacher.CommandText = "INSERT INTO Teacher VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber, @GradeTaught," +
+                addTeacher.CommandText = "INSERT INTO Teacher VALUES (@Username, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @GradeTaught," +
                     "@SubjectTaught, @MealTicket, @TShirtSize, @TSHirtColor, @TShirtDescription, @SchoolID)";
 
+                addTeacher.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
                 addTeacher.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
                 addTeacher.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtLastName.Text)));
                 addTeacher.Parameters.Add(new SqlParameter("@EmailAddress", HttpUtility.HtmlEncode(txtEmail.Text)));
@@ -270,11 +220,42 @@ namespace Lab1
                 addTeacher.Parameters.Add(new SqlParameter("@TSHirtColor", "NULL"));
                 addTeacher.Parameters.Add(new SqlParameter("@TShirtDescription", "NULL"));
                 addTeacher.Parameters.Add(new SqlParameter("@SchoolID", schoolID));
-
-
                 sqlConnect2.Open();
                 addTeacher.ExecuteNonQuery();
 
+                String queryTeacherID = "SELECT TeacherID FROM Teacher WHERE Username = @Username";
+                SqlCommand getTeacherID = new SqlCommand();
+                getTeacherID.Connection = sqlConnect2;
+                getTeacherID.CommandType = CommandType.Text;
+                getTeacherID.CommandText = queryTeacherID;
+                getTeacherID.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+                int teacherID = Convert.ToInt32(getTeacherID.ExecuteScalar());
+
+                string breakpoint = "";
+
+                //save user session variables in case they want to edit or change profile info
+                Session["TeacherID"] = teacherID;
+                Session["TeacherUsername"] = txtUsername.Text;
+                Session["TeacherPassword"] = txtPassword.Text;
+                Session["TeacherVerifyPassword"] = txtVerifyPassword.Text;
+                Session["TeacherFirstName"] = txtFirstName.Text;
+                Session["TeacherLastName"] = txtLastName.Text;
+                Session["TeacherEmailAddress"] = txtEmail.Text;
+                Session["TeacherPhoneNumber"] = txtPhoneNumber.Text;
+                Session["TeacherGradeTaught"] = ddlGradeTaught.SelectedValue;
+                Session["TeacherSubjectTaught"] = txtSubjectTaught.Text;
+                if (rdoMealTicketYes.Checked)
+                {
+                    Session["TeacherMealTicket"] = "Yes";
+
+                }
+                else
+                {
+                    Session["TeacherMealTicket"] = "Yes";
+                }
+                Session["TeacherSchool"] = ddlSchool.Text;
+
+                string breakpoint2 = "";
 
                 Response.Redirect("TeacherAccountConfirmation.aspx");
 
@@ -315,7 +296,7 @@ namespace Lab1
 
             string sqlQuerySchool = "Select SchoolName FROM School";
 
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand sqlCommand2 = new SqlCommand();
             sqlCommand2.Connection = sqlConnect;
             sqlCommand2.CommandType = CommandType.Text;

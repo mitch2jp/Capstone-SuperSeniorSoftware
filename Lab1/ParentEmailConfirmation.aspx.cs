@@ -13,7 +13,7 @@ namespace Lab1
         protected void Page_Load(object sender, EventArgs e)
         {
             //lblConfirm.Text = "Thank you, " + Session["ParentFirstName"].ToString() + " " + Session["ParentLastName"].ToString() ;
-            lblSucess.Text = "Please check your email at: " + "'" + "<b>" + Session["ParentEmail"].ToString() + "</b>" + "'" + " " + "and enter your registration code to continue" ;
+            lblSucess.Text = "Please check your email at: "  + "<b>" + Session["ParentEmail"].ToString() + "</b>" + " " + "and enter your registration code to continue" ;
 
         }
 

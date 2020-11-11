@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="card">
@@ -46,7 +46,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblEventDescription" runat="server" Text="Event Description: "></asp:Label>
-                                    <asp:TextBox CssClass="form-control" ID="txtEventDescription" runat="server" TextMode="MultiLine" Width="400" Height="200"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="txtEventDescription" runat="server" TextMode="MultiLine" Width="340" Height="200"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="valEventDescription" ControlToValidate="txtEventDescription" runat="server" ErrorMessage="" Text="(Required)" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
 
                                 </div>
@@ -81,19 +81,19 @@
                         </div>
 
                         <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <asp:Label ID="lblEventTime" runat="server" Text="Event Time:"></asp:Label>
-                                        <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" Width="300" TextMode="Time"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="valTime" ControlToValidate="txtEventTime" runat="server" ErrorMessage="" Text="(Required)" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                            <div class="col-md-6">
                                     <div class="form-group">
                                         <asp:Label ID="lblEventDate" runat="server" Text="Event Date:"></asp:Label>
                                         <asp:Calendar ID="calEvent" runat="server" OnSelectionChanged="calEvent_SelectionChanged1" ></asp:Calendar>
                                         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="valDate" ControlToValidate="txtDate" runat="server" ErrorMessage="" Text="(Required)" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblEventTime" runat="server" Text="Event Time:"></asp:Label>
+                                        <asp:TextBox CssClass="form-control" ID="txtEventTime" runat="server" Width="300" TextMode="Time" format></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valTime" ControlToValidate="txtEventTime" runat="server" ErrorMessage="" Text="(Required)" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                             </div>

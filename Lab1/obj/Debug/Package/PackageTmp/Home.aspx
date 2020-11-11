@@ -3,7 +3,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    
+
     <section>
+
+
+
+        <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <center>
+                    <img width="175" height="175" src="Images/jmu-logo.png" />
+                    <h1 style="color: darkslateblue;">Welcome to CyberDay!</h1>
+                    <p><b></b></p>
+                    </center>
+                </div>
+            </div>
+            <br />
+            <br />
 
     
     </section>
@@ -50,7 +68,7 @@
                     <h4>
                         <asp:Button ID="btnRegisterChild" CssClass="btn btn-primary btn-block" runat="server" Text="Register Student" PostBackUrl="~/ParentInfo.aspx" OnClick="btnRegisterChild_Click" />
                     </h4>
-                    <p class="text-justify">Register your child for CyberDay! Click here to begin the registration process.
+                    <p class="text-justify">Register your student for CyberDay! Click here to begin the registration process.
                     </p>
                     </center>
                 </div>

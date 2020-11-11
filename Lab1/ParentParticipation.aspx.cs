@@ -106,12 +106,42 @@ namespace Lab1
         {
             if (rdoParentParticipateYes.Checked)
             {
+                Session["ParentVolunteer"] = true;
 
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                //if parent wants to volunteer, generate credentials for them to use on volunteer page
+                int min = 1000;
+                int max = 9999;
+                Random rdm = new Random();
+
+                Session["ParentVolunteerUsername"] = "volunteer" + rdm.Next(min, max);
+                Session["ParentVolunteerPassword"] = "password" + rdm.Next(min, max);
+                Session["ParentStudentFirstName"] = txtParentFirstName.Text;
+                Session["ParentStudentLastName"] = txtParentLastName.Text;
+                Session["ParentStudentEmailAddress"] = txtParentEmail.Text;
+                Session["ParentStudentPhoneNumber"] = txtParentPhone.Text;
+                Session["ParentStudentGender"] = ddlGender.Text;
+                if (rdoParentMealTicketYes.Checked)
+                {
+                    Session["ParentStudentMealTicket"] = "Yes";
+                }
+                else
+                {
+                    Session["ParentStudentMealTicket"] = "No";
+                }
+                Session["ParentStudentOrgAfilliation"] = txtOrgAffiliation.Text;
+
+
+
+
+
+
+
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand addParentVolunteer = new SqlCommand();
                 addParentVolunteer.Connection = sqlConnect2;
-                addParentVolunteer.CommandText = "INSERT INTO Volunteer VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber, @Gender," +
+                addParentVolunteer.CommandText = "INSERT INTO Volunteer VALUES (@Username, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @Gender," +
                     "@MealTicket, @Major, @TShirtSize, @TShirtColor, @TShirtDescription, @PriorParticipation, @OrganizationAffiliation, @Type )";
+                addParentVolunteer.Parameters.Add(new SqlParameter("@Username", Session["ParentVolunteerUsername"].ToString()));
                 addParentVolunteer.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtParentFirstName.Text)));
                 addParentVolunteer.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtParentLastName.Text)));
                 addParentVolunteer.Parameters.Add(new SqlParameter("@EmailAddress", HttpUtility.HtmlEncode(txtParentEmail.Text)));
@@ -132,6 +162,21 @@ namespace Lab1
                 addParentVolunteer.Parameters.Add(new SqlParameter("@PriorParticipation", "NULL"));
                 addParentVolunteer.Parameters.Add(new SqlParameter("@OrganizationAffiliation", HttpUtility.HtmlEncode(txtOrgAffiliation.Text)));
                 addParentVolunteer.Parameters.Add(new SqlParameter("@Type", "Parent"));
+
+
+
+                //insert the new teacher record into the AUTH_Local pass table with the hashed password
+                string volunteer = "Volunteer";
+                SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
+                SqlCommand setPass = new SqlCommand();
+                setPass.Connection = sqlConnect;
+                setPass.CommandText = "INSERT INTO Pass VALUES (@Username, @Role, @Password)";
+                setPass.Parameters.Add(new SqlParameter("@Username", Session["ParentVolunteerUsername"].ToString()));
+                setPass.Parameters.Add(new SqlParameter("@Password", PasswordHash.HashPassword(HttpUtility.HtmlEncode(Session["ParentVolunteerPassword"].ToString()))));
+                setPass.Parameters.Add(new SqlParameter("@Role", volunteer));
+
+                sqlConnect.Open();
+                setPass.ExecuteNonQuery();
 
 
 
@@ -158,5 +203,7 @@ namespace Lab1
             
 
         }
+
+        
     }
 }

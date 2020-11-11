@@ -45,13 +45,18 @@
 
                             <div class="row">
                                 <div class="col">
-                                        <asp:RadioButton  ID="rdoAllow" runat="server" Text="  I hereby allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
+                                        <asp:RadioButton  ID="rdoAllow" runat="server" GroupName="PhotoAuth" Text="  I hereby allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                        <asp:RadioButton  ID="rdoDontAllow" runat="server" Text="  I do NOT allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
+                                        <asp:RadioButton  ID="rdoDontAllow" runat="server" GroupName="PhotoAuth" Text="  I do NOT allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <asp:Label ID="lblPhotoAuthStatus" Font-Bold="true" ForeColor="Red" runat="server" Text=""></asp:Label>
                                 </div>
                             </div>
                             <br />
@@ -61,7 +66,7 @@
                                     
                                         <asp:Label ID="lblStudentName" runat="server" Text="Name of Student: "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtStudentName" runat="server" Width="500"></asp:TextBox>
-                                    
+                                    <asp:RequiredFieldValidator ID="valStudentName" ControlToValidate="txtStudentName" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -70,7 +75,7 @@
                                     
                                         <asp:Label ID="lblGuardianName" runat="server" Text="Your Name (Name of Guardian): "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtGuardianName" runat="server" Width="500"></asp:TextBox>
-                                    
+                                    <asp:RequiredFieldValidator ID="valGuardianName" ControlToValidate="txtGuardianName" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -79,7 +84,7 @@
                                     
                                         <asp:Label ID="lblContactNumber" runat="server" Text="Contact Number:  "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtContactNumber" runat="server" TextMode="Phone" Width="300"></asp:TextBox>
-                                    
+                                    <asp:RequiredFieldValidator ID="valNumber" ControlToValidate="txtContactNumber" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -87,8 +92,8 @@
                                 <div class="col">
                                     
                                         <asp:Label ID="lblESig" runat="server" Text="Signature (Print Full Name):  "></asp:Label>
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" Width="500"></asp:TextBox>
-                                    
+                                        <asp:TextBox CssClass="form-control" ID="txtESig" runat="server" Width="500"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="valESig" ControlToValidate="txtESig" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
 
@@ -97,7 +102,7 @@
                                     
                                         <asp:Label ID="lblDateSigned" runat="server" Text="Date Signed:  "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtDateSigned" runat="server" TextMode="Date" Width="500"></asp:TextBox>
-                                    
+                                    <asp:RequiredFieldValidator ID="valDateSigned" ControlToValidate="txtDateSigned" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <br />

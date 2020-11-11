@@ -23,6 +23,7 @@ namespace Lab1
 
         protected void btnSendEmail_Click(object sender, EventArgs e)
         {
+            
            
             if (!txtEmail.Text.Contains("@"))
             {
@@ -34,9 +35,9 @@ namespace Lab1
                 lblStatus.Text = "Email's do not match!";
 
             }
-            else if (!txtEmail.Text.Contains("@dukes.jmu.edu"))
+            else if (!txtEmail.Text.Contains("@dukes.jmu.edu") || !txtEmail.Text.Contains("@jmu.edu"))
             {
-                lblStatus.Text = "You must be a JMU student to create a volunteer account!";
+                lblStatus.Text = "You must be a JMU student or faculty member to create a volunteer account! (Use your JMU email address)";
 
             }
             else
@@ -47,6 +48,8 @@ namespace Lab1
 
                 try
                 {
+
+
                     EASendMail.SmtpMail oMail = new EASendMail.SmtpMail("TryIt");
 
                     oMail.From = "jmu.cyberday@gmail.com";
@@ -55,8 +58,12 @@ namespace Lab1
 
                     oMail.Subject = "JMU CyberDay Volunteer Registration";
 
-                    oMail.TextBody = "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + "\n" +
-                        "Please follow the corresponding link to continue the registration process: " + "\n" + "\n" + "https://localhost:44322/CreateVolunteer";
+                    //oMail.TextBody = "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + "\n" +
+                    //    "Please follow the corresponding link to continue the registraiton process: " + "\n" + "\n" + "http://jmu-cyberday.us-east-1.elasticbeanstalk.com/ParentStudentRegistration";
+
+                    oMail.TextBody = "Hello " + "," + "\n" + "\n" +
+                        "Thank you for your interest in volunteering at James Madison University's annual CyberDay Event!" + "\n" +
+                        "Please return to the application and enter the following Authentication code to continue: " + "\n" + "\n" + "Authentication Code: " + GenerateAuthCode();
 
                     EASendMail.SmtpServer oServer = new EASendMail.SmtpServer("smtp.gmail.com");
 
@@ -71,7 +78,7 @@ namespace Lab1
                     oSmtp.SendMail(oServer, oMail);
 
                     lblStatus.ForeColor = Color.Green;
-                    Response.Redirect("VolunteerEmailConfirmation");
+                    Response.Redirect("VolunteerEmailConfirmation.aspx");
 
 
 
@@ -87,6 +94,18 @@ namespace Lab1
             }
             
            
+
+        }
+
+        public int GenerateAuthCode()
+        {
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+
+            Session["AuthenticationCode"] = rdm.Next(min, max);
+
+            return Convert.ToInt32(Session["AuthenticationCode"]);
 
         }
     }

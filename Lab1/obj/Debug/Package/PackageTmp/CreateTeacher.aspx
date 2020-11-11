@@ -252,7 +252,7 @@
                                             <asp:TextBox CssClass="form-control" ID="txtGuidanceEmail" runat="server" ></asp:TextBox>
                                             <asp:RequiredFieldValidator ValidationGroup="School" Enabled="false" ID="valGuidanceEmail" ControlToValidate="txtGuidanceEmail" ForeColor="Red" Font-Bold="true" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                             <%--<asp:Label ID="lblGuidanceEmailStatus" ForeColor="Red" Font-Bold="true" runat="server" Text=""></asp:Label>--%>
-                                            <asp:RegularExpressionValidator ID="validGuidanceEmail" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtGuidanceEmail" ErrorMessage="" Text="Invalid Email" ForeColor="Red" Font-Bold="true"></asp:RegularExpressionValidator>
+                                            <asp:RegularExpressionValidator ID="validGuidanceEmail" ValidationGroup="School" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtGuidanceEmail" ErrorMessage="" Text="Invalid Email" ForeColor="Red" Font-Bold="true"></asp:RegularExpressionValidator>
                                         </div>
                                     </div>
                                 </div>

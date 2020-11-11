@@ -219,3 +219,16 @@ C:\Capstone\Capstone-SuperSeniorSoftware\Lab1\obj\Debug\Capstone.csproj.CoreComp
 C:\Capstone\Capstone-SuperSeniorSoftware\Lab1\obj\Debug\Capstone.csproj.CopyComplete
 C:\Capstone\Capstone-SuperSeniorSoftware\Lab1\obj\Debug\Lab1.dll
 C:\Capstone\Capstone-SuperSeniorSoftware\Lab1\obj\Debug\Lab1.pdb
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Capstone\Lab1\bin\Microsoft.Owin.dll
+C:\Capstone\Lab1\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Capstone\Lab1\bin\Microsoft.Owin.Security.dll
+C:\Capstone\Lab1\bin\Owin.dll
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Capstone\Lab1\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Capstone\Lab1\bin\Microsoft.Owin.xml
+C:\Capstone\Lab1\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Capstone\Lab1\bin\Microsoft.Owin.Security.xml

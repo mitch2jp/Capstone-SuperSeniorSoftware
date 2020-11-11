@@ -3,6 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <section>
+
+     
+
+
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -12,6 +17,27 @@
                     </center>
                 </div>
             </div>
+           
+            <asp:Table ID="Table1" runat="server" Width="350" BorderStyle="Dashed">
+                
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUsername" Font-Size="Large" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUser" Font-Size="Large" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Button ID="btnLogOut" CssClass="btn btn-danger btn-sm"  Width="100" OnClick="btnLogOut_Click" runat="server" Text="Log Out"  />
+                    </asp:TableCell>
+                </asp:TableRow>
+                
+            </asp:Table>
             <br />
             <br />
 
@@ -36,7 +62,7 @@
                          <br />
                          <br />
                     <h4>
-                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/VolunteerEventInformation.aspx" runat="server" Text="Event Information" OnClick="btnViewEventInfo_Click" />
+                        <asp:Button ID="btnViewEventInfo" CssClass="btn btn-primary btn-block" PostBackUrl="~/VolunteerItinerary.aspx" runat="server" Text="Event Information" OnClick="btnViewEventInfo_Click" />
                     </h4>
                     <p class="text-justify">
                     </p>
@@ -49,7 +75,7 @@
                         <br />
                         <br />
                     <h4>
-                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/CreateVolunteer.aspx" Text="Edit Profile" />
+                        <asp:Button ID="btnItinerary" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/VolunteerEditProfile.aspx" Text="Edit Profile" />
                     </h4>
                     <p class="text-justify"></p>
                     </center>

@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <asp:Label ID="lbl" runat="server" Text="New Volunteer? "></asp:Label>
+                                    <asp:Label ID="lbl" runat="server" Text="JMU Students/Faculty: "></asp:Label>
                                 </div>
                             </div>
                             <div class="col">

@@ -31,7 +31,7 @@
                                 <div class="col">
                                     <center>
                                         <div class="form-group">
-                                            <asp:Button ID="btnLogOut" CssClass="btn btn-danger btn-block btn-sm" Width="400" PostBackUrl="~/TeacherLogin.aspx" runat="server" Text="Log Out" />
+                                            <asp:Button ID="btnLogOut" CssClass="btn btn-danger btn-block btn-sm" Width="400" OnClick="btnLogOut_Click" runat="server" Text="Log Out" />
                                         </div>
                                     </center>
                                 </div>

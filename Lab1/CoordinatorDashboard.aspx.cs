@@ -18,7 +18,8 @@ namespace Lab1
 
             }
 
-            lblUser.Text = "Current User: " + "'" + Session["CoordinatorUsername"].ToString() + "'";
+            lblUsername.Text = "Username: " + "<b>" + Session["CoordinatorUsername"].ToString() + "</b>";
+            lblUser.Text = "User: " + "<b>" + Session["CoordinatorFirstName"].ToString() + " " + Session["CoordinatorLastName"].ToString() + "</b>";
 
 
         }
@@ -30,6 +31,23 @@ namespace Lab1
 
         protected void btnViewEventInfo_Click(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+            Session["CoordinatorID"] = null;
+            Session["CoordinatorUsername"] = null;
+            Session["CoordinatorFirstName"] = null;
+            Session["CoordinatorLastName"] = null;
+            Session["CoordinatorEmail"] = null;
+            Session["CoordinatorPhoneNumber"] = null;
+
+            Response.Redirect("CoordinatorLogin.aspx");
+
+
+
 
         }
     }

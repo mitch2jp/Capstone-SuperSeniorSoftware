@@ -15,15 +15,6 @@ namespace Lab1
     {
 
         /// <summary>
-        /// btnCreateEvent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateEvent;
-
-        /// <summary>
         /// btnViewEventInfo control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnViewEventInfo;
+
+        /// <summary>
+        /// btnSurvey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSurvey;
 
         /// <summary>
         /// btnItinerary control.
@@ -42,12 +42,12 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Button btnItinerary;
 
         /// <summary>
-        /// btnSurvey control.
+        /// btnCreateEvent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSurvey;
+        protected global::System.Web.UI.WebControls.Button btnCreateEvent;
     }
 }

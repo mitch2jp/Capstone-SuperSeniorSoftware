@@ -143,7 +143,7 @@
                                         <asp:Button ID="btnSendEmail" CssClass="btn btn-info btn-block btn-sm" runat="server" Width="350" OnClick="btnSendEmail_Click" Text="Send Email" />
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-sm" PostBackUrl="~/Home.aspx" Width="350"  runat="server" Text="Cancel" />
+                                        <asp:Button ID="btnCancel" CausesValidation="false" CssClass="btn btn-danger btn-block btn-sm" PostBackUrl="~/Home.aspx" Width="350"  runat="server" Text="Cancel" />
                                     </div>
                                     </center>
                                 </div>

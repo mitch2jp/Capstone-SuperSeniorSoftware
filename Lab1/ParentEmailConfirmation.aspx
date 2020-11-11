@@ -44,8 +44,8 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <asp:Label ID="lblRegistrationCode" runat="server" Text="Registration Code: "></asp:Label>
-                                    <asp:TextBox CssClass="form-control" ID="txtAuthCode" Width="200" runat="server"></asp:TextBox>
+                                    <asp:Label ID="lblRegistrationCode" runat="server" Text="Authentication Code: "></asp:Label>
+                                    <asp:TextBox CssClass="form-control" style="text-align:center" ID="txtAuthCode" Width="200" runat="server"></asp:TextBox>
                                     </center>
                             </div>
                         </div>

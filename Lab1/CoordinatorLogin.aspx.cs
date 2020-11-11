@@ -25,18 +25,19 @@ namespace Lab1
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string coordinator = "Coordinator";
 
             //check to see if the credentials exist in the basic credentials table(for already existing users) 
             //in the Lab3 database
-            String queryCredentials = "SELECT COUNT(1) FROM Credentials WHERE Username = @Username AND Password = @Password";
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            String queryCredentials = "SELECT COUNT(1) FROM Credentials WHERE Username = @Username AND Password = @Password AND Role = @Role";
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = sqlConnection;
             loginCommand.CommandType = CommandType.Text;
             loginCommand.CommandText = queryCredentials;
             loginCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
             loginCommand.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(txtPassword.Text));
+            loginCommand.Parameters.AddWithValue("@Role", coordinator);
             sqlConnection.Open();
             int count = Convert.ToInt32(loginCommand.ExecuteScalar());
 
@@ -45,9 +46,9 @@ namespace Lab1
 
 
             //stored procedure to process the login attempt
-            //check to see if the entered info exsits int the AUTH_AWS credentials table 
-            string coordinator = "Coordinator";
-            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
+            //check to see if the entered info exsits int the AUTH_Local credentials table 
+            
+            SqlConnection sqlConnection3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
             SqlCommand loginCommand2 = new SqlCommand();
             loginCommand2.Connection = sqlConnection3;
             loginCommand2.CommandType = CommandType.StoredProcedure;
@@ -61,38 +62,16 @@ namespace Lab1
 
 
 
-            //if the basic credentials exist in the Lab3 table (for already existing users), allow user to enter the application
+            //if the basic credentials exist in the Lab3 table (for already existing users/test data), allow user to enter the application
             if (count == 1)
             {
-                //save the username in the session variable 
-                Session["CoordinatorUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
-
-
-                //find the current user's role and save it into a session variable to be diplayed in U/I for reference
-                String userRoleQuery = "SELECT Role FROM Credentials WHERE Username = @Username AND Password = @Password";
-                SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-                SqlCommand loginCommand3 = new SqlCommand();
-                loginCommand3.Connection = sqlConnection2;
-                loginCommand3.CommandType = CommandType.Text;
-                loginCommand3.CommandText = userRoleQuery;
-                loginCommand3.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
-                loginCommand3.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(txtPassword.Text));
-                sqlConnection2.Open();
-                SqlDataReader queryResultsUserRole = loginCommand3.ExecuteReader();
-                queryResultsUserRole.Read();
-
-                string userRole = queryResultsUserRole["Role"].ToString();
-
-                //save into session variable to be displayed on screen
-                Session["UserRole"] = userRole;
+                SaveSessionVariables();
 
                 Response.Redirect("CoordinatorDashboard.aspx");
-                sqlConnection2.Close();
-
 
             }
 
-            //if the credentials do not exist in the CyberDay table, check if they exist in the AUTH_AWS Pass table
+            //if the credentials do not exist in the CyberDay table, check if they exist in the AUTH_Local Pass table
             else if (reader.HasRows)
             {
                 while (reader.Read())
@@ -106,6 +85,8 @@ namespace Lab1
                         Session["UserRole"] = "Coordinator";
 
                         lblStatus.Text = "Success!";
+
+                        SaveSessionVariablesNewUser();
 
                         Response.Redirect("CoordinatorDashboard.aspx");
 
@@ -134,56 +115,151 @@ namespace Lab1
             sqlConnection3.Close();
 
 
-            //string coordinator = "Coordinator";
-            //String queryCredentials = "SELECT COUNT(1) FROM Credentials WHERE Username = @Username AND Password = @Password AND Role = @Role";
-            //SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-            //SqlCommand loginCommand = new SqlCommand();
-            //loginCommand.Connection = sqlConnection;
-            //loginCommand.CommandType = CommandType.Text;
-            //loginCommand.CommandText = queryCredentials;
-            //loginCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
-            //loginCommand.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(txtPassword.Text));
-            //loginCommand.Parameters.AddWithValue("@Role", coordinator);
+           
 
-            //sqlConnection.Open();
-            //int count = Convert.ToInt32(loginCommand.ExecuteScalar());
+        }
 
+        public void SaveSessionVariables()
+        {
+            //get all of the values associated with the entity and save them to session variables
+            String queryFirstName = "SELECT FirstName FROM Coordinator WHERE Username = @Username";
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlCommand getFirstName = new SqlCommand();
+            getFirstName.Connection = sqlConnection2;
+            getFirstName.CommandType = CommandType.Text;
+            getFirstName.CommandText = queryFirstName;
+            getFirstName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            sqlConnection2.Open();
+            string firstName = getFirstName.ExecuteScalar().ToString();
 
-            //if (count == 1)
-            //{
-            //    //save the username in the session variable 
-            //    Session["CoordinatorUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
+            String queryCoordinatorID = "SELECT CoordinatorID FROM Coordinator WHERE Username = @Username";
+            SqlCommand getCoordinatorID = new SqlCommand();
+            getCoordinatorID.Connection = sqlConnection2;
+            getCoordinatorID.CommandType = CommandType.Text;
+            getCoordinatorID.CommandText = queryCoordinatorID;
+            getCoordinatorID.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            int coordinatorID = Convert.ToInt32(getCoordinatorID.ExecuteScalar());
 
-
-            //    //find the current user's role and save it into a session variable to be diplayed in U/I for reference
-            //    String userRoleQuery = "SELECT Role FROM Credentials WHERE Username = @Username AND Password = @Password";
-            //    SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-            //    SqlCommand loginCommand3 = new SqlCommand();
-            //    loginCommand3.Connection = sqlConnection2;
-            //    loginCommand3.CommandType = CommandType.Text;
-            //    loginCommand3.CommandText = userRoleQuery;
-            //    loginCommand3.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
-            //    loginCommand3.Parameters.AddWithValue("@Password", HttpUtility.HtmlEncode(txtPassword.Text));
-            //    sqlConnection2.Open();
-            //    SqlDataReader queryResultsUserRole = loginCommand3.ExecuteReader();
-            //    queryResultsUserRole.Read();
-
-            //    string userRole = queryResultsUserRole["Role"].ToString();
-
-            //    //save into session variable to be displayed on screen
-            //    //Session["UserRole"] = userRole;
-
-            //    Response.Redirect("CoordinatorDashboard.aspx");
-            //    sqlConnection2.Close();
-
-            //}
-            //else
-            //{
-            //    lblStatus.ForeColor = Color.Red;
-            //    lblStatus.Text = "Incorrect Username and/or Password! Please try again!";
+            String queryPassword = "SELECT c.Password FROM Coordinator t, Credentials c WHERE t.Username = c.Username AND t.Username = @Username";
+            SqlCommand getPassword = new SqlCommand();
+            getPassword.Connection = sqlConnection2;
+            getPassword.CommandType = CommandType.Text;
+            getPassword.CommandText = queryPassword;
+            getPassword.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string password = getPassword.ExecuteScalar().ToString();
 
 
-            //}
+            String queryLastName = "SELECT LastName FROM Coordinator WHERE Username = @Username";
+            SqlCommand getLastName = new SqlCommand();
+            getLastName.Connection = sqlConnection2;
+            getLastName.CommandType = CommandType.Text;
+            getLastName.CommandText = queryLastName;
+            getLastName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string lastName = getLastName.ExecuteScalar().ToString();
+
+            String queryEmailAddress = "SELECT EmailAddress FROM Coordinator WHERE Username = @Username";
+            SqlCommand getEmailAddress = new SqlCommand();
+            getEmailAddress.Connection = sqlConnection2;
+            getEmailAddress.CommandType = CommandType.Text;
+            getEmailAddress.CommandText = queryEmailAddress;
+            getEmailAddress.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string emailAddress = getEmailAddress.ExecuteScalar().ToString();
+
+            String queryPhoneNumber = "SELECT PhoneNumber FROM Coordinator WHERE Username = @Username";
+            SqlCommand getPhoneNumber = new SqlCommand();
+            getPhoneNumber.Connection = sqlConnection2;
+            getPhoneNumber.CommandType = CommandType.Text;
+            getPhoneNumber.CommandText = queryPhoneNumber;
+            getPhoneNumber.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string phoneNumber = getPhoneNumber.ExecuteScalar().ToString();
+
+            
+
+
+
+
+            //save user session variables in case they want to edit or change profile info
+            Session["CoordinatorID"] = coordinatorID;
+            Session["CoordinatorUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
+            Session["CoordinatorPassword"] = password;
+            Session["CoordinatorFirstName"] = firstName;
+            Session["CoordinatorLastName"] = lastName;
+            Session["CoordinatorEmail"] = emailAddress;
+            Session["CoordinatorPhoneNumber"] = phoneNumber;
+
+            string breakpoint = "";
+
+            sqlConnection2.Close();
+
+        }
+
+        public void SaveSessionVariablesNewUser()
+        {
+            //get all of the values associated with the entity and save them to session variables
+            String queryFirstName = "SELECT FirstName FROM Coordinator WHERE Username = @Username";
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlCommand getFirstName = new SqlCommand();
+            getFirstName.Connection = sqlConnection2;
+            getFirstName.CommandType = CommandType.Text;
+            getFirstName.CommandText = queryFirstName;
+            getFirstName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            sqlConnection2.Open();
+            string firstName = getFirstName.ExecuteScalar().ToString();
+
+            String queryCoordinatorID = "SELECT CoordinatorID FROM Coordinator WHERE Username = @Username";
+            SqlCommand getCoordinatorID = new SqlCommand();
+            getCoordinatorID.Connection = sqlConnection2;
+            getCoordinatorID.CommandType = CommandType.Text;
+            getCoordinatorID.CommandText = queryCoordinatorID;
+            getCoordinatorID.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            int CoordinatorID = Convert.ToInt32(getCoordinatorID.ExecuteScalar());
+
+            //String queryPassword = "SELECT c.Password FROM Coordinator t, Credentials c WHERE t.Username = c.Username AND t.Username = @Username";
+            //SqlCommand getPassword = new SqlCommand();
+            //getPassword.Connection = sqlConnection2;
+            //getPassword.CommandType = CommandType.Text;
+            //getPassword.CommandText = queryPassword;
+            //getPassword.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            //string password = getPassword.ExecuteScalar().ToString();
+
+
+            String queryLastName = "SELECT LastName FROM Coordinator WHERE Username = @Username";
+            SqlCommand getLastName = new SqlCommand();
+            getLastName.Connection = sqlConnection2;
+            getLastName.CommandType = CommandType.Text;
+            getLastName.CommandText = queryLastName;
+            getLastName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string lastName = getLastName.ExecuteScalar().ToString();
+
+            String queryEmailAddress = "SELECT EmailAddress FROM Coordinator WHERE Username = @Username";
+            SqlCommand getEmailAddress = new SqlCommand();
+            getEmailAddress.Connection = sqlConnection2;
+            getEmailAddress.CommandType = CommandType.Text;
+            getEmailAddress.CommandText = queryEmailAddress;
+            getEmailAddress.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string emailAddress = getEmailAddress.ExecuteScalar().ToString();
+
+            String queryPhoneNumber = "SELECT PhoneNumber FROM Coordinator WHERE Username = @Username";
+            SqlCommand getPhoneNumber = new SqlCommand();
+            getPhoneNumber.Connection = sqlConnection2;
+            getPhoneNumber.CommandType = CommandType.Text;
+            getPhoneNumber.CommandText = queryPhoneNumber;
+            getPhoneNumber.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string phoneNumber = getPhoneNumber.ExecuteScalar().ToString();
+
+            
+
+
+            //save user session variables in case they want to edit or change profile info
+            Session["CoordinatorID"] = CoordinatorID;
+            Session["CoordinatorUsername"] = HttpUtility.HtmlEncode(txtUsername.Text);
+            //Session["CoordinatorPassword"] = password;
+            Session["CoordinatorFirstName"] = firstName;
+            Session["CoordinatorLastName"] = lastName;
+            Session["CoordinatorEmail"] = emailAddress;
+            Session["CoordinatorPhoneNumber"] = phoneNumber;
+            
+
 
         }
     }

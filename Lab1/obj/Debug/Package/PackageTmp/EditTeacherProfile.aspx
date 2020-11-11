@@ -17,7 +17,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:Label ID="lblPageInstructions" runat="server" Font-Bold="true" Text="Please enter the following information: "></asp:Label>
+                                <asp:Label ID="lblPageInstructions" runat="server" Font-Bold="true" Text="Please verify the following information: "></asp:Label>
                             </div>
                         </div>
                         <br />
@@ -26,10 +26,12 @@
                             <div class="col">
                                 <asp:Label ID="lblUsername" runat="server" Text="User Name: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtUsername" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valtxtUsername" ControlToValidate="txtUsername" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                             <div class="col">
                                 <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valPassword" ControlToValidate="txtPassword" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                         </div>
 
@@ -38,10 +40,12 @@
                             <div class="col">
                                 <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtFirstName" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valFirstName" ControlToValidate="txtFirstName" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                             <div class="col">
                                 <asp:Label ID="lblLastName" runat="server" Text="Last Name:  "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtLastName" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valLastName" ControlToValidate="txtLastName" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                         </div>
 
@@ -49,10 +53,12 @@
                             <div class="col">
                                 <asp:Label ID="lblEmail" runat="server" Text="Email Address: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtEmail" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valEmail" ControlToValidate="txtEmail" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                             <div class="col">
                                 <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtPhoneNumber" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valPhone" ControlToValidate="txtPhoneNumber" Font-Bold="true" Text="(Required)" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                         </div>
 
@@ -75,14 +81,18 @@
                                     <asp:ListItem Text="11" Value="11"></asp:ListItem>
                                     <asp:ListItem Text="12" Value="12"></asp:ListItem>
                                 </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="valGradeTaught" InitialValue="" ControlToValidate="ddlGradeTaught" Text="(Required)" Font-Bold="true" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                             <div class="col">
                                 <asp:Label ID="lblSubjectTaught" runat="server" Text="Subject Taught: "></asp:Label>
                                 <asp:TextBox CssClass="form-control" Width="200" ID="txtSubjectTaught" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="valSubjectTaught" ControlToValidate="txtSubjectTaught" Text="(Required)" Font-Bold="true" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                             </div>
                             <br />
                             
                         </div>
+                        <br />
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -93,6 +103,8 @@
                                 <div class="form-group">
                                     <asp:RadioButton GroupName="MealTicket" ID="rdoMealTicketYes" runat="server" Text="Yes"/>
                                     <asp:RadioButton GroupName="MealTicket" ID="rdoMealTicketNo" runat="server" Text="No"/>
+                                    <asp:Label ID="valMealTicket" ForeColor="Red" Font-Bold="true" runat="server" Text=""></asp:Label>
+
                                 </div>
                             </div>
                         </div>
@@ -108,125 +120,16 @@
                                 <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="lblSchoollist" runat="server" Text="School: "></asp:Label>
-                                        <asp:DropDownList CssClass="form-control" AutoPostBack="true" Width="300" ID="ddlSchool"  OnSelectedIndexChanged="ddlSchool_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="form-control" Width="300" ID="ddlSchool"  OnSelectedIndexChanged="ddlSchool_SelectedIndexChanged" runat="server"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="valSchool" InitialValue="Choose One" Text="(Required)" ControlToValidate="ddlSchool" Font-Bold="true" ForeColor="Red" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
 
                                 </div>
                             </div>
                         </div>
 
-                    <div id="divSchoolInfo" runat="server" class="container-fluid" style="border:1px dashed #000000" visible="false" >
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblSchoolName" runat="server" Text="SchoolName"></asp:Label>
-                                             <asp:TextBox CssClass="form-control" ID="txtSchoolName" runat="server"></asp:TextBox>
-                                            
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblSchoolPhone" runat="server" Text="Phone Number: " ></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtSchoolPhone" runat="server" TextMode="Phone"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
+                  
 
-                            <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblAddress" runat="server" Text="Street Address: "></asp:Label>
-                                             <asp:TextBox CssClass="form-control" ID="txtAddress" runat="server"></asp:TextBox>
-                                            
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblCity" runat="server" Text="City: " ></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtCity" runat="server"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblState" runat="server" Text="State: "></asp:Label>
-                                             <asp:TextBox CssClass="form-control" ID="txtState" runat="server"></asp:TextBox>
-                                            
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblZip" runat="server" Text="Zip Code:  " ></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtZip" runat="server" TextMode="Number"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblPrincipalName" runat="server" Text="Principal's Name (First and Last): "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtPrincipalName" runat="server"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblPrincipalEmail" runat="server" Text="Principal's Email: "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtPrincipalEmail" runat="server" ></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblGuidanceName" runat="server" Text="Guidance Counselor's Name (First and Last): "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtGuidanceName" runat="server"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblGuidanceEmail" runat="server" Text="Guidance Counselor's Email: "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtGuidanceEmail" runat="server" ></asp:TextBox>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <asp:Label ID="lblGudiancePhone" runat="server" Text="Guidance Counselor's Phone Number: "></asp:Label>
-                                        <asp:TextBox CssClass="form-control" ID="txtGuidancePhone" runat="server" TextMode="Phone"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-
-                                
-
-                            </div>
-                        <br />
-                        <br />
-
-                        <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Button ID="btnAddSchool" CssClass="btn btn-info btn-block btn-md" runat="server" Width="200" PostBackUrl="~/CreateTeacher.aspx"  OnClick="btnAddSchool_Click" Text="Add School" />
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                </div>
-
-                        <div class="row">
+                        <%--<div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblParentTShirtSize" runat="server" Text="Shirt Size: "></asp:Label>
@@ -239,7 +142,7 @@
                                             </asp:DropDownList>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                         <br />
                         <br />
 
@@ -247,10 +150,10 @@
                         <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <asp:Button ID="btnUpdate" CssClass="btn btn-success btn-block btn-lg" runat="server" PostBackUrl="~/UpdateTeacherAccountConfirmation.aspx" OnClick="btnUpdate_Click" Text="Update Account Information" />
+                                        <asp:Button ID="btnUpdate" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnUpdate_Click" Text="Update Account Information" />
                                     </div>
                                     <div class="form-group">
-                                        <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/Home.aspx" runat="server" Text="Cancel" />
+                                        <asp:Button ID="btnCancel" CausesValidation="false" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/TeacherDashboard.aspx" runat="server" Text="Cancel" />
                                     </div>
                                 </div>
                             </div>

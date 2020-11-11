@@ -30,7 +30,7 @@ namespace Lab1
             string sqlQueryTeacher = "Select * From Teacher";
             string sqlQuerySchool = "Select SchoolName FROM School";
 
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand sqlCommand1 = new SqlCommand();
             sqlCommand1.Connection = sqlConnect;
             sqlCommand1.CommandType = CommandType.Text;
@@ -106,7 +106,7 @@ namespace Lab1
                 Session["ParentStudentTeacher"] = ddlTeacher.SelectedValue;
 
 
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand addParent = new SqlCommand();
                 addParent.Connection = sqlConnect2;
                 addParent.CommandText = "INSERT INTO Parent VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber, @StudentSchool, @StudentTeacher)";
@@ -118,6 +118,20 @@ namespace Lab1
                 addParent.Parameters.Add(new SqlParameter("@StudentTeacher", HttpUtility.HtmlEncode(ddlTeacher.Text)));
                 sqlConnect2.Open();
                 addParent.ExecuteNonQuery();
+
+                //get the session parent's ID to associate with the newly registered student
+                String getParentID = "SELECT ParentID FROM Parent WHERE FirstName = @FirstName AND LastName = @LastName";
+                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlCommand command = new SqlCommand();
+                command.Connection = sqlConnection;
+                command.CommandType = CommandType.Text;
+                command.CommandText = getParentID;
+                command.Parameters.AddWithValue("@FirstName", Session["ParentFirstName"].ToString());
+                command.Parameters.AddWithValue("@LastName", Session["ParentLastName"].ToString());
+                sqlConnection.Open();
+                Session["ParentID"] = Convert.ToInt32(command.ExecuteScalar());
+
+                string breakpoint = "";
 
 
                 try
@@ -137,7 +151,7 @@ namespace Lab1
 
                     oMail.TextBody = "Hi " + Session["ParentFirstName"].ToString() + "," + "\n" + "\n" + 
                         "Thank you for your interest in James Madison University's annual CyberDay Event!" + "\n" + 
-                        "Please return to the application and enter the following registration code to continue: " + "\n" + "\n" + "Registration Code: " + GenerateAuthCode();
+                        "Please return to the application and enter the following authentication code to continue: " + "\n" + "\n" + "Authentication Code: " + GenerateAuthCode();
 
                     EASendMail.SmtpServer oServer = new EASendMail.SmtpServer("smtp.gmail.com");
 

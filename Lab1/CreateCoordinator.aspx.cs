@@ -16,17 +16,27 @@ namespace Lab1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["CoordinatorUsername"] == null)
+            {
+                Response.Redirect("CoordinatorLogin.aspx");
+
+            }
 
 
         }
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            if (txtPassword.Text != txtVerifyPassword.Text)
+            {
+                lblPasswordStatus.Text = "Passwords do not match";
+
+            }
 
             string coordinator = "Coordinator";
 
-            //insert the new teacher record into the AUTH_AWS pass table with the hashed password
-            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_AWS"].ToString());
+            //insert the new teacher record into the AUTH_Local pass table with the hashed password
+            SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
             SqlCommand setPass = new SqlCommand();
             setPass.Connection = sqlConnect;
             setPass.CommandText = "INSERT INTO Pass VALUES (@Username, @Role, @Password)";
@@ -38,10 +48,11 @@ namespace Lab1
             setPass.ExecuteNonQuery();
 
             //add the coordinator to the coordiantor table in the Cyberday_Local DB
-            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand addCoordinator = new SqlCommand();
             addCoordinator.Connection = sqlConnect2;
-            addCoordinator.CommandText = "INSERT INTO Coordinator VALUES (@FirstName, @LastName, @EmailAddress, @PhoneNumber)";
+            addCoordinator.CommandText = "INSERT INTO Coordinator VALUES (@Username, @FirstName, @LastName, @EmailAddress, @PhoneNumber)";
+            addCoordinator.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
             addCoordinator.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
             addCoordinator.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtLastName.Text)));
             addCoordinator.Parameters.Add(new SqlParameter("@EmailAddress", HttpUtility.HtmlEncode(txtEmail.Text)));

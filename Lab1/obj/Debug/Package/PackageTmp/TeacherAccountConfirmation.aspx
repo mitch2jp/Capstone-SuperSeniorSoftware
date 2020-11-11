@@ -10,7 +10,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <asp:Label ID="lblSucess" runat="server" Text="Account Successfully Created." ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>
+                                    <asp:Label ID="lblSucess" runat="server" Text="Account successfully created." ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>
                                 </center>
                             </div>
                         </div>

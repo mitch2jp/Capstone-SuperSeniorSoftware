@@ -14,7 +14,7 @@
         <br />
     
     
-        <div class="container-fluid">
+        <div class="container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <div class="card">
@@ -50,12 +50,14 @@
                                         <div class="form-group">
                                             <asp:Label ID="lblStudentFirstName" runat="server" Text="First Name: "></asp:Label>
                                             <asp:TextBox CssClass="form-control" placeholder="Student's First Name" Width="300" ID="txtFirstName" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="valFirstName" ValidationGroup="Student" ControlToValidate="txtFirstName" ForeColor="Red" Font-Bold="true" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblStudentLastName" runat="server" Text="Last Name: "></asp:Label>
                                             <asp:TextBox CssClass="form-control" placeholder="Student's Last Name" Width="300" ID="txtLastName" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="valLastName" ValidationGroup="Student" ControlToValidate="txtLastName" ForeColor="Red" Font-Bold="true" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                 </div>
@@ -65,12 +67,15 @@
                                         <div class="form-group">
                                             <asp:Label ID="lblAge" runat="server" Text="Age: "></asp:Label>
                                             <asp:TextBox CssClass="form-control" placeholder="" ID="txtAge" Width="85" runat="server"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="valAge" ValidationGroup="Student" ControlToValidate="txtAge" ForeColor="Red" Font-Bold="true" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblNotes" runat="server" Text="Comments/Notes: "></asp:Label>
-                                            <asp:TextBox CssClass="form-control" ID="txtNotes" runat="server" TextMode="MultiLine" Width="300" Height="100"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ValidationGroup="Student" ID="txtNotes" runat="server" TextMode="MultiLine" Width="300" Height="100"></asp:TextBox>
+
                                         </div>
                                     </div>
                                 </div>
@@ -83,9 +88,9 @@
                                             <asp:ListItem Text="Female"></asp:ListItem>
                                             <asp:ListItem Text="Non-Binary"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="valGender" ValidationGroup="Student" ControlToValidate="ddlGender" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
-                                <br />
                                 <br />
 
                                 <%--<div class="row">
@@ -112,8 +117,9 @@
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:RadioButton GroupName="PriorParticipation" ID="chkboxPriorYes" runat="server" Text="Yes"/>
-                                            <asp:RadioButton GroupName="PriorParticipation" ID="chkboxPriorNo" runat="server" Text="No"/>
+                                            <asp:RadioButton ValidationGroup="PriorParticipate" GroupName="PriorParticipation" ID="rdoPriorYes" runat="server" Text="Yes"/>
+                                            <asp:RadioButton ValidationGroup="PriorParticipate" GroupName="PriorParticipation" ID="rdoPriorNo" runat="server" Text="No"/>
+                                            <asp:Label ID="valPriorParticipation" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -127,9 +133,11 @@
                                         <div class="form-group">
                                             <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketYes" runat="server" Text="Yes" />
                                             <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketNo" runat="server" Text="No" />
+                                            <asp:Label ID="valMealTicket" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
                                         </div>
                                     </div>
                                 </div>
+                                <br />
 
                             
                                <%-- <div class="row">
@@ -140,16 +148,20 @@
 
 
                         
-                                <div class="row">
+<%--<%--<%--                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:Label ID="lblParentParticipation" runat="server" Text="Will you like to chaperone or participate at CyberDay?"></asp:Label>
+                                            <asp:Label ID="lblParentParticipation" runat="server" Text="Would you like to chaperone or participate at CyberDay?"></asp:Label>
                                         </div>
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:RadioButton ID="rdoParentParticipateYes" runat="server" GroupName="ParentParticipate" Text="Yes" AutoPostBack="true" OnCheckedChanged="rdoParentParticipateYes_CheckedChanged" />
                                             <asp:RadioButton ID="rdoParentParticipateNo" runat="server" GroupName="ParentParticipate" Text="No" AutoPostBack="true" OnCheckedChanged="rdoParentParticipateNo_CheckedChanged" />
+                                            <asp:Label ID="valParentParticipation" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
+                                        </div>
+                                         <div class="form-group">
+                                             <asp:Label ID="lblParentRegistrationStatus" Font-Bold="true" ForeColor="Green" runat="server" Text=""></asp:Label>
                                         </div>
                                     </div>
                                 </div>
@@ -160,12 +172,15 @@
                                             <div class="form-group">
                                                 <asp:Label ID="lblParentFirstName" runat="server" Text="First Name: " ></asp:Label>
                                                 <asp:TextBox CssClass="form-control" ID="txtParentFirstName" Width="300" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="valParentFirstName" ControlToValidate="txtParentFirstName" ValidationGroup="Parent" runat="server" ForeColor="Red" Font-Bold="true" ErrorMessage=""></asp:RequiredFieldValidator>
+
                                             </div>
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <asp:Label ID="lblParentLastName" runat="server" Text="Last Name: " ></asp:Label>
                                                 <asp:TextBox CssClass="form-control" ID="txtParentLastName" Width="300" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="valParentLastName" ControlToValidate="txtParentLastName" ValidationGroup="Parent" runat="server" Font-Bold="true" ForeColor="Red" ErrorMessage=""></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -175,12 +190,15 @@
                                             <div class="form-group">
                                                 <asp:Label ID="lblParentEmail" runat="server" Text="Email Adress: "></asp:Label>
                                                 <asp:TextBox CssClass="form-control" ID="txtParentEmail" Width="300" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="valParentEmail" ControlToValidate="txtParentEmail" ValidationGroup="Parent" runat="server" Font-Bold="true" ForeColor="Red" ErrorMessage=""></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ValidationGroup="Parent" ID="validParentEmail" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtParentEmail" ErrorMessage="" Text="Invalid Email" ForeColor="Red" Font-Bold="true"></asp:RegularExpressionValidator>
                                             </div>
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group">
                                                 <asp:Label ID="lblParentPhone" runat="server" Text="Phone Number: "></asp:Label>
                                                 <asp:TextBox CssClass="form-control" ID="txtParentPhone" Width="300" runat="server" TextMode="Phone"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="valParentPhone" ControlToValidate="txtParentPhone" ValidationGroup="Parent" runat="server" Font-Bold="true" ForeColor="Red" ErrorMessage=""></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                     </div>
@@ -201,7 +219,7 @@
                                     </div>--%>
 
 
-                                    <br />
+                                    <%--<br />
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -212,11 +230,25 @@
                                             <div class="form-group">
                                                 <asp:RadioButton ID="rdoParentMealTicketYes" GroupName="ParentMealTicket" runat="server" Text="Yes" />
                                                 <asp:RadioButton ID="rdoParentMealTicketNo" GroupName="ParentMealTicket" Text="No" runat="server" />
+                                                <asp:Label ID="valParentMealTicket" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="form-group">
+                                                <asp:Button ID="btnRegister" CausesValidation="true" ValidationGroup="Parent" CssClass="btn btn-info btn-block btn-md" OnClick="btnRegister_Click1" runat="server" Width="200" Text="Register" />
+                                                <asp:Button ID="btnCancelRegister" CausesValidation="false" CssClass="btn btn-danger btn-block btn-md" Width="200" runat="server" Text="Cancel" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <%--<div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <asp:Label ID="lblParentPriorParticipation" runat="server" Text="Have you participated in CyberDay previously?: "></asp:Label>
@@ -228,11 +260,11 @@
                                                 <asp:RadioButton ID="rdoParentPriorParticipationNo" runat="server" Text="No" GroupName="ParentPriorParticipation" />
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div>--%>
+                                <%--</div>
                                 <br />
-                                <br />
-                        
+                                <br />--%>
+                       
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -242,7 +274,8 @@
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:DropDownList CssClass="form-control" ID="ddlSchool" runat="server"></asp:DropDownList>
+                                            <asp:DropDownList CssClass="form-control" ID="ddlSchool" Width="300" runat="server"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="valSchooList" ValidationGroup="Student" ControlToValidate="ddlSchool" Font-Bold="true" ForeColor="Red" InitialValue="Choose One" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                 </div>
@@ -255,8 +288,8 @@
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:DropDownList CssClass="form-control" ID="ddlTeacher" runat="server"></asp:DropDownList>
-
+                                            <asp:DropDownList CssClass="form-control" Width="300" ID="ddlTeacher" runat="server"></asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="valTeacherList" ValidationGroup="Student" ControlToValidate="ddlTeacher" ForeColor="Red" Font-Bold="true" Text="(Required)" InitialValue="Choose One" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +299,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <asp:Button ID="btnContinue" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnContinue_Click" Text="Continue" />
+                                            <asp:Button ID="btnContinue" ValidationGroup="Student" CssClass="btn btn-success btn-block btn-lg" runat="server" OnClick="btnContinue_Click" Text="Continue" />
                                         </div>
                                         <div class="form-group">
                                             <asp:Button ID="btnCancel" CssClass="btn btn-danger btn-block btn-lg" PostBackUrl="~/Home.aspx" runat="server" Text="Cancel" />

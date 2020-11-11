@@ -126,9 +126,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassRoster.aspx" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="CoordinatorAddSchool.aspx" />
+    <Content Include="CoordinatorAddSchoolConfirmation.aspx" />
     <Content Include="CoordinatorChat.aspx" />
     <Content Include="CoordinatorEventDetails.aspx" />
-    <Content Include="CoordinatorEventInformation.aspx" />
+    <Content Include="CoordinatorItinerary.aspx" />
+    <Content Include="CoordinatorSchoolInfo.aspx" />
+    <Content Include="CoordinatorViewSurveyResults.aspx" />
     <Content Include="CreateConfirmVolunteer.aspx" />
     <Content Include="CreateCoordinator.aspx" />
     <Content Include="CreateCoordinatorSuccess.aspx" />
@@ -1802,6 +1809,8 @@
     <Content Include="Images\jmu-logo.png" />
     <Content Include="Images\register.png" />
     <Content Include="Images\register_student.png" />
+    <Content Include="Images\school-info.png" />
+    <Content Include="Images\school.png" />
     <Content Include="Images\student-roster.png" />
     <Content Include="Images\survey.png" />
     <Content Include="Images\teacher.jpg" />
@@ -1882,18 +1891,19 @@
     <Content Include="StudentChat.aspx" />
     <Content Include="StudentDashboard.aspx" />
     <Content Include="StudentEventDetails.aspx" />
-    <Content Include="StudentEventInformation.aspx" />
+    <Content Include="StudentItinerary.aspx" />
     <Content Include="StudentRoster.aspx" />
     <Content Include="StudentSurvey.aspx" />
+    <Content Include="StudentSurveyConfirmation.aspx" />
     <Content Include="TeacherAccountConfirmation.aspx" />
     <Content Include="TeacherDashboard.aspx" />
     <Content Include="TeacherEventDetails.aspx" />
     <Content Include="TeacherLogin.aspx" />
-    <Content Include="TeacherSelectEvents.aspx" />
+    <Content Include="TeacherItinerary.aspx" />
     <Content Include="TeacherStudentRegistration.aspx" />
     <Content Include="TeacherStudentRegistrationConfirmation.aspx" />
     <Content Include="UpdateTeacherAccountConfirmation.aspx" />
-    <Content Include="UploadProjects.aspx" />
+    <Content Include="StudentUploadProjects.aspx" />
     <Content Include="VolunteerAccountConfirmation.aspx" />
     <Content Include="VolunteerChat.aspx" />
     <Content Include="VolunteerDashboard.aspx" />
@@ -2061,9 +2071,11 @@
     <Content Include="Lab3\View Teacher Roster.aspx" />
     <Content Include="Lab3\ViewSwitcher.ascx" />
     <Content Include="Lab3\VolunteerInformation.aspx" />
+    <Content Include="VolunteerEditProfile.aspx" />
+    <Content Include="VolunteerEditProfileConfirmation.aspx" />
     <Content Include="VolunteerEmailConfirmation.aspx" />
     <Content Include="VolunteerEventDetails.aspx" />
-    <Content Include="VolunteerEventInformation.aspx" />
+    <Content Include="VolunteerItinerary.aspx" />
     <Content Include="VolunteerLogin.aspx" />
     <Content Include="VolunteerRoster.aspx" />
     <Content Include="Web.config" />
@@ -2071,7 +2083,28 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatStartup.cs" />
+    <Compile Include="ChatHub.cs" />
+    <Compile Include="ClassRoster.aspx.cs">
+      <DependentUpon>ClassRoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassRoster.aspx.designer.cs">
+      <DependentUpon>ClassRoster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorAddSchool.aspx.cs">
+      <DependentUpon>CoordinatorAddSchool.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorAddSchool.aspx.designer.cs">
+      <DependentUpon>CoordinatorAddSchool.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorAddSchoolConfirmation.aspx.cs">
+      <DependentUpon>CoordinatorAddSchoolConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorAddSchoolConfirmation.aspx.designer.cs">
+      <DependentUpon>CoordinatorAddSchoolConfirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CoordinatorChat.aspx.cs">
       <DependentUpon>CoordinatorChat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2086,12 +2119,26 @@
     <Compile Include="CoordinatorEventDetails.aspx.designer.cs">
       <DependentUpon>CoordinatorEventDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CoordinatorEventInformation.aspx.cs">
-      <DependentUpon>CoordinatorEventInformation.aspx</DependentUpon>
+    <Compile Include="CoordinatorItinerary.aspx.cs">
+      <DependentUpon>CoordinatorItinerary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CoordinatorEventInformation.aspx.designer.cs">
-      <DependentUpon>CoordinatorEventInformation.aspx</DependentUpon>
+    <Compile Include="CoordinatorItinerary.aspx.designer.cs">
+      <DependentUpon>CoordinatorItinerary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorSchoolInfo.aspx.cs">
+      <DependentUpon>CoordinatorSchoolInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorSchoolInfo.aspx.designer.cs">
+      <DependentUpon>CoordinatorSchoolInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorViewSurveyResults.aspx.cs">
+      <DependentUpon>CoordinatorViewSurveyResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CoordinatorViewSurveyResults.aspx.designer.cs">
+      <DependentUpon>CoordinatorViewSurveyResults.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateConfirmVolunteer.aspx.cs">
       <DependentUpon>CreateConfirmVolunteer.aspx</DependentUpon>
@@ -2368,6 +2415,7 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Startup.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Lab3\Update Students.aspx.cs">
       <DependentUpon>Update Students.aspx</DependentUpon>
@@ -2433,12 +2481,12 @@
     <Compile Include="StudentEventDetails.aspx.designer.cs">
       <DependentUpon>StudentEventDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentEventInformation.aspx.cs">
-      <DependentUpon>StudentEventInformation.aspx</DependentUpon>
+    <Compile Include="StudentItinerary.aspx.cs">
+      <DependentUpon>StudentItinerary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentEventInformation.aspx.designer.cs">
-      <DependentUpon>StudentEventInformation.aspx</DependentUpon>
+    <Compile Include="StudentItinerary.aspx.designer.cs">
+      <DependentUpon>StudentItinerary.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentRoster.aspx.cs">
       <DependentUpon>StudentRoster.aspx</DependentUpon>
@@ -2453,6 +2501,13 @@
     </Compile>
     <Compile Include="StudentSurvey.aspx.designer.cs">
       <DependentUpon>StudentSurvey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentSurveyConfirmation.aspx.cs">
+      <DependentUpon>StudentSurveyConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentSurveyConfirmation.aspx.designer.cs">
+      <DependentUpon>StudentSurveyConfirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherAccountConfirmation.aspx.cs">
       <DependentUpon>TeacherAccountConfirmation.aspx</DependentUpon>
@@ -2482,12 +2537,12 @@
     <Compile Include="TeacherLogin.aspx.designer.cs">
       <DependentUpon>TeacherLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TeacherSelectEvents.aspx.cs">
-      <DependentUpon>TeacherSelectEvents.aspx</DependentUpon>
+    <Compile Include="TeacherItinerary.aspx.cs">
+      <DependentUpon>TeacherItinerary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TeacherSelectEvents.aspx.designer.cs">
-      <DependentUpon>TeacherSelectEvents.aspx</DependentUpon>
+    <Compile Include="TeacherItinerary.aspx.designer.cs">
+      <DependentUpon>TeacherItinerary.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherStudentRegistration.aspx.cs">
       <DependentUpon>TeacherStudentRegistration.aspx</DependentUpon>
@@ -2510,12 +2565,12 @@
     <Compile Include="UpdateTeacherAccountConfirmation.aspx.designer.cs">
       <DependentUpon>UpdateTeacherAccountConfirmation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UploadProjects.aspx.cs">
-      <DependentUpon>UploadProjects.aspx</DependentUpon>
+    <Compile Include="StudentUploadProjects.aspx.cs">
+      <DependentUpon>StudentUploadProjects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UploadProjects.aspx.designer.cs">
-      <DependentUpon>UploadProjects.aspx</DependentUpon>
+    <Compile Include="StudentUploadProjects.aspx.designer.cs">
+      <DependentUpon>StudentUploadProjects.aspx</DependentUpon>
     </Compile>
     <Compile Include="VolunteerAccountConfirmation.aspx.cs">
       <DependentUpon>VolunteerAccountConfirmation.aspx</DependentUpon>
@@ -2531,6 +2586,20 @@
     <Compile Include="VolunteerChat.aspx.designer.cs">
       <DependentUpon>VolunteerChat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VolunteerEditProfile.aspx.cs">
+      <DependentUpon>VolunteerEditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerEditProfile.aspx.designer.cs">
+      <DependentUpon>VolunteerEditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VolunteerEditProfileConfirmation.aspx.cs">
+      <DependentUpon>VolunteerEditProfileConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VolunteerEditProfileConfirmation.aspx.designer.cs">
+      <DependentUpon>VolunteerEditProfileConfirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VolunteerEmailConfirmation.aspx.cs">
       <DependentUpon>VolunteerEmailConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2545,12 +2614,12 @@
     <Compile Include="VolunteerEventDetails.aspx.designer.cs">
       <DependentUpon>VolunteerEventDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VolunteerEventInformation.aspx.cs">
-      <DependentUpon>VolunteerEventInformation.aspx</DependentUpon>
+    <Compile Include="VolunteerItinerary.aspx.cs">
+      <DependentUpon>VolunteerItinerary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VolunteerEventInformation.aspx.designer.cs">
-      <DependentUpon>VolunteerEventInformation.aspx</DependentUpon>
+    <Compile Include="VolunteerItinerary.aspx.designer.cs">
+      <DependentUpon>VolunteerItinerary.aspx</DependentUpon>
     </Compile>
     <Compile Include="VolunteerLogin.aspx.cs">
       <DependentUpon>VolunteerLogin.aspx</DependentUpon>
@@ -2576,6 +2645,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Student_Files\" />
   </ItemGroup>
   <ItemGroup>

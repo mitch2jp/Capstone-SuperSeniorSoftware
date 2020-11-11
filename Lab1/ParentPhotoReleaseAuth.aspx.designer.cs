@@ -42,6 +42,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.RadioButton rdoDontAllow;
 
         /// <summary>
+        /// lblPhotoAuthStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhotoAuthStatus;
+
+        /// <summary>
         /// lblStudentName control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtStudentName;
+
+        /// <summary>
+        /// valStudentName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valStudentName;
 
         /// <summary>
         /// lblGuardianName control.
@@ -78,6 +96,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtGuardianName;
 
         /// <summary>
+        /// valGuardianName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valGuardianName;
+
+        /// <summary>
         /// lblContactNumber control.
         /// </summary>
         /// <remarks>
@@ -96,6 +123,15 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
 
         /// <summary>
+        /// valNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valNumber;
+
+        /// <summary>
         /// lblESig control.
         /// </summary>
         /// <remarks>
@@ -105,13 +141,22 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblESig;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtESig control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtESig;
+
+        /// <summary>
+        /// valESig control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valESig;
 
         /// <summary>
         /// lblDateSigned control.
@@ -130,6 +175,15 @@ namespace Lab1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDateSigned;
+
+        /// <summary>
+        /// valDateSigned control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valDateSigned;
 
         /// <summary>
         /// btnConfirm control.

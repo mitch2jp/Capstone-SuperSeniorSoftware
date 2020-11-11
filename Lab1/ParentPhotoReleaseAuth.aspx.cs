@@ -23,41 +23,75 @@ namespace Lab1
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (rdoAllow.Checked)
+
+            if (!rdoAllow.Checked && !rdoDontAllow.Checked)
             {
-                Session["StudentPhotoReleaseAuth"] = "Yes";
+                lblPhotoAuthStatus.Text = "(Required)";
 
             }
             else
             {
-                Session["StudentPhotoReleaseAuth"] = "No";
+
+                if (rdoAllow.Checked)
+                {
+                    Session["StudentPhotoReleaseAuth"] = "Yes";
+
+                }
+                else
+                {
+                    Session["StudentPhotoReleaseAuth"] = "No";
+                }
+
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlCommand addStudent = new SqlCommand();
+                addStudent.Connection = sqlConnect2;
+                addStudent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
+                    " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID)";
+                addStudent.Parameters.Add(new SqlParameter("@FirstName", Session["StudentFirstName"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@LastName", Session["StudentLastName"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@Age", Session["StudentAge"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@Gender", Session["StudentGender"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@Notes", Session["StudentNotes"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@MealTicket", Session["StudentMealTicket"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@TShirtSize", ""));
+                addStudent.Parameters.Add(new SqlParameter("@TSHirtColor", ""));
+                addStudent.Parameters.Add(new SqlParameter("@TShirtDescription", ""));
+                addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", Session["StudentPhotoReleaseAuth"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", Session["StudentPriorParticipation"].ToString()));
+                addStudent.Parameters.Add(new SqlParameter("@SchoolID", Convert.ToInt32(Session["StudentSchoolID"])));
+                addStudent.Parameters.Add(new SqlParameter("@TeacherID", Convert.ToInt32(Session["StudentTeacherID"])));
+                sqlConnect2.Open();
+                addStudent.ExecuteNonQuery();
+
+                //get the session parent's ID to associate with the newly registered student
+                String getCurrentStudentID = "SELECT StudentID FROM Student WHERE FirstName = @FirstName AND LastName = @LastName";
+                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlCommand command = new SqlCommand();
+                command.Connection = sqlConnection;
+                command.CommandType = CommandType.Text;
+                command.CommandText = getCurrentStudentID;
+                command.Parameters.AddWithValue("@FirstName", Session["StudentFirstName"].ToString());
+                command.Parameters.AddWithValue("@LastName", Session["StudentLastName"].ToString());
+                sqlConnection.Open();
+                int studentID = Convert.ToInt32(command.ExecuteScalar());
+
+                string breakpoint = "";
+
+                SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+                SqlCommand addParentStudent = new SqlCommand();
+                addParentStudent.Connection = sqlConnect3;
+                addParentStudent.CommandText = "INSERT INTO ParentStudent VALUES (@ParentID, @StudentID)";
+                addParentStudent.Parameters.Add(new SqlParameter("@ParentID", Convert.ToInt32(Session["ParentID"])));
+                addParentStudent.Parameters.Add(new SqlParameter("@StudentID", studentID));
+                sqlConnect3.Open();
+                addParentStudent.ExecuteNonQuery();
+
+                Response.Redirect("ParentStudentRegistrationConfirmation.aspx");
+
             }
 
-            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
-            SqlCommand addParent = new SqlCommand();
-            addParent.Connection = sqlConnect2;
-            addParent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
-                " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID, @ParentID)";
-            addParent.Parameters.Add(new SqlParameter("@FirstName", Session["StudentFirstName"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@LastName", Session["StudentLastName"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@Age", Session["StudentAge"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@Gender", Session["StudentGender"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@Notes", Session["StudentNotes"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@MealTicket", Session["StudentMealTicket"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@TShirtSize", "NULL"));
-            addParent.Parameters.Add(new SqlParameter("@TSHirtColor", "NULL"));
-            addParent.Parameters.Add(new SqlParameter("@TShirtDescription", "NULL"));
-            addParent.Parameters.Add(new SqlParameter("@PhotoAuthorization", Session["StudentPhotoReleaseAuth"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@PriorParticipation", Session["StudentPriorParticipation"].ToString()));
-            addParent.Parameters.Add(new SqlParameter("@SchoolID", Convert.ToInt32(Session["StudentSchoolID"])));
-            addParent.Parameters.Add(new SqlParameter("@TeacherID", Convert.ToInt32(Session["StudentTeacherID"])));
-            addParent.Parameters.Add(new SqlParameter("@ParentID", Convert.ToInt32(Session["ParentID"])));
 
-
-            sqlConnect2.Open();
-            addParent.ExecuteNonQuery();
-
-            Response.Redirect("ParentStudentRegistrationConfirmation.aspx");
+            
 
         }
     }
