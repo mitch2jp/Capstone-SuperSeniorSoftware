@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>
-
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -57,6 +56,22 @@
                 </div>
                 <div class="col-md-4">
                     <center>
+                        <h2>Validate Parent(s)</h2>
+                        <img width="150px" height="150px" src="Images/validation.png" />
+                        <br />
+                        <br />
+                        <p class="text-justify">Verify your student's parents for registration authorization</p>
+                        <br />
+                   
+                    <h4>
+                        <asp:Button ID="btnValidateParents" CssClass="btn btn-primary btn-block" PostBackUrl="~/TeacherValidateParents.aspx" runat="server" Text="Validate Parent Registration(s)"  />
+                    </h4>
+                    
+                    </center>
+                </div>
+
+                <div class="col-md-4">
+                    <center>
                         <h2>Itinerary</h2>
                         <img width="150px" height="150px" src="Images/Itinerary_schedule.png" />
                         <br />
@@ -93,6 +108,18 @@
                         <p class="text-justify">View, edit and manage your student's CyberDay information!</p>
                     <h4>
                         <asp:Button ID="btnClassRoster" CssClass="btn btn-primary btn-block" runat="server" PostBackUrl="~/ClassRoster.aspx" Text="View Class Roster" />
+                    </h4>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <center>
+                        <h2>Chaperone Roster</h2>
+                        <img width="150px" height="150px" src="Images/volunteer-list.png" />
+                        <br />
+                        <br />
+                        <p class="text-justify">View, Edit and Manage your class chaperones for CyberDay!</p>
+                    <h4>
+                        <asp:Button ID="btnChaperoneRoster" CssClass="btn btn-primary btn-block" PostBackUrl="~/TeacherChaperoneRoster.aspx" runat="server" Text="View Chaperone Roster" />
                     </h4>
                     </center>
                 </div>

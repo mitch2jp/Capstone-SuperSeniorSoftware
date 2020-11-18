@@ -2,7 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
+
+
+
+
+    <div class="row">
+            <div class="col">
+                <center>
+                    <h2>Step 1: Account Registration </h2>
+
+                </center>
+            </div>
+        </div>
+        <br />
+        <br />
+
+
+    <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="card">
@@ -159,10 +175,20 @@
                         </div>
 
                     <div id="divSchoolInfo" runat="server" class="container-fluid" style="border:1px dashed #000000" visible="false" >
+                        <br />
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <asp:Label ID="lblSchoolName" runat="server" Text="SchoolName"></asp:Label>
+                                            <asp:Label ID="lblSchoolAddInstructions" Font-Bold="true" runat="server" Text="Please enter your school's information: "></asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                        <br />
+                        <br />
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <asp:Label ID="lblSchoolName" runat="server" Text="School Name:"></asp:Label>
                                             <asp:TextBox CssClass="form-control" ID="txtSchoolName" runat="server"></asp:TextBox>
                                             <asp:RequiredFieldValidator ValidationGroup="School" Enabled="false" ID="valSchoolName" ControlToValidate="txtSchoolName" ForeColor="Red" Font-Bold="true" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                             <%--<asp:Label ID="lblSchoolNameStatus" ForeColor="Red" Font-Bold="true" runat="server" Text=""></asp:Label>--%>

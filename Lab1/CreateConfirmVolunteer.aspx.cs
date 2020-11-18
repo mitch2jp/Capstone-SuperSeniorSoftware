@@ -35,11 +35,11 @@ namespace Lab1
                 lblStatus.Text = "Email's do not match!";
 
             }
-            else if (!txtEmail.Text.Contains("@dukes.jmu.edu") || !txtEmail.Text.Contains("@jmu.edu"))
-            {
-                lblStatus.Text = "You must be a JMU student or faculty member to create a volunteer account! (Use your JMU email address)";
+            //else if (!txtEmail.Text.Contains("@dukes.jmu.edu") || !txtEmail.Text.Contains("@jmu.edu"))
+            //{
+            //    lblStatus.Text = "You must be a JMU student or faculty member to create a volunteer account! (Use your JMU email address)";
 
-            }
+            //}
             else
             {
                 Session["VolunteerEmail"] = txtEmail.Text.ToString();

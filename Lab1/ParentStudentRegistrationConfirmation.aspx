@@ -20,6 +20,14 @@
             <div class="col-md-8 mx-auto">
                 <div class="card">
                     <div class="card-body">
+                        <br />
+                            <div class="row">
+                                <div class="col">
+                                    <center><img width="150px" height="150px" src="Images/success.png" />
+                                    </center>
+                                </div>
+                            </div>
+                            <br />
                         <div class="row">
                             <div class="col">
                                 <center>

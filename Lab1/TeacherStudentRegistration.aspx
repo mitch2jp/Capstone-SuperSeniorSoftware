@@ -3,17 +3,35 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/CustomStyleSheet.css" rel="stylesheet" />
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <div class="row">
+            <div class="col">
+                <center>
+                    <h2>Step 1: Student Registration </h2>
+
+                </center>
+            </div>
+        </div>
+        <br />
+        <br />
+
      <div class="container-fluid">
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="card">
                         <div class="card-body">
+                            <br />
                             <div class="row">
                                 <div class="col">
-                                    <center><img width="100px" src="Images/new-user.png" />
+                                    <center><img width="150px" height="150px" src="Images/new-student.png" />
                                     </center>
                                 </div>
                             </div>
+                            <br />
 
                             <div class="row">
                                 <div class="col">
@@ -78,9 +96,11 @@
                                             <asp:ListItem Text="Female"></asp:ListItem>
                                             <asp:ListItem Text="Non-Binary"></asp:ListItem>
                                         </asp:DropDownList>
-                                        <asp:RequiredFieldValidator ID="valGender" ValidationGroup="Student" ControlToValidate="ddlGender" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="valGender"  ControlToValidate="ddlGender" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                     </div>
                             </div>
+                            <br />
+                            <br />
 
                             <%--<div class="row">
                                 <div class="col-md-6">
@@ -98,8 +118,44 @@
                                 </div>
                             </div>--%>
 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblPriorParticipation" runat="server" Text="Has your student participated in CyberDay previously? "></asp:Label>
+                                    </div>
+                                </div>
+                                 <div class="col">
+                                        <asp:DropDownList  ID="ddlPriorParticipation" Width="225" CssClass="form-control" runat="server">
+                                            <asp:ListItem Text="Choose one"></asp:ListItem>
+                                            <asp:ListItem Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="valPriorParticipation" ControlToValidate="ddlPriorParticipation" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+                                    </div>
+                            </div>
+                            <br />
 
-                             <div class="row">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblPhotoAuth" runat="server" Text="Have you recieved signed documentation from the legal parent/guardian of the student authorizing their photo to be taken and published while participating in CyberDay?"></asp:Label>
+                                    </div>
+                                </div>
+                                 <div class="col">
+                                        <asp:DropDownList  ID="ddlPhotoAuth" Width="225" CssClass="form-control" runat="server">
+                                            <asp:ListItem Text="Choose one"></asp:ListItem>
+                                            <asp:ListItem Text="Yes"></asp:ListItem>
+                                            <asp:ListItem Text="No"></asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="valPhotoAuth" ControlToValidate="ddlPhotoAuth" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+                                    </div>
+                            </div>
+                            <br />
+                            <br />
+
+
+
+                             <%--<div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <asp:Label ID="lblPriorParticipation" runat="server" Text="Has your student participated in CyberDay previously? "></asp:Label>
@@ -141,7 +197,7 @@
                                         <asp:Label ID="valPhotoAuth" ForeColor="Red" Font-Bold="true" runat="server" Text=""></asp:Label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
 
 
                             <%--<div class="row">
@@ -185,7 +241,9 @@
                     </div>
                 </div>
             </div>
-     </div>
+         </div>
+    <br />
+    <br />
 
 
 </asp:Content>

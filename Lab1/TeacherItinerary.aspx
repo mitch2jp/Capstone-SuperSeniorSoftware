@@ -106,7 +106,7 @@
             <div class="row">
                 <div class="col mx-auto" style="width:auto">
                     <center>
-                    <asp:Button ID="btnBack" CssClass="btn btn-info btn-block btn-md" Width="250" runat="server" PostBackUrl="~/VolunteerDashboard.aspx" Text="Back to Dashboard " />
+                    <asp:Button ID="btnBack" CssClass="btn btn-info btn-block btn-md" Width="250" runat="server" PostBackUrl="~/TeacherDashboard.aspx" Text="Back to Dashboard " />
                     </center>
                 </div>
             </div>

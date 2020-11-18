@@ -27,7 +27,7 @@
                                 <Columns>  
                                     <asp:TemplateField>  
                                         <ItemTemplate>  
-                                            <asp:Button ID="btn_Edit" CssClass="btn btn-info btn-block btn-sm" runat="server" Text="Edit" CommandName="Edit" />  
+                                            <asp:Button ID="btn_Edit" CssClass="btn btn-info btn-block btn-sm" runat="server"  Text="Edit" CommandName="Edit" />  
                                         </ItemTemplate>  
                                         <EditItemTemplate>  
                                             <asp:Button ID="btn_Update" CssClass="btn btn-success btn-block btn-sm" runat="server" Text="Update" CommandName="Update"/>  

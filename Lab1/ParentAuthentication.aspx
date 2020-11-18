@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="ParentEmailConfirmation.aspx.cs" Inherits="Lab1.EmailConfirmation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="ParentAuthentication.aspx.cs" Inherits="Lab1.ParentAuthentication" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,16 +22,14 @@
                         <br />
                             <div class="row">
                                 <div class="col">
-                                    <center><img width="150px" height="150px" src="Images/email-confirmation.png" />
+                                    <center><img width="150px" height="150px" src="Images/validate.png" />
                                     </center>
                                 </div>
                             </div>
                             <br />
                         <div class="row">
                             <div class="col">
-                                <center>
-                                    <asp:Label ID="lblConfirm" runat="server" Text="" ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>
-                                </center>
+                                    <asp:Label ID="lblPageInstruction" runat="server" Text="Please enter your email address and authentication code to continue:" Font-Bold="true" Font-Size="Large"></asp:Label>
                             </div>
                         </div>
                         <br />
@@ -48,17 +46,25 @@
                         <br />
                         <br />
 
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <asp:Label ID="lblEmail" runat="server" Text="Email Address:  "></asp:Label>
+                                    <asp:TextBox CssClass="form-control" style="text-align:center" ID="txtParentEmail" Width="200" runat="server"></asp:TextBox>
+                                    </center>
+                            </div>
+                        </div>
 
-                        <%--<div class="row">
+                        <div class="row">
                             <div class="col">
                                 <center>
                                     <asp:Label ID="lblRegistrationCode" runat="server" Text="Authentication Code: "></asp:Label>
-                                    <asp:TextBox CssClass="form-control" style="text-align:center" ID="txtAuthCode" Width="200" runat="server"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" style="text-align:center" ID="txtAuthCode" Width="120" runat="server"></asp:TextBox>
                                     </center>
                             </div>
                         </div>
                         <br />
-                        <br />--%>
+                        <br />
                         
                         <div class="row">
                             <div class="col">
@@ -98,5 +104,7 @@
             </div>
         </div>
     </div>
-    
+
+
+
 </asp:Content>

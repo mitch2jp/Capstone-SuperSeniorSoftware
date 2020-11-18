@@ -11,26 +11,17 @@ namespace Lab1
 {
 
 
-    public partial class EmailConfirmation
+    public partial class TeacherValidateParents
     {
 
         /// <summary>
-        /// lblConfirm control.
+        /// grdParentAuthorization control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirm;
-
-        /// <summary>
-        /// lblSucess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSucess;
+        protected global::System.Web.UI.WebControls.GridView grdParentAuthorization;
 
         /// <summary>
         /// lblStatus control.
@@ -42,21 +33,12 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
-        /// btnProceed control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProceed;
-
-        /// <summary>
-        /// btnHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

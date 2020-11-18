@@ -150,22 +150,13 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblPriorParticipation;
 
         /// <summary>
-        /// rdoPriorYes control.
+        /// ddlPriorParticipation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoPriorYes;
-
-        /// <summary>
-        /// rdoPriorNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoPriorNo;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPriorParticipation;
 
         /// <summary>
         /// valPriorParticipation control.
@@ -174,43 +165,7 @@ namespace Lab1
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label valPriorParticipation;
-
-        /// <summary>
-        /// lblMealTicket control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMealTicket;
-
-        /// <summary>
-        /// rdoStudentMealTicketYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoStudentMealTicketYes;
-
-        /// <summary>
-        /// rdoStudentMealTicketNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoStudentMealTicketNo;
-
-        /// <summary>
-        /// valMealTicket control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label valMealTicket;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valPriorParticipation;
 
         /// <summary>
         /// lblSchool control.

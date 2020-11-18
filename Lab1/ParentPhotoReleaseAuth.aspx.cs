@@ -19,64 +19,73 @@ namespace Lab1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["StudentFirstName"] != null && Session["StudentLastName"] != null)
+            {
+                txtStudentName.Text = Session["StudentFirstName"].ToString() + " " + Session["StudentLastName"].ToString();
+
+            }
+
+            if (Session["ParentFirstName"] != null && Session["ParentLastName"] != null)
+            {
+                txtGuardianName.Text = Session["ParentFirstName"].ToString() + " " + Session["ParentLastName"].ToString();
+
+            }
+            if (Session["ParentPhoneNumber"] != null)
+            {
+                txtContactNumber.Text = Session["ParentPhoneNumber"].ToString();
+            }
+
+            
+
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-
-            if (!rdoAllow.Checked && !rdoDontAllow.Checked)
+            if (ddlPhotAutho.Text == "Allow")
             {
-                lblPhotoAuthStatus.Text = "(Required)";
-
+                Session["StudentPhotoReleaseAuth"] = "Yes";
             }
             else
             {
+                Session["StudentPhotoReleaseAuth"] = "No";
+            }
 
-                if (rdoAllow.Checked)
-                {
-                    Session["StudentPhotoReleaseAuth"] = "Yes";
 
-                }
-                else
-                {
-                    Session["StudentPhotoReleaseAuth"] = "No";
-                }
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlCommand addStudent = new SqlCommand();
+            addStudent.Connection = sqlConnect2;
+            addStudent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
+                " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID)";
+            addStudent.Parameters.Add(new SqlParameter("@FirstName", Session["StudentFirstName"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@LastName", Session["StudentLastName"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@Age", Session["StudentAge"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@Gender", Session["StudentGender"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@Notes", Session["StudentNotes"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@MealTicket", Session["StudentMealTicket"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@TShirtSize", ""));
+            addStudent.Parameters.Add(new SqlParameter("@TSHirtColor", ""));
+            addStudent.Parameters.Add(new SqlParameter("@TShirtDescription", ""));
+            addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", Session["StudentPhotoReleaseAuth"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", Session["StudentPriorParticipation"].ToString()));
+            addStudent.Parameters.Add(new SqlParameter("@SchoolID", Convert.ToInt32(Session["StudentSchoolID"])));
+            addStudent.Parameters.Add(new SqlParameter("@TeacherID", Convert.ToInt32(Session["StudentTeacherID"])));
+            sqlConnect2.Open();
+            addStudent.ExecuteNonQuery();
 
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
-                SqlCommand addStudent = new SqlCommand();
-                addStudent.Connection = sqlConnect2;
-                addStudent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
-                    " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID)";
-                addStudent.Parameters.Add(new SqlParameter("@FirstName", Session["StudentFirstName"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@LastName", Session["StudentLastName"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@Age", Session["StudentAge"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@Gender", Session["StudentGender"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@Notes", Session["StudentNotes"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@MealTicket", Session["StudentMealTicket"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@TShirtSize", ""));
-                addStudent.Parameters.Add(new SqlParameter("@TSHirtColor", ""));
-                addStudent.Parameters.Add(new SqlParameter("@TShirtDescription", ""));
-                addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", Session["StudentPhotoReleaseAuth"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", Session["StudentPriorParticipation"].ToString()));
-                addStudent.Parameters.Add(new SqlParameter("@SchoolID", Convert.ToInt32(Session["StudentSchoolID"])));
-                addStudent.Parameters.Add(new SqlParameter("@TeacherID", Convert.ToInt32(Session["StudentTeacherID"])));
-                sqlConnect2.Open();
-                addStudent.ExecuteNonQuery();
+            //get the session parent's ID to associate with the newly registered student
+            String getCurrentStudentID = "SELECT StudentID FROM Student WHERE FirstName = @FirstName AND LastName = @LastName";
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlCommand command = new SqlCommand();
+            command.Connection = sqlConnection;
+            command.CommandType = CommandType.Text;
+            command.CommandText = getCurrentStudentID;
+            command.Parameters.AddWithValue("@FirstName", Session["StudentFirstName"].ToString());
+            command.Parameters.AddWithValue("@LastName", Session["StudentLastName"].ToString());
+            sqlConnection.Open();
+            int studentID = Convert.ToInt32(command.ExecuteScalar());
 
-                //get the session parent's ID to associate with the newly registered student
-                String getCurrentStudentID = "SELECT StudentID FROM Student WHERE FirstName = @FirstName AND LastName = @LastName";
-                SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
-                SqlCommand command = new SqlCommand();
-                command.Connection = sqlConnection;
-                command.CommandType = CommandType.Text;
-                command.CommandText = getCurrentStudentID;
-                command.Parameters.AddWithValue("@FirstName", Session["StudentFirstName"].ToString());
-                command.Parameters.AddWithValue("@LastName", Session["StudentLastName"].ToString());
-                sqlConnection.Open();
-                int studentID = Convert.ToInt32(command.ExecuteScalar());
-
-                string breakpoint = "";
-
+            if (Session["ParentVolunteer"] != null)
+            {
                 SqlConnection sqlConnect3 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand addParentStudent = new SqlCommand();
                 addParentStudent.Connection = sqlConnect3;
@@ -91,7 +100,13 @@ namespace Lab1
             }
 
 
-            
+            Response.Redirect("ParentStudentRegistrationConfirmation.aspx");
+
+
+
+
+
+
 
         }
     }

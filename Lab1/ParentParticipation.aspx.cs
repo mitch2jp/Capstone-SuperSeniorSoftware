@@ -193,6 +193,7 @@ namespace Lab1
             }
             else if (rdoParentParticipateNo.Checked)
             {
+                Session["ParentVolunteer"] = false;
                 Response.Redirect("ParentPhotoReleaseAuth.aspx");
             }
             else

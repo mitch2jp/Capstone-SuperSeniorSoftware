@@ -6,7 +6,7 @@
     <div class="row">
             <div class="col">
                 <center>
-                    <h2>Step 1: Parent Information </h2>
+                    <h2>Step 1: Parent Registration </h2>
 
                 </center>
             </div>
@@ -21,8 +21,14 @@
                 <div class="col-md-8 mx-auto">
                     <div class="card">
                         <div class="card-body">
-
-
+                            <br />
+                            <div class="row">
+                                <div class="col">
+                                    <center><img width="150px" height="150px" src="Images/email.png" />
+                                    </center>
+                                </div>
+                            </div>
+                            <br />
                             <div class="row">
                                 <div class="col">
                                     <asp:Label ID="lblPageInstructions" runat="server" Font-Bold="true" Text="Please enter your email and the following information to continue the registration process: "></asp:Label>
@@ -34,25 +40,17 @@
                             <div class="row">
                                 <div class="col">
                                     <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>
-                                </div>
-                                <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtFirstName" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="valFirstName" ControlToValidate="txtFirstName" runat="server" Text ="(Required)" ErrorMessage="" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
                                 </div>
-                            </div>
-                            <br />
-
-                            <div class="row">
                                 <div class="col">
                                     <asp:Label ID="lblLastName" runat="server" Text="Last Name: "></asp:Label>
-
-                                </div>
-                                <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtLastName" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="valLastName" ControlToValidate="txtLastName" runat="server" Text="(Required)" ErrorMessage="" ForeColor="Red" Font-Bold="true"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
-                             <br />
+                            <br />
+
 
                             <div class="row">
                                 <div class="col">
@@ -133,9 +131,6 @@
                             </div>
                              <br />
                             <br />
-
-
-
                             <div class="row">
                                 <div class="col">
                                     <center>
@@ -155,70 +150,4 @@
             </div>
      </div>
 
-
-
-
-
-    <%--<div>
-            <asp:Table  runat ="server" HorizontalAlign="Center">
-                <asp:TableRow HorizontalAlign="Center">
-                    <asp:TableCell HorizontalAlign="Center" >
-                        <asp:Label ID="lblPageInstructions" runat="server" Text="Please enter the following information " Font-Bold ="true"  ></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-            <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" BorderStyle ="Solid" Height="232px" Width="518px"  >
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblLastName" runat="server" Text="Last Name:  "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtLastName" runat="server" ></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblEmail" runat="server" Text="Email Adress: "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblVerifyEmail" runat="server" Text="Verify Email Adress: "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="txtVerifyEmail" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell ColumnSpan="2">
-                        <asp:Label ID="lblStatus" runat="server" Text="" ForeColor="Red" FontBold="true"></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="lblTeachers" runat="server" Text="Already registered? "></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:LinkButton ID="lnkBtn" runat="server" OnClick="lnkBtn_Click1" PostBackUrl="">Login</asp:LinkButton>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-        </div>--%>
 </asp:Content>

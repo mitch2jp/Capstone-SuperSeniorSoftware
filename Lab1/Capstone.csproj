@@ -1804,21 +1804,28 @@
     <Content Include="Images\computer1.png" />
     <Content Include="Images\computer2.png" />
     <Content Include="Images\edit-profile.png" />
+    <Content Include="Images\email-confirmation.png" />
+    <Content Include="Images\email.png" />
     <Content Include="Images\Itinerary_schedule.png" />
     <Content Include="Images\jmu-cover.png" />
     <Content Include="Images\jmu-logo.png" />
+    <Content Include="Images\new-student.png" />
     <Content Include="Images\register.png" />
     <Content Include="Images\register_student.png" />
     <Content Include="Images\school-info.png" />
     <Content Include="Images\school.png" />
     <Content Include="Images\student-roster.png" />
+    <Content Include="Images\success.png" />
     <Content Include="Images\survey.png" />
     <Content Include="Images\teacher.jpg" />
     <Content Include="Images\teachers.png" />
     <Content Include="Images\upload.png" />
     <Content Include="Images\upload_folder.png" />
     <Content Include="Images\user-profile.jpg" />
+    <Content Include="Images\validate.png" />
+    <Content Include="Images\validation.png" />
     <Content Include="Images\volunteer-list.png" />
+    <Content Include="Images\warning.png" />
     <Content Include="Lab3\Add a Student Page.aspx" />
     <Content Include="Lab3\Add a Teacher.aspx" />
     <Content Include="Lab3\Bag Toss Information Page.aspx" />
@@ -1838,6 +1845,7 @@
     <Content Include="CreateEventSuccess.aspx" />
     <Content Include="css\CustomStyleSheet.css" />
     <Content Include="Lab3\EditStudentInfo.aspx" />
+    <Content Include="ParentAuthentication.aspx" />
     <Content Include="ParentEmailConfirmation.aspx" />
     <Content Include="Lab3\Event Information.aspx" />
     <Content Include="Lab3\Event Sign Up Page.aspx" />
@@ -1896,12 +1904,14 @@
     <Content Include="StudentSurvey.aspx" />
     <Content Include="StudentSurveyConfirmation.aspx" />
     <Content Include="TeacherAccountConfirmation.aspx" />
+    <Content Include="TeacherChaperoneRoster.aspx" />
     <Content Include="TeacherDashboard.aspx" />
     <Content Include="TeacherEventDetails.aspx" />
     <Content Include="TeacherLogin.aspx" />
     <Content Include="TeacherItinerary.aspx" />
     <Content Include="TeacherStudentRegistration.aspx" />
     <Content Include="TeacherStudentRegistrationConfirmation.aspx" />
+    <Content Include="TeacherValidateParents.aspx" />
     <Content Include="UpdateTeacherAccountConfirmation.aspx" />
     <Content Include="StudentUploadProjects.aspx" />
     <Content Include="VolunteerAccountConfirmation.aspx" />
@@ -2290,6 +2300,13 @@
     <Compile Include="Lab3\EditStudentInfo.aspx.designer.cs">
       <DependentUpon>EditStudentInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ParentAuthentication.aspx.cs">
+      <DependentUpon>ParentAuthentication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParentAuthentication.aspx.designer.cs">
+      <DependentUpon>ParentAuthentication.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ParentEmailConfirmation.aspx.cs">
       <DependentUpon>ParentEmailConfirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2516,6 +2533,13 @@
     <Compile Include="TeacherAccountConfirmation.aspx.designer.cs">
       <DependentUpon>TeacherAccountConfirmation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TeacherChaperoneRoster.aspx.cs">
+      <DependentUpon>TeacherChaperoneRoster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherChaperoneRoster.aspx.designer.cs">
+      <DependentUpon>TeacherChaperoneRoster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeacherDashboard.aspx.cs">
       <DependentUpon>TeacherDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2557,6 +2581,13 @@
     </Compile>
     <Compile Include="TeacherStudentRegistrationConfirmation.aspx.designer.cs">
       <DependentUpon>TeacherStudentRegistrationConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherValidateParents.aspx.cs">
+      <DependentUpon>TeacherValidateParents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherValidateParents.aspx.designer.cs">
+      <DependentUpon>TeacherValidateParents.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateTeacherAccountConfirmation.aspx.cs">
       <DependentUpon>UpdateTeacherAccountConfirmation.aspx</DependentUpon>

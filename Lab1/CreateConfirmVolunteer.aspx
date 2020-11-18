@@ -38,6 +38,8 @@
                                 </div>
                                 <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="valEmail" ControlToValidate="txtEmail" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
+
 
                                 </div>
                             </div>
@@ -46,11 +48,11 @@
                             <div class="row">
                                 <div class="col">
                                     <asp:Label ID="lblVerifyEmail" runat="server" Text="Verify Email Address:  "></asp:Label>
-
+                                    
                                 </div>
                                 <div class="col">
                                     <asp:TextBox CssClass="form-control" ID="txtVerifyEmail" runat="server"></asp:TextBox>
-
+                                    <asp:RequiredFieldValidator ID="valVerifyEmail" ControlToValidate="txtVerifyEmail" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                              <br />

@@ -141,24 +141,8 @@ namespace Lab1
 
 
 
-            if (!rdoPriorYes.Checked && !rdoPriorNo.Checked)
-            {
-                valPriorParticipation.Text = "(Required)";
-
-            }
-            else if (!rdoStudentMealTicketNo.Checked && !rdoStudentMealTicketYes.Checked)
-            {
-                valMealTicket.Text = "(Required)";
-
-            }
-            //else if (!rdoParentParticipateYes.Checked && !rdoParentParticipateNo.Checked)
-            //{
-            //    lblParentRegistrationStatus.ForeColor = Color.Red;
-            //    lblParentRegistrationStatus.Text = "(Required)";
-
-            //}
-            else
-            {
+            
+           
 
 
                 SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
@@ -189,37 +173,17 @@ namespace Lab1
                 Session["StudentAge"] = txtAge.Text;
                 Session["StudentGender"] = ddlGender.Text;
                 Session["StudentNotes"] = txtNotes.Text;
-
-                if (rdoPriorYes.Checked)
-                {
-                    Session["StudentPriorParticipation"] = "Yes";
-                }
-                else
-                {
-                    Session["StudentPriorParticipation"] = "No";
-                }
-
-
-                if (rdoStudentMealTicketYes.Checked)
-                {
-                    Session["StudentMealTicket"] = "Yes";
-
-                }
-                else
-                {
-                    Session["StudentMealTicket"] = "No";
-                }
-
+                Session["StudentPriorParticipation"] = ddlPriorParticipation.Text;
+                Session["StudentMealTicket"] = "Yes";
                 Session["StudentSchoolID"] = schoolID;
                 Session["StudentTeacherID"] = teacherID; ;
                 
-
 
                 Response.Redirect("ParentParticipation.aspx");
 
 
 
-            }
+            
 
             
 

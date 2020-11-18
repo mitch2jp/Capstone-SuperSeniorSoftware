@@ -14,14 +14,14 @@
         <br />
     
     
-        <div class="container">
+        <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                        <center><img width="100px" src="Images/new-user.png" />
+                                        <center><img width="100px" src="Images/new-student.png" />
                                         </center>
                                     </div>
                                 </div>
@@ -109,35 +109,23 @@
                                     </div>
                                 </div>--%>
 
-                                 <div class="row">
+                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <asp:Label ID="lblPriorParticipation" runat="server" Text="Has your student participated in CyberDay previously? "></asp:Label>
                                         </div>
                                     </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:RadioButton ValidationGroup="PriorParticipate" GroupName="PriorParticipation" ID="rdoPriorYes" runat="server" Text="Yes"/>
-                                            <asp:RadioButton ValidationGroup="PriorParticipate" GroupName="PriorParticipation" ID="rdoPriorNo" runat="server" Text="No"/>
-                                            <asp:Label ID="valPriorParticipation" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
+                                     <div class="col">
+                                            <asp:DropDownList  ID="ddlPriorParticipation" Width="225" CssClass="form-control" runat="server">
+                                                <asp:ListItem Text="Choose one"></asp:ListItem>
+                                                <asp:ListItem Text="Yes"></asp:ListItem>
+                                                <asp:ListItem Text="No"></asp:ListItem>
+                                            </asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="valPriorParticipation" ControlToValidate="ddlPriorParticipation" InitialValue="Choose one" ForeColor="Red" Text="(Required)" Font-Bold="true" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:Label ID="lblMealTicket" runat="server" Text="Will your student require a meal ticket? "></asp:Label>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketYes" runat="server" Text="Yes" />
-                                            <asp:RadioButton GroupName="StudentMealTicket" ID="rdoStudentMealTicketNo" runat="server" Text="No" />
-                                            <asp:Label ID="valMealTicket" runat="server" ForeColor="Red" Font-Bold="true" Text=""></asp:Label>
-                                        </div>
-                                    </div>
                                 </div>
                                 <br />
+                                
 
                             
                                <%-- <div class="row">

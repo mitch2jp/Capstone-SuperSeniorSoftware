@@ -20,6 +20,62 @@ namespace Lab1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            //if (Session["TeacherUsername"] != null)
+            //{
+            //    txtUsername.Text = Session["TeacherUsername"].ToString();
+
+            //}
+            //if (Session["TeacherPassword"] != null)
+            //{
+            //    txtPassword.Text = Session["TeacherPassword"].ToString();
+
+            //}
+            //if (Session["TeacherVerifyPassword"] != null)
+            //{
+            //    txtVerifyPassword.Text = Session["TeacherVerifyPassword"].ToString();
+
+            //}
+            //if (Session["TeacherFirstName"] != null)
+            //{
+            //    txtFirstName.Text = Session["TeacherFirstName"].ToString();
+            //}
+            //if (Session["TeacherLastName"] != null)
+            //{
+            //    txtLastName.Text = Session["TeacherLastName"].ToString();
+            //}
+            //if (Session["TeacherEmailAddress"] != null)
+            //{
+            //    txtEmail.Text = Session["TeacherEmailAddress"].ToString();
+            //}
+            //if (Session["TeacherPhoneNumber"] != null)
+            //{
+            //    txtPhoneNumber.Text = Session["TeacherPhoneNumber"].ToString();
+            //}
+            //if (Session["TeacherGradeTaught"] != null)
+            //{
+            //    ddlGradeTaught.Text = Session["TeacherGradeTaught"].ToString();
+            //}
+            //if (Session["TeacherSubjectTaught"] != null)
+            //{
+            //    txtSubjectTaught.Text = Session["TeacherSubjectTaught"].ToString();
+            //}
+            //if (Session["TeacherMealTicket"] != null)
+            //{
+            //    if (Session["TeacherMealTicket"].ToString() == "Yes")
+            //    {
+            //        rdoMealTicketYes.Checked = true;
+            //    }
+            //    else if (Session["TeacherMealTicket"].ToString() == "No")
+            //    {
+            //        rdoMealTicketNo.Checked = true;
+            //    }
+            //}
+           
+
+
+
+
+
             valSchoolName.Enabled = false;
             valSchoolPhone.Enabled = false;
             valAddress.Enabled = false;
@@ -38,7 +94,6 @@ namespace Lab1
             divSchoolInfo.Visible = false;
 
             //populate the drop down lists 
-            ddlSchool.Items.Insert(0, "Choose One");
 
             string sqlQuerySchool = "Select SchoolName FROM School";
 
@@ -73,7 +128,26 @@ namespace Lab1
         protected void btnAddSchool_Click(object sender, EventArgs e)
         {
 
-            dropDownListHandler(0);
+            Session["TeacherUsername"] = txtUsername.Text;
+            Session["TeacherPassword"] = txtPassword.Text;
+            Session["TeacherVerifyPassword"] = txtVerifyPassword.Text;
+            Session["TeacherFirstName"] = txtFirstName.Text;
+            Session["TeacherLastName"] = txtLastName.Text;
+            Session["TeacherEmailAddress"] = txtEmail.Text;
+            Session["TeacherPhoneNumber"] = txtPhoneNumber.Text;
+            Session["TeacherGradeTaught"] = ddlGradeTaught.SelectedValue;
+            Session["TeacherSubjectTaught"] = txtSubjectTaught.Text;
+            if (rdoMealTicketYes.Checked)
+            {
+                Session["TeacherMealTicket"] = "Yes";
+
+            }
+            else
+            {
+                Session["TeacherMealTicket"] = "Yes";
+            }
+
+            
 
 
             //add the newly added school to the drop down
@@ -105,16 +179,17 @@ namespace Lab1
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
 
-            
 
+            string teacher = "Teacher";
             //check to see if the entered username already is already taken
-            String usernameCheck = "SELECT COUNT(1) FROM Pass WHERE Username = @Username";
+            String usernameCheck = "SELECT COUNT(1) FROM Pass WHERE Username = @Username AND Role = @Role";
             SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
             SqlCommand loginCommand = new SqlCommand();
             loginCommand.Connection = sqlConnection;
             loginCommand.CommandType = CommandType.Text;
             loginCommand.CommandText = usernameCheck;
             loginCommand.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            loginCommand.Parameters.AddWithValue("@Role", teacher);
             sqlConnection.Open();
             int count = Convert.ToInt32(loginCommand.ExecuteScalar());
 
@@ -131,19 +206,19 @@ namespace Lab1
 
 
 
-            //validation checks and submission
-            if (count == 1)
-            {
-                lblUsernameStatus.Text = "Username is already taken!";
+            ////validation checks and submission
+            //if (count == 1)
+            //{
+            //    lblUsernameStatus.Text = "Username is already taken!";
 
-            }
-            else if (txtPassword.Text != txtVerifyPassword.Text)
+            //}
+            if (txtPassword.Text != txtVerifyPassword.Text)
             {
                 lblPasswordStatus.Text = "Passwords do not match!";
 
             }
             
-            else if (emailCount == 1)
+            else if(emailCount == 1)
             {
                 lblEmailStatus.Text = "There is already an account associated with this email!";
 
@@ -181,14 +256,14 @@ namespace Lab1
 
 
                 //insert the new teacher record into the AUTH_Local pass table with the hashed password
-                string teacher = "Teacher";
+                string teacher2 = "Teacher";
                 SqlConnection sqlConnect = new SqlConnection(WebConfigurationManager.ConnectionStrings["AUTH_Local"].ToString());
                 SqlCommand setPass = new SqlCommand();
                 setPass.Connection = sqlConnect;
                 setPass.CommandText = "INSERT INTO Pass VALUES (@Username, @Role, @Password)";
                 setPass.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
                 setPass.Parameters.Add(new SqlParameter("@Password", PasswordHash.HashPassword(HttpUtility.HtmlEncode(txtPassword.Text))));
-                setPass.Parameters.Add(new SqlParameter("@Role", teacher));
+                setPass.Parameters.Add(new SqlParameter("@Role", teacher2));
 
                 sqlConnect.Open();
                 setPass.ExecuteNonQuery();
@@ -199,7 +274,7 @@ namespace Lab1
                 SqlCommand addTeacher = new SqlCommand();
                 addTeacher.Connection = sqlConnect2;
                 addTeacher.CommandText = "INSERT INTO Teacher VALUES (@Username, @FirstName, @LastName, @EmailAddress, @PhoneNumber, @GradeTaught," +
-                    "@SubjectTaught, @MealTicket, @TShirtSize, @TSHirtColor, @TShirtDescription, @SchoolID)";
+                    "@SubjectTaught, @MealTicket, @TShirtSize, @TSHirtColor, @TShirtDescription, @TeacherEventID, @SchoolID)";
 
                 addTeacher.Parameters.Add(new SqlParameter("@Username", HttpUtility.HtmlEncode(txtUsername.Text)));
                 addTeacher.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
@@ -219,6 +294,7 @@ namespace Lab1
                 addTeacher.Parameters.Add(new SqlParameter("@TShirtSize", "NULL"));
                 addTeacher.Parameters.Add(new SqlParameter("@TSHirtColor", "NULL"));
                 addTeacher.Parameters.Add(new SqlParameter("@TShirtDescription", "NULL"));
+                addTeacher.Parameters.Add(new SqlParameter("@TeacherEventID", GenerateTEID()));
                 addTeacher.Parameters.Add(new SqlParameter("@SchoolID", schoolID));
                 sqlConnect2.Open();
                 addTeacher.ExecuteNonQuery();
@@ -255,7 +331,6 @@ namespace Lab1
                 }
                 Session["TeacherSchool"] = ddlSchool.Text;
 
-                string breakpoint2 = "";
 
                 Response.Redirect("TeacherAccountConfirmation.aspx");
 
@@ -330,6 +405,18 @@ namespace Lab1
             dropDownListHandler(0);
 
 
+        }
+        public string GenerateTEID()
+        {
+            string teacherTEID;
+
+            int min = 1000;
+            int max = 9999;
+            Random rdm = new Random();
+
+            teacherTEID = "TEID" + "-" + rdm.Next(min, max);
+
+            return teacherTEID;
         }
     }
 }

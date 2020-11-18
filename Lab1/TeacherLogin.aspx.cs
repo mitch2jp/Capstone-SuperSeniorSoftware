@@ -212,6 +212,15 @@ namespace Lab1
             getSchoolName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
             string schoolName = getSchoolName.ExecuteScalar().ToString();
 
+            String queryTEID = "SELECT TeacherEventID FROM Teacher WHERE Username = @Username";
+            SqlCommand getTEID = new SqlCommand();
+            getTEID.Connection = sqlConnection2;
+            getTEID.CommandType = CommandType.Text;
+            getTEID.CommandText = queryTEID;
+            getTEID.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string teacherEventID = getTEID.ExecuteScalar().ToString();
+
+
 
             //save user session variables in case they want to edit or change profile info
             Session["TeacherID"] = teacherID;
@@ -226,8 +235,9 @@ namespace Lab1
             Session["TeacherSubjectTaught"] = subjectTaught;
             Session["TeacherMealTicket"] = mealTicket;
             Session["TeacherSchool"] = schoolName;
+            Session["TeacherEventID"] = teacherEventID;
 
-            string breakpoint = "";
+            string breakpoint2 = "";
 
             sqlConnection2.Close();
 
@@ -321,6 +331,14 @@ namespace Lab1
             getSchoolName.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
             string schoolName = getSchoolName.ExecuteScalar().ToString();
 
+            String queryTEID = "SELECT TeacherEventID FROM Teacher WHERE Username = @Username";
+            SqlCommand getTEID = new SqlCommand();
+            getTEID.Connection = sqlConnection2;
+            getTEID.CommandType = CommandType.Text;
+            getTEID.CommandText = queryTEID;
+            getTEID.Parameters.AddWithValue("@Username", HttpUtility.HtmlEncode(txtUsername.Text));
+            string teacherEventID = getTEID.ExecuteScalar().ToString();
+
 
             //save user session variables in case they want to edit or change profile info
             Session["TeacherID"] = teacherID;
@@ -335,6 +353,7 @@ namespace Lab1
             Session["TeacherSubjectTaught"] = subjectTaught;
             Session["TeacherMealTicket"] = mealTicket;
             Session["TeacherSchool"] = schoolName;
+            Session["TeacherEventID"] = teacherEventID;
 
             string breakpoint = "";
 

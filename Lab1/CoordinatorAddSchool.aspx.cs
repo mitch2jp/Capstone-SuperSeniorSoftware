@@ -25,7 +25,7 @@ namespace Lab1
 
             //check to see if the school already exists in the DB
             String querySchool = "SELECT COUNT(1) FROM School WHERE SchoolName = @SchoolName";
-            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+            SqlConnection sqlConnection = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
             SqlCommand getSchool = new SqlCommand();
             getSchool.Connection = sqlConnection;
             getSchool.CommandType = CommandType.Text;
@@ -45,7 +45,7 @@ namespace Lab1
 
 
                 //add the newly added school to the drop down
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_AWS"].ToString());
+                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
                 SqlCommand addSchool = new SqlCommand();
                 addSchool.Connection = sqlConnect2;
                 addSchool.CommandText = "INSERT INTO School VALUES (@SchoolName, @PhoneNumber, @PrincipalName, @PrincipalEmail," +

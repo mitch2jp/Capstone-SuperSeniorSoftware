@@ -23,7 +23,7 @@
                                 <div class="col">
                                     
                                         <h4 class="font-weight-bold">Dear Parent/Guardian:</h4>
-                                        <p>During the school year, we take photographs of school activities involving students to share the school's positive vibe and updates.
+                                        <p>During CyberDay, we may take photographs of school activities involving students to share and/or advertise  CyberDay experiences and updates.
                                             By which incidentally, some photographs may capture your child's participation, directly or indirectly.</p>
                                         <br />
                                         <p>These photos may be published through our website, social media pages, news bulletins, billboards, and ads.</p>
@@ -42,8 +42,20 @@
                                         <asp:Label ID="lblPhotoConsent" runat="server" Font-Bold="true" Text="Photo Release Consent: "></asp:Label>
                                 </div>
                             </div>
-
+                            <br />
                             <div class="row">
+                                <div class="col">
+                                        <asp:Label ID="lblPhotoAuth" runat="server"  Text="I hereby _________________ the reproduction and publication of my child's photograph(s) "></asp:Label>
+                                </div>
+                                <div class="col">
+                                     <asp:DropDownList  ID="ddlPhotAutho" Width="225" CssClass="form-control" runat="server">
+                                                <asp:ListItem Text="Allow"></asp:ListItem>
+                                                <asp:ListItem Text="Do Not Allow"></asp:ListItem>
+                                            </asp:DropDownList>
+                                </div>
+                            </div>
+
+                            <%--<div class="row">
                                 <div class="col">
                                         <asp:RadioButton  ID="rdoAllow" runat="server" GroupName="PhotoAuth" Text="  I hereby allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
                                 </div>
@@ -53,7 +65,7 @@
                                 <div class="col">
                                         <asp:RadioButton  ID="rdoDontAllow" runat="server" GroupName="PhotoAuth" Text="  I do NOT allow the reproduction and publication of my child's photograph(s) "></asp:RadioButton>
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="row">
                                 <div class="col">
                                     <asp:Label ID="lblPhotoAuthStatus" Font-Bold="true" ForeColor="Red" runat="server" Text=""></asp:Label>
@@ -72,7 +84,6 @@
 
                             <div class="row">
                                 <div class="col">
-                                    
                                         <asp:Label ID="lblGuardianName" runat="server" Text="Your Name (Name of Guardian): "></asp:Label>
                                         <asp:TextBox CssClass="form-control" ID="txtGuardianName" runat="server" Width="500"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="valGuardianName" ControlToValidate="txtGuardianName" Font-Bold="true" ForeColor="Red" Text="(Required)" runat="server" ErrorMessage=""></asp:RequiredFieldValidator>

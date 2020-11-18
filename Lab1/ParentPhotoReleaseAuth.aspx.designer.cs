@@ -24,22 +24,22 @@ namespace Lab1
         protected global::System.Web.UI.WebControls.Label lblPhotoConsent;
 
         /// <summary>
-        /// rdoAllow control.
+        /// lblPhotoAuth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoAllow;
+        protected global::System.Web.UI.WebControls.Label lblPhotoAuth;
 
         /// <summary>
-        /// rdoDontAllow control.
+        /// ddlPhotAutho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdoDontAllow;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPhotAutho;
 
         /// <summary>
         /// lblPhotoAuthStatus control.

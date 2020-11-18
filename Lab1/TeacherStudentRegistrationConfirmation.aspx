@@ -3,20 +3,41 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div class="row">
+            <div class="col">
+                <center>
+                    <h2>Step 2: Confirmation </h2>
+
+                </center>
+            </div>
+        </div>
+        <br />
+        <br />
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="card">
                     <div class="card-body">
+                        <br />
+                            <div class="row">
+                                <div class="col">
+                                    <center><img width="150px" height="150px" src="Images/success.png" />
+                                    </center>
+                                </div>
+                            </div>
+                            <br />
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <asp:Label ID="lblSuccess" runat="server" Text="Student sucessfully registered for CyberDay events." ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>
+                                    <asp:Label ID="lblSuccess" runat="server" Text="Student sucessfully registered for CyberDay!" ForeColor="Green" Font-Bold="true" Font-Size="Large"></asp:Label>
                                 </center>
                             </div>
                         </div>
                         <br />
                         <br />
+                        <br />
+
                         
 
                         <div class="row">

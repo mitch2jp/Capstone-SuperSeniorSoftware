@@ -95,80 +95,27 @@ namespace Lab1
 
 
 
-            if (!rdoPriorNo.Checked && !rdoPriorYes.Checked)
-            {
-                valPriorParticipation.Text = "(Required)";
 
-            }
-            else if (!rdoMealYes.Checked && !rdoMealNo.Checked)
-            {
-                valMealTicket.Text = "(Required)";
-
-            }
-            else
-            {
-
-                SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
-                SqlCommand addStudent = new SqlCommand();
-                addStudent.Connection = sqlConnect2;
-                addStudent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
-                    " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID)";
-                addStudent.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
-                addStudent.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtLastName.Text)));
-                addStudent.Parameters.Add(new SqlParameter("@Age", HttpUtility.HtmlEncode(txtAge.Text)));
-                addStudent.Parameters.Add(new SqlParameter("@Gender", HttpUtility.HtmlEncode(ddlGender.Text)));
-                addStudent.Parameters.Add(new SqlParameter("@Notes", HttpUtility.HtmlEncode(txtNotes.Text)));
-                if (rdoMealNo.Checked)
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@MealTicket", "No"));
-
-                }
-                else
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@MealTicket", "Yes"));
-                }
-                addStudent.Parameters.Add(new SqlParameter("@TShirtSize", ""));
-                addStudent.Parameters.Add(new SqlParameter("@TSHirtColor", ""));
-                addStudent.Parameters.Add(new SqlParameter("@TShirtDescription", ""));
-
-                if (rdoAuthYes.Checked)
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", "Yes"));
-                }
-                else
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", "No"));
-                }
-
-                if (rdoPriorYes.Checked)
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", "Yes"));
-
-                }
-                else
-                {
-                    addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", "No"));
-                }
-
-                addStudent.Parameters.Add(new SqlParameter("@SchoolID", schoolID));
-                addStudent.Parameters.Add(new SqlParameter("@TeacherID", teacherID));
-
-
-
-                sqlConnect2.Open();
-                addStudent.ExecuteNonQuery();
-
-
-
-
-
-
-
-
-
-            }
-
-
+            SqlConnection sqlConnect2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["CyberDay_Local"].ToString());
+            SqlCommand addStudent = new SqlCommand();
+            addStudent.Connection = sqlConnect2;
+            addStudent.CommandText = "INSERT INTO Student VALUES (@FirstName, @LastName, @Age, @Gender, @Notes, @MealTicket, @TShirtSize," +
+                " @TSHirtColor, @TShirtDescription, @PhotoAuthorization, @PriorParticipation, @SchoolID, @TeacherID)";
+            addStudent.Parameters.Add(new SqlParameter("@FirstName", HttpUtility.HtmlEncode(txtFirstName.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@LastName", HttpUtility.HtmlEncode(txtLastName.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@Age", HttpUtility.HtmlEncode(txtAge.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@Gender", HttpUtility.HtmlEncode(ddlGender.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@Notes", HttpUtility.HtmlEncode(txtNotes.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@MealTicket", "Yes"));
+            addStudent.Parameters.Add(new SqlParameter("@TShirtSize", ""));
+            addStudent.Parameters.Add(new SqlParameter("@TSHirtColor", ""));
+            addStudent.Parameters.Add(new SqlParameter("@TShirtDescription", ""));
+            addStudent.Parameters.Add(new SqlParameter("@PhotoAuthorization", HttpUtility.HtmlEncode(ddlPhotoAuth.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@PriorParticipation", HttpUtility.HtmlEncode(ddlPriorParticipation.Text)));
+            addStudent.Parameters.Add(new SqlParameter("@SchoolID", schoolID));
+            addStudent.Parameters.Add(new SqlParameter("@TeacherID", teacherID));
+            sqlConnect2.Open();
+            addStudent.ExecuteNonQuery();
 
 
             Response.Redirect("TeacherStudentRegistrationConfirmation.aspx");
